@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/HatchlingByHeart/PastLink/main/public/images/pl_logo_small.png" alt="Total Downloads">
+<img src="https://raw.githubusercontent.com/HatchlingByHeart/PastLink/main/public/images/pl_logo_small.png" alt="PastLink Logo">
 
 PastLink is a web-based alternative to Crowd Control for manipulating an A Link to the Past Randomizer game. Useful as a Streamer vs Chat tool.
 
