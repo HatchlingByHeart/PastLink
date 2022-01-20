@@ -135,6 +135,7 @@ Titan's Mitt
 
 Pegasus Boots
 00F35501
+00F3796C
 
 Zora's Flippers
 00F35601
