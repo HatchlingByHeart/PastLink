@@ -26,8 +26,41 @@ while true do
 			console.writeline("ERROR: BizHawk sent the wrong key to the host. Access is denied! Check that the keys in config.php and pastlink.lua match.")
 		else
 		-- Item Management
-		if (bizstring.contains(request, "GIVEITEM:00;")) then
-			-- TODO: Give Player Normal Bow
+		if (bizstring.contains(request, "GIVEITEM:00;")) then			
+			if (mainmemory.readbyte(0x00F38E) == 224) then
+				-- Player has both bows already. Do nothing.
+			else if (mainmemory.readbyte(0x00F38E) == 128) then
+				-- Player has Normal Bow already. Do nothing.
+			else if (mainmemory.readbyte(0x00F38E) == 96) then
+				-- Player has only a Silver Bow. Give Normal Bow and adjust Bitmask.
+				-- Check amount of arrows and give Bow appropriate icon.
+				if (mainmemory.readbyte(0x00F377) >= 1) then
+					mainmemory.writebyte(0x00F340, 2)
+				else
+					mainmemory.writebyte(0x00F340, 1)
+				end
+				mainmemory.writebyte(0x00F38E, 224)
+			else if (mainmemory.readbyte(0x00F38E) == 0) then
+				-- Player has no bows. Give Normal Bow and adjust Bitmask.
+				-- Check amount of arrows and give Bow appropriate icon.
+				if (mainmemory.readbyte(0x00F377) >= 1) then
+					mainmemory.writebyte(0x00F340, 2)
+				else
+					mainmemory.writebyte(0x00F340, 1)
+				end
+				mainmemory.writebyte(0x00F38E, 128)
+			else
+				-- Bitmask is invalid, and I'm not smart enough to fix it, so we'll just assume it was 0 to prevent any glitches.
+				-- Making sure to warn the Player via the console if this happens.
+				if (mainmemory.readbyte(0x00F377) >= 1) then
+					mainmemory.writebyte(0x00F340, 2)
+				else
+					mainmemory.writebyte(0x00F340, 1)
+				end
+				mainmemory.writebyte(0x00F38E, 128)
+				console.writeline("WARNING: The Bitmask address for Bows was assigned an invalid value and has been reset. This may result in lost Bows.")
+				console.writeline("If this issue persists and you haven't been manually tampering with address 0x00F38E, please open an issue here: https://github.com/HatchlingByHeart/PastLink/issues")
+			end
 		end
 		if (bizstring.contains(request, "GIVEITEM:01;")) then
 			-- TODO: Give Player Silver Bow
@@ -302,7 +335,7 @@ while true do
 	else
 		-- Not time yet, decrement one frame from timer.
 		refresh = refresh-1;
-	end
+	end	
 	-- Once everything is checked, advance BizHawk a frame.
 	emu.frameadvance();
 end
