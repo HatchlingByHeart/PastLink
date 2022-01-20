@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/HatchlingByHeart/PastLink/main/public/images/pl_logo_small.png" alt="PastLink Logo">
 
-<span style="color:red;">PastLink is in heavy development and is not ready for use yet. Key components are yet to be developed!</span>
+**PastLink is in heavy development and is not ready for use yet. Key components are yet to be developed!**
 
 PastLink is a web-based alternative to Crowd Control for manipulating an A Link to the Past Randomizer game. Useful as a Streamer vs Chat tool.
 
