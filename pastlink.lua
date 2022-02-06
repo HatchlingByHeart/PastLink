@@ -12,61 +12,221 @@ key = "****************"
 refreshtime = 60
 refresh = refreshtime
 
+-- FUNCTION: Edit Item
+-- Argument id (int): The ID number of the item to be received.
+-- Argument take (bool): If true, take item away instead of giving it. (Default: false)
+function edititem(id,take)
+if (id == 0) then
+	-- Normal Bow
+	if (take) then
+		if (bit.check(mainmemory.readbyte(0x00F38E),2) then
+			if (mainmemory.readbyte(0x00F377) >= 1) then
+				mainmemory.writebyte(0x00F340, 4)
+			else
+				mainmemory.writebyte(0x00F340, 3)
+			end
+		else
+			mainmemory.writebyte(0x00F340, 0)
+		end
+		mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),1))
+	else
+		if (mainmemory.readbyte(0x00F377) >= 1) then
+			mainmemory.writebyte(0x00F340, 2)
+		else
+			mainmemory.writebyte(0x00F340, 1)
+		end
+		mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),1))
+	end
+else if (id == 1) then
+	-- Silver Bow
+	if (take) then
+		if (bit.check(mainmemory.readbyte(0x00F38E),1) then
+			if (mainmemory.readbyte(0x00F377) >= 1) then
+				mainmemory.writebyte(0x00F340, 2)
+			else
+				mainmemory.writebyte(0x00F340, 1)
+			end
+		else
+			mainmemory.writebyte(0x00F340, 0)
+		end
+		mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),2))
+	else
+		if (mainmemory.readbyte(0x00F377) >= 1) then
+			mainmemory.writebyte(0x00F340, 4)
+		else
+			mainmemory.writebyte(0x00F340, 3)
+		end
+		mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),2))
+	end
+else if (id == 2) then
+	-- Shovel
+	if (take) then
+		if (bit.check(mainmemory.readbyte(0x00F38C),8) then
+			mainmemory.writebyte(0x00F34C, 3)
+		else if (bit.check(mainmemory.readbyte(0x00F38C),7) then
+			mainmemory.writebyte(0x00F34C, 2)
+		else
+			mainmemory.writebyte(0x00F34C, 0)
+		end
+		mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),1))
+	else
+		mainmemory.writebyte(0x00F34C, 1)
+		mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),6))
+	end
+else if (id == 3) then
+	-- Inactive Ocarina
+else if (id == 4) then
+	-- Active Ocarina
+else if (id == 5) then
+	-- Mushroom
+else if (id == 6) then
+	-- Magic Powder
+else if (id == 7) then
+	-- Boomerang
+else if (id == 8) then
+	-- Magic Boomerang
+else if (id == 9) then
+	-- Hookshot
+else if (id == 10) then
+	-- Give Player some Bombs
+else if (id == 11) then
+	-- Fire Rod
+else if (id == 12) then
+	-- Ice Rod
+else if (id == 13) then
+	-- Bombos Medallion
+else if (id == 14) then
+	-- Ether Medallion
+else if (id == 15) then
+	-- Quake Medallion
+else if (id == 16) then
+	-- Lamp
+else if (id == 17) then
+	-- Magic Hammer
+else if (id == 18) then
+	-- Bug Net
+else if (id == 19) then
+	-- Book of Mudora
+else if (id == 20) then
+	-- Bottle #1 (Empty)
+else if (id == 21) then
+	-- Bottle #1 (Red Potion)
+else if (id == 22) then
+	-- Bottle #1 (Green Potion)
+else if (id == 23) then
+	-- Bottle #1 (Blue Potion)
+else if (id == 24) then
+	-- Bottle #1 (Fairy)
+else if (id == 25) then
+	-- Bottle #1 (Bee)
+else if (id == 26) then
+	-- Bottle #1 (Super Bee)
+else if (id == 27) then
+	-- Bottle #2 (Empty)
+else if (id == 28) then
+	-- Bottle #2 (Red Potion)
+else if (id == 29) then
+	-- Bottle #2 (Green Potion)
+else if (id == 30) then
+	-- Bottle #2 (Blue Potion)
+else if (id == 31) then
+	-- Bottle #2 (Fairy)
+else if (id == 32) then
+	-- Bottle #2 (Bee)
+else if (id == 33) then
+	-- Bottle #2 (Super Bee)
+else if (id == 34) then
+	-- Bottle #3 (Empty)
+else if (id == 35) then
+	-- Bottle #3 (Red Potion)
+else if (id == 36) then
+	-- Bottle #3 (Green Potion)
+else if (id == 37) then
+	-- Bottle #3 (Blue Potion)
+else if (id == 38) then
+	-- Bottle #3 (Fairy)
+else if (id == 39) then
+	-- Bottle #3 (Bee)
+else if (id == 40) then
+	-- Bottle #3 (Super Bee)
+else if (id == 41) then
+	-- Bottle #4 (Empty)
+else if (id == 42) then
+	-- Bottle #4 (Red Potion)
+else if (id == 43) then
+	-- Bottle #4 (Green Potion)
+else if (id == 44) then
+	-- Bottle #4 (Blue Potion)
+else if (id == 45) then
+	-- Bottle #4 (Fairy)
+else if (id == 46) then
+	-- Bottle #4 (Bee)
+else if (id == 47) then
+	-- Bottle #4 (Super Bee)
+else if (id == 48) then
+	-- Cane Of Somaria
+else if (id == 49) then
+	-- Cane of Byrna
+else if (id == 50) then
+	-- Magic Cape
+else if (id == 51) then
+	-- Magic Mirror
+else if (id == 52) then
+	-- Power Glove
+else if (id == 53) then
+	-- Titan's Mitt
+else if (id == 54) then
+	-- Pegasus Boots
+else if (id == 55) then
+	-- Zora's Flippers
+else if (id == 56) then
+	-- Moon Pearl
+else if (id == 57) then
+	-- Fighter's Sword
+else if (id == 58) then
+	-- Master Sword
+else if (id == 59) then
+	-- Tempered Sword
+else if (id == 60) then
+	-- Gold Sword
+else if (id == 61) then
+	-- Fighter's Shield
+else if (id == 62) then
+	-- Fire Shield
+else if (id == 63) then
+	-- Mirror Shield
+else if (id == 64) then
+	-- Blue Mail
+else if (id == 65) then
+	-- Red Mail
+else if (id == 66) then
+	-- Give Player 1/2 Magic
+end
+
+
 -- Place all main code inside an always true while loop to maintain indefinite operation.
 while true do
 	-- Refresh counter expired, time to make a call to the server.
 	if refresh <= 0 then
 		request = comm.httpGet("https://"..url.."/pastlink.php?mode=readDB&key="..key)
-		-- If the request does not receive an answer, we will know the server is offline or unresponsive.
 		if request = "" then
+			-- If nothing is returned, will know the server is offline or unresponsive. Write error info to console.
 			console.writeline("ERROR: BizHawk could not connect to the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
-		-- If the request was made with a non-matching key, the server will deny access.
-		-- In this case, output an error and terminate script execution.
+		else if request == "NULL" then
+			-- If "NULL" is returned, the connection was successful, but there are no requests to process. Literally do nothing.
 		else if request == "WRONGKEY" then
+			-- If "WRONGKEY" is returned, the connection was successful, but the request was made with a non-matching key, and the server will deny access. In this case, output an error.
 			console.writeline("ERROR: BizHawk sent the wrong key to the host. Access is denied! Check that the keys in config.php and pastlink.lua match.")
 		else
 		-- Item Management
-		if (bizstring.contains(request, "GIVEITEM:00;")) then			
-			if (mainmemory.readbyte(0x00F38E) == 224) then
-				-- Player has both bows already. Do nothing.
-			else if (mainmemory.readbyte(0x00F38E) == 128) then
-				-- Player has Normal Bow already. Do nothing.
-			else if (mainmemory.readbyte(0x00F38E) == 96) then
-				-- Player has only a Silver Bow. Give Normal Bow and adjust Bitmask.
-				-- Check amount of arrows and give Bow appropriate icon.
-				if (mainmemory.readbyte(0x00F377) >= 1) then
-					mainmemory.writebyte(0x00F340, 2)
-				else
-					mainmemory.writebyte(0x00F340, 1)
-				end
-				mainmemory.writebyte(0x00F38E, 224)
-			else if (mainmemory.readbyte(0x00F38E) == 0) then
-				-- Player has no bows. Give Normal Bow and adjust Bitmask.
-				-- Check amount of arrows and give Bow appropriate icon.
-				if (mainmemory.readbyte(0x00F377) >= 1) then
-					mainmemory.writebyte(0x00F340, 2)
-				else
-					mainmemory.writebyte(0x00F340, 1)
-				end
-				mainmemory.writebyte(0x00F38E, 128)
-			else
-				-- Bitmask is invalid, and I'm not smart enough to fix it, so we'll just assume it was 0 to prevent any glitches.
-				-- Making sure to warn the Player via the console if this happens.
-				if (mainmemory.readbyte(0x00F377) >= 1) then
-					mainmemory.writebyte(0x00F340, 2)
-				else
-					mainmemory.writebyte(0x00F340, 1)
-				end
-				mainmemory.writebyte(0x00F38E, 128)
-				console.writeline("WARNING: The Bitmask address for Bows was assigned an invalid value and has been reset. This may result in lost Bows.")
-				console.writeline("If this issue persists and you haven't been manually tampering with address 0x00F38E, please open an issue here: https://github.com/HatchlingByHeart/PastLink/issues")
-			end
+		if (bizstring.contains(request, "GIVEITEM:00;")) then
+
 		end
 		if (bizstring.contains(request, "GIVEITEM:01;")) then
-			-- TODO: Give Player Silver Bow
+
 		end
 		if (bizstring.contains(request, "GIVEITEM:02;")) then
-			-- TODO: Give Player Shovel
+
 		end
 		if (bizstring.contains(request, "GIVEITEM:03;")) then
 			-- TODO: Give Player Ocarina (Inactive))
@@ -93,7 +253,7 @@ while true do
 			-- Give Player Bombs
 			-- This will need to account for the exact amount of Bombs.
 			-- I'm not too sure about this next line and haven't tested it. :/
-			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+tonumber(bizstring.substring(request, 12, 2))
+			-- mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+tonumber(bizstring.substring(request, 12, 2))
 		end
 		if (bizstring.contains(request, "GIVEITEM:11;")) then
 			-- TODO: Give Player Fire Rod
