@@ -16,191 +16,327 @@ refresh = refreshtime
 -- Argument id (int): The ID number of the item to be received.
 -- Argument take (bool): If true, take item away instead of giving it. (Default: false)
 function edititem(id,take)
-if (id == 0) then
-	-- Normal Bow
-	if (take) then
-		if (bit.check(mainmemory.readbyte(0x00F38E),2) then
-			if (mainmemory.readbyte(0x00F377) >= 1) then
-				mainmemory.writebyte(0x00F340, 4)
+	if (id == 0) then
+		-- Normal Bow
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38E),2) then
+				if (mainmemory.readbyte(0x00F377) >= 1) then
+					mainmemory.writebyte(0x00F340, 4)
+				else
+					mainmemory.writebyte(0x00F340, 3)
+				end
 			else
-				mainmemory.writebyte(0x00F340, 3)
+				mainmemory.writebyte(0x00F340, 0)
 			end
+			mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),1))
 		else
-			mainmemory.writebyte(0x00F340, 0)
-		end
-		mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),1))
-	else
-		if (mainmemory.readbyte(0x00F377) >= 1) then
-			mainmemory.writebyte(0x00F340, 2)
-		else
-			mainmemory.writebyte(0x00F340, 1)
-		end
-		mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),1))
-	end
-else if (id == 1) then
-	-- Silver Bow
-	if (take) then
-		if (bit.check(mainmemory.readbyte(0x00F38E),1) then
 			if (mainmemory.readbyte(0x00F377) >= 1) then
 				mainmemory.writebyte(0x00F340, 2)
 			else
 				mainmemory.writebyte(0x00F340, 1)
 			end
-		else
-			mainmemory.writebyte(0x00F340, 0)
+			mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),1))
 		end
-		mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),2))
-	else
-		if (mainmemory.readbyte(0x00F377) >= 1) then
-			mainmemory.writebyte(0x00F340, 4)
+	else if (id == 1) then
+		-- Silver Bow
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38E),1) then
+				if (mainmemory.readbyte(0x00F377) >= 1) then
+					mainmemory.writebyte(0x00F340, 2)
+				else
+					mainmemory.writebyte(0x00F340, 1)
+				end
+			else
+				mainmemory.writebyte(0x00F340, 0)
+			end
+			mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),2))
 		else
-			mainmemory.writebyte(0x00F340, 3)
+			if (mainmemory.readbyte(0x00F377) >= 1) then
+				mainmemory.writebyte(0x00F340, 4)
+			else
+				mainmemory.writebyte(0x00F340, 3)
+			end
+			mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),2))
 		end
-		mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),2))
+	else if (id == 2) then
+		-- Shovel
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38C),8) then
+				mainmemory.writebyte(0x00F34C, 3)
+			else if (bit.check(mainmemory.readbyte(0x00F38C),7) then
+				mainmemory.writebyte(0x00F34C, 2)
+			else
+				mainmemory.writebyte(0x00F34C, 0)
+			end
+			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),6))
+		else
+			mainmemory.writebyte(0x00F34C, 1)
+			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),6))
+		end
+	else if (id == 3) then
+		-- Inactive Ocarina
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38C),8) then
+				mainmemory.writebyte(0x00F34C, 3)
+			else if (bit.check(mainmemory.readbyte(0x00F38C),6) then
+				mainmemory.writebyte(0x00F34C, 1)
+			else
+				mainmemory.writebyte(0x00F34C, 0)
+			end
+			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),7))
+		else
+			mainmemory.writebyte(0x00F34C, 1)
+			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),7))
+		end
+	else if (id == 4) then
+		-- Active Ocarina
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38C),7) then
+				mainmemory.writebyte(0x00F34C, 2)
+			else if (bit.check(mainmemory.readbyte(0x00F38C),6) then
+				mainmemory.writebyte(0x00F34C, 1)
+			else
+				mainmemory.writebyte(0x00F34C, 0)
+			end
+			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),8))
+		else
+			mainmemory.writebyte(0x00F34C, 1)
+			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),8))
+		end
+	else if (id == 5) then
+		-- Mushroom
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38C),4) then
+				mainmemory.writebyte(0x00F344, 2)
+			else
+				mainmemory.writebyte(0x00F344, 0)
+			end
+			mushbit1 = bit.clear(mainmemory.readbyte(0x00F38C),5)
+			mushbit2 = bit.clear(mushbit1,3)
+			mainmemory.writebyte(0x00F38C, mushbit2)
+		else
+			mainmemory.writebyte(0x00F344, 1)
+			mushbit1 = bit.set(mainmemory.readbyte(0x00F38C),5)
+			mushbit2 = bit.set(mushbit1,3)
+			mainmemory.writebyte(0x00F38C, mushbit2)
+		end
+	else if (id == 6) then
+		-- Magic Powder
+		if (take) then
+			if (bit.check(mainmemory.readbyte(0x00F38C),5) && bit.check(mainmemory.readbyte(0x00F38C),3)) then
+				mainmemory.writebyte(0x00F344, 1)
+			else
+				mainmemory.writebyte(0x00F344, 0)
+			end
+			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),4))
+		else
+			mainmemory.writebyte(0x00F344, 2)
+			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),4))
+		end
+	else if (id == 7) then
+		-- Boomerang
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38C),2) then
+				mainmemory.writebyte(0x00F341, 2)
+			else
+				mainmemory.writebyte(0x00F341, 0)
+			end
+			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),1))
+		else
+			mainmemory.writebyte(0x00F341, 1)
+			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),1))
+		end
+	else if (id == 8) then
+		-- Magic Boomerang
+		if (take) then
+			if bit.check(mainmemory.readbyte(0x00F38C),1) then
+				mainmemory.writebyte(0x00F341, 1)
+			else
+				mainmemory.writebyte(0x00F341, 0)
+			end
+			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),2))
+		else
+			mainmemory.writebyte(0x00F341, 2)
+			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),2))
+		end
+	else if (id == 9) then
+		-- Hookshot
+		if (take) then
+			mainmemory.writebyte(0x00F342, 0)
+		else
+			mainmemory.writebyte(0x00F342, 1)
+		end
+	else if (id == 10) then
+		-- Fire Rod
+		if (take) then
+			mainmemory.writebyte(0x00F345, 0)
+		else
+			mainmemory.writebyte(0x00F345, 1)
+		end
+	else if (id == 11) then
+		-- Ice Rod
+		if (take) then
+			mainmemory.writebyte(0x00F346, 0)
+		else
+			mainmemory.writebyte(0x00F346, 1)
+		end
+	else if (id == 12) then
+		-- Bombos Medallion
+		if (take) then
+			mainmemory.writebyte(0x00F347, 0)
+		else
+			mainmemory.writebyte(0x00F347, 1)
+		end
+	else if (id == 13) then
+		-- Ether Medallion
+		if (take) then
+			mainmemory.writebyte(0x00F348, 0)
+		else
+			mainmemory.writebyte(0x00F348, 1)
+		end
+	else if (id == 14) then
+		-- Quake Medallion
+		if (take) then
+			mainmemory.writebyte(0x00F349, 0)
+		else
+			mainmemory.writebyte(0x00F349, 1)
+		end
+	else if (id == 15) then
+		-- Lamp
+		if (take) then
+			mainmemory.writebyte(0x00F34A, 0)
+		else
+			mainmemory.writebyte(0x00F34A, 1)
+		end
+	else if (id == 16) then
+		-- Magic Hammer
+		if (take) then
+			mainmemory.writebyte(0x00F34B, 0)
+		else
+			mainmemory.writebyte(0x00F34B, 1)
+		end
+	else if (id == 17) then
+		-- Bug Net
+		if (take) then
+			mainmemory.writebyte(0x00F34D, 0)
+		else
+			mainmemory.writebyte(0x00F34D, 1)
+		end
+	else if (id == 18) then
+		-- Book of Mudora
+		if (take) then
+			mainmemory.writebyte(0x00F34E, 0)
+		else
+			mainmemory.writebyte(0x00F34E, 1)
+		end
+	else if (id == 19) then
+		-- Bottle #1 (Empty)
+		if (take) then
+			mainmemory.writebyte(0x00F35C, 0)
+		else
+			mainmemory.writebyte(0x00F35C, 1)
+		end
+	else if (id == 20) then
+		-- Bottle #2 (Empty)
+		if (take) then
+			mainmemory.writebyte(0x00F35D, 0)
+		else
+			mainmemory.writebyte(0x00F35D, 1)
+		end
+	else if (id == 21) then
+		-- Bottle #3 (Empty)
+		if (take) then
+			mainmemory.writebyte(0x00F35E, 0)
+		else
+			mainmemory.writebyte(0x00F35E, 1)
+		end
+	else if (id == 22) then
+		-- Bottle #4
+		if (take) then
+			mainmemory.writebyte(0x00F35F, 0)
+		else
+			mainmemory.writebyte(0x00F35F, 1)
+		end
+	else if (id == 23) then
+		-- Cane Of Somaria
+		if (take) then
+			mainmemory.writebyte(0x00F350, 0)
+		else
+			mainmemory.writebyte(0x00F350, 1)
+		end
+	else if (id == 24) then
+		-- Cane of Byrna
+		if (take) then
+			mainmemory.writebyte(0x00F351, 0)
+		else
+			mainmemory.writebyte(0x00F351, 1)
+		end
+	else if (id == 25) then
+		-- Magic Cape
+		if (take) then
+			mainmemory.writebyte(0x00F352, 0)
+		else
+			mainmemory.writebyte(0x00F352, 1)
+		end
+	else if (id == 26) then
+		-- Magic Mirror
+		if (take) then
+			mainmemory.writebyte(0x00F353, 0)
+		else
+			mainmemory.writebyte(0x00F353, 1)
+		end
+	else if (id == 27) then
+		-- Power Glove
+		if (take) then
+			mainmemory.writebyte(0x00F354, 0)
+		else
+			mainmemory.writebyte(0x00F354, 1)
+		end
+	else if (id == 28) then
+		-- Titan's Mitt
+		if (take) then
+			mainmemory.writebyte(0x00F354, 0)
+		else
+			mainmemory.writebyte(0x00F354, 2)
+		end
+	else if (id == 29) then
+		-- Pegasus Boots
+		if (take) then
+			mainmemory.writebyte(0x00F355, 0)
+			mainmemory.writebyte(0x00F379, 0)
+		else
+			mainmemory.writebyte(0x00F355, 1)
+			mainmemory.writebyte(0x00F379, 108)
+		end
+	else if (id == 30) then
+		-- Zora's Flippers
+		if (take) then
+			mainmemory.writebyte(0x00F356, 0)
+		else
+			mainmemory.writebyte(0x00F356, 1)
+		end
+	else if (id == 31) then
+		-- Moon Pearl
+		if (take) then
+			mainmemory.writebyte(0x00F357, 0)
+		else
+			mainmemory.writebyte(0x00F357, 1)
+		end
+	else if (id == 32) then
+		-- Give Player 1/2 Magic
+		if (take) then
+			mainmemory.writebyte(0x00F37B, 0)
+		else
+			mainmemory.writebyte(0x00F37B, 1)
+		end
 	end
-else if (id == 2) then
-	-- Shovel
-	if (take) then
-		if (bit.check(mainmemory.readbyte(0x00F38C),8) then
-			mainmemory.writebyte(0x00F34C, 3)
-		else if (bit.check(mainmemory.readbyte(0x00F38C),7) then
-			mainmemory.writebyte(0x00F34C, 2)
+	else if (id == 33) then
+		-- Give Player 1/4 Magic
+		if (take) then
+			mainmemory.writebyte(0x00F37B, 0)
 		else
-			mainmemory.writebyte(0x00F34C, 0)
-		end
-		mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),1))
-	else
-		mainmemory.writebyte(0x00F34C, 1)
-		mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),6))
+			mainmemory.writebyte(0x00F37B, 2)
 	end
-else if (id == 3) then
-	-- Inactive Ocarina
-else if (id == 4) then
-	-- Active Ocarina
-else if (id == 5) then
-	-- Mushroom
-else if (id == 6) then
-	-- Magic Powder
-else if (id == 7) then
-	-- Boomerang
-else if (id == 8) then
-	-- Magic Boomerang
-else if (id == 9) then
-	-- Hookshot
-else if (id == 10) then
-	-- Give Player some Bombs
-else if (id == 11) then
-	-- Fire Rod
-else if (id == 12) then
-	-- Ice Rod
-else if (id == 13) then
-	-- Bombos Medallion
-else if (id == 14) then
-	-- Ether Medallion
-else if (id == 15) then
-	-- Quake Medallion
-else if (id == 16) then
-	-- Lamp
-else if (id == 17) then
-	-- Magic Hammer
-else if (id == 18) then
-	-- Bug Net
-else if (id == 19) then
-	-- Book of Mudora
-else if (id == 20) then
-	-- Bottle #1 (Empty)
-else if (id == 21) then
-	-- Bottle #1 (Red Potion)
-else if (id == 22) then
-	-- Bottle #1 (Green Potion)
-else if (id == 23) then
-	-- Bottle #1 (Blue Potion)
-else if (id == 24) then
-	-- Bottle #1 (Fairy)
-else if (id == 25) then
-	-- Bottle #1 (Bee)
-else if (id == 26) then
-	-- Bottle #1 (Super Bee)
-else if (id == 27) then
-	-- Bottle #2 (Empty)
-else if (id == 28) then
-	-- Bottle #2 (Red Potion)
-else if (id == 29) then
-	-- Bottle #2 (Green Potion)
-else if (id == 30) then
-	-- Bottle #2 (Blue Potion)
-else if (id == 31) then
-	-- Bottle #2 (Fairy)
-else if (id == 32) then
-	-- Bottle #2 (Bee)
-else if (id == 33) then
-	-- Bottle #2 (Super Bee)
-else if (id == 34) then
-	-- Bottle #3 (Empty)
-else if (id == 35) then
-	-- Bottle #3 (Red Potion)
-else if (id == 36) then
-	-- Bottle #3 (Green Potion)
-else if (id == 37) then
-	-- Bottle #3 (Blue Potion)
-else if (id == 38) then
-	-- Bottle #3 (Fairy)
-else if (id == 39) then
-	-- Bottle #3 (Bee)
-else if (id == 40) then
-	-- Bottle #3 (Super Bee)
-else if (id == 41) then
-	-- Bottle #4 (Empty)
-else if (id == 42) then
-	-- Bottle #4 (Red Potion)
-else if (id == 43) then
-	-- Bottle #4 (Green Potion)
-else if (id == 44) then
-	-- Bottle #4 (Blue Potion)
-else if (id == 45) then
-	-- Bottle #4 (Fairy)
-else if (id == 46) then
-	-- Bottle #4 (Bee)
-else if (id == 47) then
-	-- Bottle #4 (Super Bee)
-else if (id == 48) then
-	-- Cane Of Somaria
-else if (id == 49) then
-	-- Cane of Byrna
-else if (id == 50) then
-	-- Magic Cape
-else if (id == 51) then
-	-- Magic Mirror
-else if (id == 52) then
-	-- Power Glove
-else if (id == 53) then
-	-- Titan's Mitt
-else if (id == 54) then
-	-- Pegasus Boots
-else if (id == 55) then
-	-- Zora's Flippers
-else if (id == 56) then
-	-- Moon Pearl
-else if (id == 57) then
-	-- Fighter's Sword
-else if (id == 58) then
-	-- Master Sword
-else if (id == 59) then
-	-- Tempered Sword
-else if (id == 60) then
-	-- Gold Sword
-else if (id == 61) then
-	-- Fighter's Shield
-else if (id == 62) then
-	-- Fire Shield
-else if (id == 63) then
-	-- Mirror Shield
-else if (id == 64) then
-	-- Blue Mail
-else if (id == 65) then
-	-- Red Mail
-else if (id == 66) then
-	-- Give Player 1/2 Magic
 end
 
 
