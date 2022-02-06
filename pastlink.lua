@@ -230,32 +230,32 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F34E, 1)
 		end
 	else if (id == 19) then
-		-- Bottle #1 (Empty)
+		-- Bottle #1
 		if take then
 			mainmemory.writebyte(0x00F35C, 0)
 		else
-			mainmemory.writebyte(0x00F35C, 1)
+			mainmemory.writebyte(0x00F35C, 2)
 		end
 	else if (id == 20) then
-		-- Bottle #2 (Empty)
+		-- Bottle #2
 		if take then
 			mainmemory.writebyte(0x00F35D, 0)
 		else
-			mainmemory.writebyte(0x00F35D, 1)
+			mainmemory.writebyte(0x00F35D, 2)
 		end
 	else if (id == 21) then
-		-- Bottle #3 (Empty)
+		-- Bottle #3
 		if take then
 			mainmemory.writebyte(0x00F35E, 0)
 		else
-			mainmemory.writebyte(0x00F35E, 1)
+			mainmemory.writebyte(0x00F35E, 2)
 		end
 	else if (id == 22) then
 		-- Bottle #4
 		if take then
 			mainmemory.writebyte(0x00F35F, 0)
 		else
-			mainmemory.writebyte(0x00F35F, 1)
+			mainmemory.writebyte(0x00F35F, 2)
 		end
 	else if (id == 23) then
 		-- Cane Of Somaria
@@ -283,7 +283,7 @@ function edititem(id,take)
 		if take then
 			mainmemory.writebyte(0x00F353, 0)
 		else
-			mainmemory.writebyte(0x00F353, 1)
+			mainmemory.writebyte(0x00F353, 2)
 		end
 	else if (id == 27) then
 		-- Power Glove
