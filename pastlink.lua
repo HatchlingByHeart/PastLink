@@ -8,15 +8,16 @@ key = "****************"
 
 -- Time (in frames) between calls to server.
 -- Higher values will save server resources but increase command delay.
+-- Values that are too low (0-10) may slow down BizHawk
 -- Default (Recommended) Value: 60
 refreshtime = 60
 refresh = refreshtime
 
 -- FUNCTION: Edit Item
--- Argument id (int): The ID number of the item to be received.
+-- Argument id (int): The ID number of the item to be received/ktaen.
 -- Argument take (bool): If true, take item away instead of giving it. (Default: false)
 function edititem(id,take)
-	if (id == 0) then
+	if id == 0 then
 		-- Normal Bow
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38E),2) then
@@ -37,7 +38,7 @@ function edititem(id,take)
 			end
 			mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),1))
 		end
-	else if (id == 1) then
+	else if id == 1 then
 		-- Silver Bow
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38E),1) then
@@ -58,7 +59,7 @@ function edititem(id,take)
 			end
 			mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),2))
 		end
-	else if (id == 2) then
+	else if id == 2 then
 		-- Shovel
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38C),8) then
@@ -73,7 +74,7 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F34C, 1)
 			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),6))
 		end
-	else if (id == 3) then
+	else if id == 3 then
 		-- Inactive Ocarina
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38C),8) then
@@ -88,7 +89,7 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F34C, 1)
 			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),7))
 		end
-	else if (id == 4) then
+	else if id == 4 then
 		-- Active Ocarina
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38C),7) then
@@ -103,7 +104,7 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F34C, 1)
 			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),8))
 		end
-	else if (id == 5) then
+	else if id == 5 then
 		-- Mushroom
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38C),4) then
@@ -120,7 +121,7 @@ function edititem(id,take)
 			mushbit2 = bit.set(mushbit1,3)
 			mainmemory.writebyte(0x00F38C, mushbit2)
 		end
-	else if (id == 6) then
+	else if id == 6 then
 		-- Magic Powder
 		if take then
 			if (bit.check(mainmemory.readbyte(0x00F38C),5) && bit.check(mainmemory.readbyte(0x00F38C),3)) then
@@ -133,7 +134,7 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F344, 2)
 			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),4))
 		end
-	else if (id == 7) then
+	else if id == 7 then
 		-- Boomerang
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38C),2) then
@@ -146,7 +147,7 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F341, 1)
 			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),1))
 		end
-	else if (id == 8) then
+	else if id == 8 then
 		-- Magic Boomerang
 		if take then
 			if bit.check(mainmemory.readbyte(0x00F38C),1) then
@@ -159,147 +160,147 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F341, 2)
 			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),2))
 		end
-	else if (id == 9) then
+	else if id == 9 then
 		-- Hookshot
 		if take then
 			mainmemory.writebyte(0x00F342, 0)
 		else
 			mainmemory.writebyte(0x00F342, 1)
 		end
-	else if (id == 10) then
+	else if id == 10 then
 		-- Fire Rod
 		if take then
 			mainmemory.writebyte(0x00F345, 0)
 		else
 			mainmemory.writebyte(0x00F345, 1)
 		end
-	else if (id == 11) then
+	else if id == 11 then
 		-- Ice Rod
 		if take then
 			mainmemory.writebyte(0x00F346, 0)
 		else
 			mainmemory.writebyte(0x00F346, 1)
 		end
-	else if (id == 12) then
+	else if id == 12 then
 		-- Bombos Medallion
 		if take then
 			mainmemory.writebyte(0x00F347, 0)
 		else
 			mainmemory.writebyte(0x00F347, 1)
 		end
-	else if (id == 13) then
+	else if id == 13 then
 		-- Ether Medallion
 		if take then
 			mainmemory.writebyte(0x00F348, 0)
 		else
 			mainmemory.writebyte(0x00F348, 1)
 		end
-	else if (id == 14) then
+	else if id == 14 then
 		-- Quake Medallion
 		if take then
 			mainmemory.writebyte(0x00F349, 0)
 		else
 			mainmemory.writebyte(0x00F349, 1)
 		end
-	else if (id == 15) then
+	else if id == 15 then
 		-- Lamp
 		if take then
 			mainmemory.writebyte(0x00F34A, 0)
 		else
 			mainmemory.writebyte(0x00F34A, 1)
 		end
-	else if (id == 16) then
+	else if id == 16 then
 		-- Magic Hammer
 		if take then
 			mainmemory.writebyte(0x00F34B, 0)
 		else
 			mainmemory.writebyte(0x00F34B, 1)
 		end
-	else if (id == 17) then
+	else if id == 17 then
 		-- Bug Net
 		if take then
 			mainmemory.writebyte(0x00F34D, 0)
 		else
 			mainmemory.writebyte(0x00F34D, 1)
 		end
-	else if (id == 18) then
+	else if id == 18 then
 		-- Book of Mudora
 		if take then
 			mainmemory.writebyte(0x00F34E, 0)
 		else
 			mainmemory.writebyte(0x00F34E, 1)
 		end
-	else if (id == 19) then
+	else if id == 19 then
 		-- Bottle #1
 		if take then
 			mainmemory.writebyte(0x00F35C, 0)
 		else
 			mainmemory.writebyte(0x00F35C, 2)
 		end
-	else if (id == 20) then
+	else if id == 20 then
 		-- Bottle #2
 		if take then
 			mainmemory.writebyte(0x00F35D, 0)
 		else
 			mainmemory.writebyte(0x00F35D, 2)
 		end
-	else if (id == 21) then
+	else if id == 21 then
 		-- Bottle #3
 		if take then
 			mainmemory.writebyte(0x00F35E, 0)
 		else
 			mainmemory.writebyte(0x00F35E, 2)
 		end
-	else if (id == 22) then
+	else if id == 22 then
 		-- Bottle #4
 		if take then
 			mainmemory.writebyte(0x00F35F, 0)
 		else
 			mainmemory.writebyte(0x00F35F, 2)
 		end
-	else if (id == 23) then
+	else if id == 23 then
 		-- Cane Of Somaria
 		if take then
 			mainmemory.writebyte(0x00F350, 0)
 		else
 			mainmemory.writebyte(0x00F350, 1)
 		end
-	else if (id == 24) then
+	else if id == 24 then
 		-- Cane of Byrna
 		if take then
 			mainmemory.writebyte(0x00F351, 0)
 		else
 			mainmemory.writebyte(0x00F351, 1)
 		end
-	else if (id == 25) then
+	else if id == 25 then
 		-- Magic Cape
 		if take then
 			mainmemory.writebyte(0x00F352, 0)
 		else
 			mainmemory.writebyte(0x00F352, 1)
 		end
-	else if (id == 26) then
+	else if id == 26 then
 		-- Magic Mirror
 		if take then
 			mainmemory.writebyte(0x00F353, 0)
 		else
 			mainmemory.writebyte(0x00F353, 2)
 		end
-	else if (id == 27) then
+	else if id == 27 then
 		-- Power Glove
 		if take then
 			mainmemory.writebyte(0x00F354, 0)
 		else
 			mainmemory.writebyte(0x00F354, 1)
 		end
-	else if (id == 28) then
+	else if id == 28 then
 		-- Titan's Mitt
 		if take then
 			mainmemory.writebyte(0x00F354, 0)
 		else
 			mainmemory.writebyte(0x00F354, 2)
 		end
-	else if (id == 29) then
+	else if id == 29 then
 		-- Pegasus Boots
 		if take then
 			mainmemory.writebyte(0x00F355, 0)
@@ -308,21 +309,21 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F355, 1)
 			mainmemory.writebyte(0x00F379, 108)
 		end
-	else if (id == 30) then
+	else if id == 30 then
 		-- Zora's Flippers
 		if take then
 			mainmemory.writebyte(0x00F356, 0)
 		else
 			mainmemory.writebyte(0x00F356, 1)
 		end
-	else if (id == 31) then
+	else if id == 31 then
 		-- Moon Pearl
 		if take then
 			mainmemory.writebyte(0x00F357, 0)
 		else
 			mainmemory.writebyte(0x00F357, 1)
 		end
-	else if (id == 32) then
+	else if id == 32 then
 		-- Give Player 1/2 Magic
 		if take then
 			mainmemory.writebyte(0x00F37B, 0)
@@ -330,12 +331,50 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F37B, 1)
 		end
 	end
-	else if (id == 33) then
+	else if id == 33 then
 		-- Give Player 1/4 Magic
 		if take then
 			mainmemory.writebyte(0x00F37B, 0)
 		else
 			mainmemory.writebyte(0x00F37B, 2)
+	end
+end
+
+-- FUNCTION: Edit Consumable Items
+-- Argument id (int): The ID number of the item to be received/taken.
+-- Argument take (bool): If true, take item away instead of giving it. (Default: false)
+-- Argument amount (int): Amount of the item to give or take. (Default: 1)
+function editconsumable(id,take,amount)
+	if id == 0 then
+		if take then
+			if mainmemory.readbyte(0x00F343) > amount then
+				mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)-tonumber(amount))
+			else
+				mainmemory.writebyte(0x00F343, 0)
+			end
+		else
+			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+tonumber(amount))
+		end
+	else if id == 1 then
+		if take then
+			if mainmemory.readbyte(0x00F377) > amount then
+				mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)-tonumber(amount))
+			else
+				mainmemory.writebyte(0x00F377, 0)
+			end
+		else
+			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)+tonumber(amount))
+		end
+		else if id == 2 then
+		if take then
+			if mainmemory.read_u16_le(0x00F360) > amount then
+				mainmemory.write_s16_le(0x00F360, mainmemory.read_u16_le(0x00F360)-tonumber(amount))
+			else
+				mainmemory.write_s16_le(0x00F360, 0)
+			end
+		else
+			mainmemory.write_s16_le(0x00F360, mainmemory.read_u16_le(0x00F360)+tonumber(amount))
+		end
 	end
 end
 
