@@ -1,8 +1,10 @@
 * Indicates Codes that are being considered for removal due to glitches or sideeffects.
+^ Indicates codes that need continuous poking to function.
+# Indicates codes that need to be manually timed.
 
 Insta-Death!
-000010 12
 00F36D 00
+000010 12
 
 Y-Axis
 000020 XXXX
@@ -10,30 +12,18 @@ Y-Axis
 X-Axis
 000022 XXXX
 
-Slow Mode
+Slow Mode^
 00005E 01
 
-Let there be light!
+Let there be light!#
 00045A 03
-07CB9A EA
-07CB9B EA
-07C1FA EA
-07C1FB EA
 
-Cloak
+Cloak^#
+0003F5 01
 000055 01
 
-Cannot Spin Attack
+Cannot Spin Attack^
 000079 00
-
-Auto Spin Attack
-000079 40
-
-Glitch City #1*
-000085 50
-
-Glitch City #2*
-000085 FF
 
 Cannot Open Chests
 0002E9 01
@@ -41,137 +31,36 @@ Cannot Open Chests
 Brief Invincibility
 00031F FF
 
-Pinball Mode (Add a Timer or Softlocks may occur)*
+Pinball Mode (Add a Timer or Softlocks may occur)#
 000372 01
 
 Invincible / Walk Through Enemies
 00037B 01
 
-Invisibility
-0003F5 01
-
-Bunnify (Set Invisibility FIRST)
+Bunnify (Poke for 30 frames)^
 0003F5 FF
 
-Enemy #1 Can't React*
+Dumb Enemies*^#
 000D80 00
-
-Enemy #2 Can't React*
 000D81 00
-
-Enemy #3 Can't React*
 000D82 00
-
-Enemy #4 Can't React*
 000D83 00
-
-Enemy #5 Can't React*
 000D84 00
-
-Enemy #6 Can't React*
 000D85 00
-
-Enemy #7 Can't React*
 000D86 00
-
-Enemy #8 Can't React*
 000D87 00
-
-Enemy #9 Can't React*
 000D88 00
-
-Enemy #10 Can't React*
 000D89 00
-
-Enemy #11 Can't React*
 000D8A 00
-
-Enemy #12 Can't React*
 000D8B 00
-
-Enemy #13 Can't React*
 000D8C 00
-
-Enemy #14 Can't React*
 000D8D 00
-
-Enemy #15 Can't React*
 000D8E 00
-
-Enemy #16 Can't React*
 000D8F 00
-
-Enemy #17 Can't React*
 000D90 00
-
-Enemy #18 Can't React*
 000D91 00
-
-Enemy #19 Can't React*
 000D92 00
-
-Enemy #20 Can't React*
 000D93 00
-
-Enemy Mod 1
-000E20 XX
-
-Enemy Mod 2
-000E21 XX
-
-Enemy Mod 3
-000E22 XX
-
-Enemy Mod 4
-000E23 XX
-
-Enemy Mod 5
-000E24 XX
-
-Enemy Mod 6
-000E25 XX
-
-Enemy Mod 7
-000E26 XX
-
-Enemy Mod 8
-000E27 XX
-
-Enemy Mod 9
-000E28 XX
-
-Enemy Mod 10
-000E29 XX
-
-Enemy Mod 11
-000E2A XX
-
-Enemy Mod 12
-000E2B XX
-
-Enemy Mod 13
-000E2C XX
-
-Enemy Mod 14
-000E2D XX
-
-Enemy Mod 15
-000E2E XX
-
-Enemy Mod 16
-000E2F XX
-
-Enemy Mod 17
-000E30 XX
-
-Enemy Mod 18
-000E31 XX
-
-Enemy Mod 19
-000E32 XX
-
-Enemy Mod 20
-000E33 XX
 
 Enemy Health Mod 1
 000E50 XX
