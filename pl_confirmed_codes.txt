@@ -1,16 +1,17 @@
 * Indicates Codes that are being considered for removal due to glitches or sideeffects.
 ^ Indicates codes that need continuous poking to function.
 # Indicates codes that need to be manually timed.
+X Indicates a relative value (get value and add to/subtract from it)
 
 Insta-Death!
 00F36D 00
 000010 12
 
 Y-Axis
-000020 XXXX
+000020 X
 
 X-Axis
-000022 XXXX
+000022 X
 
 Slow Mode^
 00005E 01
@@ -62,62 +63,24 @@ Dumb Enemies*^#
 000D92 00
 000D93 00
 
-Enemy Health Mod 1
-000E50 XX
-
-Enemy Health Mod 2
-000E51 XX
-
-Enemy Health Mod 3
-000E52 XX
-
-Enemy Health Mod 4
-000E53 XX
-
-Enemy Health Mod 5
-000E54 XX
-
-Enemy Health Mod 6
-000E55 XX
-
-Enemy Health Mod 7
-000E56 XX
-
-Enemy Health Mod 8
-000E57 XX
-
-Enemy Health Mod 9
-000E58 XX
-
-Enemy Health Mod 10
-000E59 XX
-
-Enemy Health Mod 11
-000E5A XX
-
-Enemy Health Mod 12
-000E5B XX
-
-Enemy Health Mod 13
-000E5C XX
-
-Enemy Health Mod 14
-000E5D XX
-
-Enemy Health Mod 15
-000E5E XX
-
-Enemy Health Mod 16
-000E5F XX
-
-Enemy Health Mod 17
-000E60 XX
-
-Enemy Health Mod 18
-000E61 XX
-
-Enemy Health Mod 19
-000E62 XX
-
-Enemy Health Mod 20
-000E63 XX
+Current Enemies' Health
+000E50 X
+000E51 X
+000E52 X
+000E53 X
+000E54 X
+000E55 X
+000E56 X
+000E57 X
+000E58 X
+000E59 X
+000E5A X
+000E5B X
+000E5C X
+000E5D X
+000E5E X
+000E5F X
+000E60 X
+000E61 X
+000E62 X
+000E63 X
