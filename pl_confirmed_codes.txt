@@ -7,6 +7,9 @@ Insta-Death!
 00F36D 00
 000010 12
 
+Light Level Modifier (affects entire screen including menus and HUDs)
+000013 00-0F
+
 Y-Axis
 000020 X
 
@@ -15,6 +18,12 @@ X-Axis
 
 Slow Mode^
 00005E 01
+
+Fast Mode^
+00005E 10
+
+Confusion!^
+00005E 25
 
 Let there be light!#
 00045A 03
