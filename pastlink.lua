@@ -346,6 +346,7 @@ end
 -- Argument amount (int): Amount of the item to give or take. (Default: 1)
 function editconsumable(id,take,amount)
 	if id == 0 then
+		-- Bombs
 		if take then
 			if mainmemory.readbyte(0x00F343) > amount then
 				mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)-tonumber(amount))
@@ -356,6 +357,7 @@ function editconsumable(id,take,amount)
 			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+tonumber(amount))
 		end
 	else if id == 1 then
+		-- Arrows
 		if take then
 			if mainmemory.readbyte(0x00F377) > amount then
 				mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)-tonumber(amount))
@@ -365,7 +367,8 @@ function editconsumable(id,take,amount)
 		else
 			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)+tonumber(amount))
 		end
-		else if id == 2 then
+	else if id == 2 then
+		-- Rupees
 		if take then
 			if mainmemory.read_u16_le(0x00F360) > amount then
 				mainmemory.write_s16_le(0x00F360, mainmemory.read_u16_le(0x00F360)-tonumber(amount))
@@ -530,8 +533,11 @@ while true do
 		if request = "" then
 			-- If nothing is returned, will know the server is offline or unresponsive. Write error info to console.
 			console.writeline("ERROR: BizHawk could not connect to the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
-		else if request == "NULL" then
-			-- If "NULL" is returned, the connection was successful, but there are no requests to process. Literally do nothing.
+		else if request == "EMPTY" then
+			-- If "EMPTY" is returned, the connection was successful, but there are no requests to process. Literally do nothing.
+		else if request == "FULL" then
+			-- If "FULL" is returned, the connection was successful, but the command queue limit has been reached.
+			-- The command queue limit can be changed in "config.php"
 		else if request == "WRONGKEY" then
 			-- If "WRONGKEY" is returned, the connection was successful, but the request was made with a non-matching key, and the server will deny access. In this case, output an error.
 			console.writeline("ERROR: BizHawk sent the wrong key to the host. Access is denied! Check that the keys in config.php and pastlink.lua match.")
