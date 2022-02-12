@@ -15,6 +15,7 @@ You will need a server with:
 On your local machine (where you are playing ALTTP), you will need:
 
 - BizHawk Emulator
+
 This is the only supported emulator at the moment, and **only** with a BSNES core.
 PastLink has been tested with Snes9x-rr and LSNES, both lack features required by PastLink (namely the HTTP client).
 PastLink has also been tested with BizHawk's Snes9x core, and due to differences in it's cheat engine, is not compatible with PastLink at this time.
