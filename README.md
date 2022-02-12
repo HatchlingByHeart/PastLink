@@ -9,20 +9,19 @@ PastLink is a web-based alternative to Crowd Control for manipulating an A Link 
 You will need a server with:
 
 - HTTP server (Apache is recommended)
-- PHP 7.x (only tested with PHP 7.2, may work with other 7.x versions)
+- PHP 7.x (only 7.2 has been tested, other 7.x and 8.x versions may work, more testing needed. PHP<7.0 likely will not work and is not recommended.)
 - MySQL or MariaDB database system, with permissions to create and modify your own database and tables.
 
 On your local machine (where you are playing ALTTP), you will need:
 
-- BizHawk Emulator with BSNES Core
+- BizHawk Emulator
+This is the only supported emulator at the moment, and **only** with a BSNES core.
+PastLink has been tested with Snes9x-rr and LSNES, both lack features required by PastLink (namely the HTTP client).
+PastLink has also been tested with BizHawk's Snes9x core, and due to differences in it's cheat engine, is not compatible with PastLink at this time.
+It should also be noted that only the **Windows** version of BizHawk supports Lua scripting, and hence is the only version PastLink is able to support.
+There is nothing that can be done to support BizHawk on Mac or Linux until BizHawk is updated to support Lua on those platforms.
 
-This is the only supported emulator/core at the moment. Unfortunately, Snes9x-rr and BizHawk's Snes9x core both do not play nice with PastLink.
-
-It should also be noted that only the **Windows** version of BizHawk supports Lua scripting, and hence is the only version PastLink is able to support. There is nothing that can be done to support BizHawk on Mac or Linux until BizHawk is updated to support Lua on those platforms.
-
-Although the ALTTP Randomizer player needs to use Windows to play, because the viewer control panel is a web app, the viewers can be on any platform or device with a modern browser.
-
-# Installation
+~~# Installation
 
 1. Change the "config.php" file to reflect your configuration.
 
@@ -34,4 +33,6 @@ Although the ALTTP Randomizer player needs to use Windows to play, because the v
 
 5. Using the Lua Console, load the PastLink.lua script and run it. The console output will indicate if the script is working or if it isn't working and why.
  
-6. If everything is working correctly, users can visit http://mywebserver.com/pastlink (mywebserver.com being the IP address or domain name for your web server) to manipulate your ALTTP Randomizer run!
+6. If everything is working correctly, users can visit http://mywebserver.com/pastlink (mywebserver.com being the IP address or domain name for your web server) to manipulate your ALTTP Randomizer run!~~
+
+Installation instructions seems pointless when PastLink is not ready for use yet, but I'm keeping it here for later use.
