@@ -22,7 +22,7 @@ PastLink has also been tested with BizHawk's Snes9x core, and due to differences
 It should also be noted that only the **Windows** version of BizHawk supports Lua scripting, and hence is the only version PastLink is able to support.
 There is nothing that can be done to support BizHawk on Mac or Linux until BizHawk is updated to support Lua on those platforms.
 
-~~Installation~~
+~~# Installation~~
 
 ~~1. Change the "config.php" file to reflect your configuration.~~
 
