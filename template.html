@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>PastLink</title>
-    <link rel="stylesheet" href="public/theme.css">
-  </head>
-  <body> <img src="public/images/pl_logo_small.png" alt="PastLink" title="PastLink">
-    <div class="container">TEST</div>
-  </body>
-</html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>PastLink</title>
+<link rel="stylesheet" href="public/theme.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		$("#div1").load("demo_test.txt");
+	});
+});
+</script>
+</head>
+  <body>
+<div style="text-align: center;"><img src="public/images/pl_logo_small.png" alt="PastLink" title="PastLink"></div>
+<div class="container">
+TEST
+</div>
+</body></html>
