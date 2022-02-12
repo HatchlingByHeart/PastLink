@@ -4,6 +4,17 @@
 
 PastLink is a web-based alternative to Crowd Control for manipulating an A Link to the Past Randomizer game. Useful as a Streamer vs Chat tool.
 
+# Why PastLink?
+
+PastLink was born from my desire for a free and open source alternative to a "Streamer vs Chat" tool known as Crowd Control for Zelda A Link to the Past Randomizer runs.
+Crowd Control is popular and quite robust, but has some drawbacks:
+
+- Crowd Control is paid software, and closed source, making it not very accessible for a lot of people. PastLink is **free** and **open source**, and always will be.
+- Crowd Control requires a Windows PC. As of the time of writing this, there are no versions for Linux or Mac. The core of PastLink runs on a PHP-based web server, and can hence be used on any operating system where PHP is available.  
+- Crowd Control is 100% a Twitch integration, and can only be used for a Twitch stream. On top of that, some features are locked to non-Twitch affiliates. PastLink can be used for any streaming platform, and the web interface can be used on any OS/Browser.
+- On Crowd Control, viewers must pay bits to buy coins to be able to input commands. On PastLink, no such requirement exists, it's just as free for viewers as it is for the players. If you want to monetize functionality of PastLink, feel free to fork it and add that yourself, but as it stands, I have no desire to add such features.
+- While designed for A Link to the Past, PastLink could be adapted in future to support more games. Because it's open source, you are free to tweak to code to support more games yourself!
+
 # Requirements
 
 You will need a server with:
@@ -31,7 +42,7 @@ There is nothing that can be done to support BizHawk on Mac or Linux until BizHa
 ~~3. Put the included BizHawk-http.bat file in the same directory as BizHawk (EmuHawk.exe) and launch it. This is required to start BizHawk with Lua's HTTP client enabled. This will also automatically open the Lua console for you. PastLink will not work if you launch EmuHawk.exe directly.~~
  
 ~~4. Run your Zelda A Link to the Past Randomizer ROM in BizHawk. A vanilla A Link to the Past ROM from any region will also work as they share the same WRAM addresses, but where's the fun in that?~~
-
+h
 ~~5. Using the Lua Console, load the PastLink.lua script and run it. The console output will indicate if the script is working or if it isn't working and why.~~
  
 ~~6. If everything is working correctly, users can visit http://mywebserver.com/pastlink (mywebserver.com being the IP address or domain name for your web server) to manipulate your ALTTP Randomizer run!~~
