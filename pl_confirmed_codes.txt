@@ -3,12 +3,19 @@
 # Indicates codes that need to be manually timed.
 X Indicates a relative value (get value and add to/subtract from it)
 
-Insta-Death!
+Insta-Death! (Fairies will NOT revive player!)
+IF (00F35C 06) 00F35C 00
+IF (00F35D 06) 00F35D 00
+IF (00F35E 06) 00F35E 00
+IF (00F35F 06) 00F35F 00
 00F36D 00
 000010 12
 
-Light Level Modifier (affects entire screen including menus and HUDs)
-000013 00-0F
+Blackout (affects entire screen including menus and HUDs): ON
+000013 00
+
+Blackout (affects entire screen including menus and HUDs): OFF
+000013 0F
 
 Y-Axis
 000020 X
