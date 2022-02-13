@@ -47,9 +47,15 @@ img {
   width: 25%;
   float: left;
 }
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 400px) {
   .col {width: 20%;}
 }
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 500px) {
+  .col {width: 15%;}
+}
+@media only screen and (min-width: 600px) {
   .col {width: 10%;}
+}
+@media only screen and (min-width: 1000px) {
+  .col {width: 7.5%;}
 }
