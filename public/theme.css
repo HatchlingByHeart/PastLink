@@ -23,7 +23,6 @@ img {
 }
 
 .container {
-	height: auto;
 	position: relative;
 	background-image: url("images/z3map_blur.png");
 	background-position: center center;
@@ -44,10 +43,19 @@ img {
   display: table;
 }
 .col {
-  width: 25%;
+  text-align: center;
+  width: 100px;
+  height: 150px;
   float: left;
 }
-@media only screen and (min-width: 400px) {
+.col2 {
+  text-align: center;
+  width: 350px;
+  height: 150px;
+  float: left;
+  margin-right: 20px;
+}
+/*@media only screen and (min-width: 400px) {
   .col {width: 20%;}
 }
 @media only screen and (min-width: 500px) {
@@ -59,3 +67,6 @@ img {
 @media only screen and (min-width: 1000px) {
   .col {width: 7.5%;}
 }
+@media only screen and (min-width: 3840px) {
+  .col {width: 1%;}
+}*/
