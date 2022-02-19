@@ -40,7 +40,7 @@ else if ($_GET["mode"] == "writeDB") {
 		$user = "Anonymous (".$_SERVER['REMOTE_ADDR'].")";
 	}
 	else {
-		$user = "Unknown User";
+		$user = "Anonymous (no address)";
 	}
 	if ($_POST['message']) {
 		$message = $_POST['message'];
