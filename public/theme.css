@@ -1,72 +1,53 @@
 /**
- * PastLink theme
- */
+* PastLink theme
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+	box-sizing: border-box;
+}
 
 body {
 	min-width: 320px;
-	position: relative;
 	background-color: black;
 	background-image: url("images/z3map.png");
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-    font-size: 14pt;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+	font-size: 1em;
+	font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .container {
-	position: relative;
+	width: 700px;
+	margin: auto;
 	background-image: url("images/z3map_blur.png");
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-    padding: 0.75em;
+	padding: 0.75em;
 	margin-bottom: 1em;
+    border-radius: 10px;
+	box-shadow: 0 0 10px #ffffff;
 }
 
-* {
-  box-sizing: border-box;
+button {
+	margin: 5px 12px 5px 0;
+	padding: 6px 12px 6px 12px;
 }
 
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
-.col {
-  text-align: center;
-  width: 100px;
-  height: 150px;
-  float: left;
-}
-.col2 {
-  text-align: center;
-  width: 350px;
-  height: 150px;
-  float: left;
-  margin-right: 20px;
-}
-/*@media only screen and (min-width: 400px) {
-  .col {width: 20%;}
-}
-@media only screen and (min-width: 500px) {
-  .col {width: 15%;}
-}
-@media only screen and (min-width: 600px) {
-  .col {width: 10%;}
-}
-@media only screen and (min-width: 1000px) {
-  .col {width: 7.5%;}
-}
-@media only screen and (min-width: 3840px) {
-  .col {width: 1%;}
-}*/

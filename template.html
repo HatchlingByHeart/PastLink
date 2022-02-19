@@ -1,135 +1,203 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PastLink</title>
-<link rel="stylesheet" href="public/theme.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-$("button").click(function(){
-$("#div1").load("demo_test.txt");
-});
-});
-</script>
-</head>
-  <body>
-<div style="text-align: center;"><img src="public/images/pl_logo_small.png" alt="PastLink" title="PastLink"></div>
-<form name="pl_form" action="pastlink.php" method="POST" autocomplete="off" enctype="multipart/form-data">
-
-<div class="row container">
-<label for="pl_username">Username:</label> <input id="pl_username" name="pl_username" title="Your Username (max 32 characters, uppercase letters, lowercase letters, and numbers only)" placeholder="Your Username Here" required="required" maxlength="32" pattern="[0-9A-Za-z]{1,32}" size="32" type="text">
-</div>
-
-<div class="row container">
-<div style="text-align:center;margin-bottom:1em;">ITEMS</div>
-<div class="col">
-  <img alt="" src="public/images/icons/normalbow.png"><br>Bow
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/silverbow.png"><br>Silver Bow
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/blueboomer.png"><br>Boomerang
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/redboomer.png"><br>Magical Boomerang
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/hookshot.png"><br>Hookshot
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/mushroom.png"><br>Mushroom
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/powder.png"><br>Magic Powder
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/firerod.png"><br>Fire Rod
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/icerod.png"><br>Ice Rod
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bombos.png"><br>Bombos Medallion
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/ether.png"><br>Ether Medallion
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/quake.png"><br>Quake Medallion
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/lamp.png"><br>Lamp
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/hammer.png"><br>Magic Hammer
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/ocarinafake.png"><br>Ocarina (No Bird)
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bugnet.png"><br>Bug Net
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/book.png"><br>Book of Modura
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bottle1.png"><br>Bottle #1
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bottle2.png"><br>Bottle #2
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bottle3.png"><br>Bottle #3
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bottle4.png"><br>Bottle #4
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/canesomaria.png"><br>Cane of Somaria
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/canebyrna.png"><br>Cane of Byrna
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/cape.png"><br>Magic Cape
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/mirror.png"><br>Magic Mirror
-</div>
-</div>
-<div class="col2 container">
-<div style="text-align:center;margin-bottom:1em;">CONSUMABLES</div>
-<div class="col">
-  <img alt="" src="public/images/icons/bomb.png"><br>Bombs
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/arrow.png"><br>Arrows
-</div>
-<div class="col">
-  <img alt="" src="public/images/icons/rupee.png"><br>Rupees
-</div>
-</div>
-<div class="col2 container">
-<div style="text-align:center;margin-bottom:1em;">EQUIPMENT</div>
-<div class="col">
-  <input type="submit" name="command" value="+"><br>
-  <img alt="" src="public/images/icons/sword1.png"><br>
-  <input type="submit" name="command" value="-">
-</div>
-<div class="col">
-  <input type="submit" name="command" value="+"><br>
-  <img alt="" src="public/images/icons/shield1.png"><br>
-  <input type="submit" name="command" value="-">
-</div>
-<div class="col">
-  <input type="submit" name="command" value="+"><br>
-  <img alt="" src="public/images/icons/greenmail.png"><br>
-  <input type="submit" name="command" value="-">
-</div>
-</div>
-
-</form>
-</body></html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>PastLink</title>
+		<link rel="stylesheet" href="public/theme.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() { $("button").click(function() { $("#div1").load("demo_test.txt"); }); });
+		</script>
+	</head>
+	<body>
+		<div class="row">
+			<div style="text-align: center;"><img src="public/images/pl_logo_small.png" alt="PastLink" title="PastLink"></div>
+			<form name="pl_form" action="pastlink.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+				<div class="container">
+					<label for="pl_username">Username:</label> <input id="pl_username" name="pl_username" title="Your Username (max 32 characters, uppercase letters, lowercase letters, and numbers only)" placeholder="Your Username Here" required="required" maxlength="32" pattern="[0-9A-Za-z]{1,32}" size="32" type="text">
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/normalbow.png"></td>
+								<td>Bow<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/silverbow.png"></td>
+								<td>Silver Bow<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/blueboomer.png"></td>
+								<td>Boomerang<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/redboomer.png"></td>
+								<td>Magical Boomerang<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/hookshot.png"></td>
+								<td>Hookshot<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/mushroom.png"></td>
+								<td>Mushroom<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/powder.png"></td>
+								<td>Magic Powder<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/firerod.png"></td>
+								<td>Fire Rod<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/icerod.png"></td>
+								<td>Ice Rod<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/bombos.png"></td>
+								<td>Bombos Medallion<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/ether.png"></td>
+								<td>Ether Medallion<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/quake.png"></td>
+								<td>Quake Medallion<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/lamp.png"></td>
+								<td>Lamp<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/hammer.png"></td>
+								<td>Magic Hammer<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/shovel.png"></td>
+								<td>Shovel<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/ocarinafake.png"></td>
+								<td>Ocarina<br><button type="button">Give</button> <button type="button">Take</button> <input type="checkbox" id="bird"> <label for="bird">Activate Bird</label></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/bugnet.png"></td>
+								<td>Bug Net<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="container">
+					<table style="width: 100%" border="0">
+						<tbody>
+							<tr>
+								<td style="width:100px;"><img style="vertical-align:middle;" alt="" src="public/images/icons/book.png"></td>
+								<td>Book of Modura<br><button type="button">Give</button> <button type="button">Take</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
