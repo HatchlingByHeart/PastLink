@@ -23,8 +23,9 @@ if ($_GET["mode"] == "readDB") {
 			$result = $db->query("DELETE FROM `".DB_PRFX."queue` WHERE `id` = '".$row['id']."';");
 			echo $row['message'];
 		}
+		// No requests in queue. Return "NULL" to let BizHawk know there's nothing to do.
 		else {
-			echo "NULL";
+			die("NULL");
 		}
 	}
 	// Requester is not using the correct key, kill script and return the bad news.
