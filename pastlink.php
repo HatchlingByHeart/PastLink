@@ -23,6 +23,9 @@ if ($_GET["mode"] == "readDB") {
 			$result = $db->query("DELETE FROM `".DB_PRFX."queue` WHERE `id` = '".$row['id']."';");
 			echo $row['message'];
 		}
+		else {
+			echo "NULL";
+		}
 	}
 	// Requester is not using the correct key, kill script and return the bad news.
 	else {
