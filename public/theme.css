@@ -2,7 +2,7 @@
 * PastLink theme
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -16,8 +16,8 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-	font-size: 1em;
-	font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	font-family: 'Jua', Arial, Helvetica, sans-serif;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
