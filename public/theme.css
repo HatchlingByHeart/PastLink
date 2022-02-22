@@ -16,7 +16,7 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-family: 'Jua', Arial, Helvetica, sans-serif;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
@@ -35,19 +35,183 @@ img {
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-	padding: 0.75em;
+	padding: 0.25em;
 	margin-bottom: 1em;
     border-radius: 10px;
 	box-shadow: 0 0 10px #ffffff;
 }
 
 button {
-	margin: 5px 12px 5px 0;
-	padding: 6px 12px 6px 12px;
+	margin: 4px 3px 3px 0;
+	padding: 3px 6px 3px 6px;
 }
 
 .row::after {
 	content: "";
 	clear: both;
 	display: table;
+}
+
+ul#dropdownmenu, ul#dropdownmenu ul {
+	background-color: #424542;
+	border-color: #FFFFFF;
+	border-radius: 7px;
+	border-style: solid;
+	border-width: 2px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#dropdownmenu ul {
+	border-radius: 7px;
+	box-shadow: 3.5px 3.5px 5px #000000;
+	-moz-border-radius: 7px;
+	-moz-box-shadow: 3.5px 3.5px 5px #000000;
+	-webkit-border-radius: 7px;
+	-webkit-box-shadow: 3.5px 3.5px 5px #000000;
+	display: none;
+	left: 100%;
+	padding: 0 3px 3px 0;
+	position: absolute;
+	top: 0;
+}
+
+ul#dropdownmenu li:hover > * {
+	display: block;
+}
+
+ul#dropdownmenu li {
+	display: block;
+	font-size: 0;
+	position: relative;
+	white-space: nowrap;
+}
+
+ul#dropdownmenu li:hover {
+	z-index: 1;
+}
+
+ul#dropdownmenu ul ul {
+	left: 100%;
+	position: absolute;
+	top: 0;
+}
+
+ul#dropdownmenu {
+	display: block;
+	float: left;
+	font-size: 0;
+	padding: 0 3px 3px 0;
+	position: relative;
+	z-index: 999;
+}
+
+ul#dropdownmenu>li {
+	margin: 3px 0 0 0;
+}
+
+ul#dropdownmenu a:active, ul#dropdownmenu a:focus {
+	outline-style: none;
+}
+
+ul#dropdownmenu a {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #424542;
+	background-image: none;
+	background-repeat: repeat;
+	border-color: #424542;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: block;
+	font: 14px Trebuchet MS;
+	padding: 10px;
+	text-align: left;
+	text-decoration: none;
+	vertical-align: middle;
+}
+ul#dropdownmenu ul li {
+	float: none;
+	margin: 3px 0 0 0;
+}
+ul#dropdownmenu ul a {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color: #FFFFFF;
+	text-align: left;
+	text-decoration: none;
+}
+ul#dropdownmenu li:hover > a, ul#dropdownmenu li a.pressed {
+	background-color: #668855;
+	background-image: url("images/mainbk.png");
+	border-color: #424542;
+	border-style: solid;
+	color: #FFFFFF;
+}
+ul#dropdownmenu img {
+	border: none;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+ul#dropdownmenu span {
+	background-image: url("images/arrowsub.png");
+	background-position: right center;
+	background-repeat: no-repeat;
+	display: block;
+	overflow: visible;
+	padding-right: 14px;
+}
+ul#dropdownmenu ul span {
+	background-image: url("images/arrowsub.png");
+	padding-right: 14px;
+}
+ul#dropdownmenu > li.switch {
+	cursor: pointer;
+	display: none;
+	height: 20px;
+	padding: 10px;
+	width: 25px;
+}
+ul#dropdownmenu > li.switch:before {
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	box-shadow: 0 8px #FFFFFF, 0 16px #FFFFFF;
+	-moz-box-shadow: 0 8px #FFFFFF, 0 16px #FFFFFF;
+	-webkit-box-shadow: 0 8px #FFFFFF, 0 16px #FFFFFF;
+	content: "";
+	display: block;
+	height: 4px;
+	position: absolute;
+	width: 25px;
+}
+ul#dropdownmenu > li.switch:hover:before {
+	background-color: #FFFFFF;
+	box-shadow: 0 8px #FFFFFF, 0 16px #FFFFFF;
+	-moz-box-shadow: 0 8px #FFFFFF, 0 16px #FFFFFF;
+	-webkit-box-shadow: 0 8px #FFFFFF, 0 16px #FFFFFF;
+}
+ul#dropdownmenu li:hover > a, ul#dropdownmenu li > a.pressed {
+	background-color: #668855;
+	background-image: url("images/mainbk.png");
+	border-color: #424542;
+	border-style: solid;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+ul#dropdownmenu ul li:hover > a, ul#dropdownmenu ul li > a.pressed {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+ul#dropdownmenu li.topfirst > a {
+	border-width: 0;
+}
+ul#dropdownmenu li.subfirst > a {
+	border-width: 0;
 }
