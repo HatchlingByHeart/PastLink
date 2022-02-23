@@ -131,7 +131,7 @@ ul#dropdownmenu a {
 	cursor: pointer;
 	display: block;
 	font: 14px Trebuchet MS;
-	padding: 10px;
+	padding-left: 6px;
 	text-align: left;
 	text-decoration: none;
 	vertical-align: middle;
@@ -170,6 +170,7 @@ ul#dropdownmenu span {
 }
 ul#dropdownmenu ul span {
 	background-image: url("images/arrowsub.png");
+	overflow: visible;
 	padding-right: 14px;
 }
 ul#dropdownmenu > li.switch {
