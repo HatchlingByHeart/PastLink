@@ -7,7 +7,58 @@
 		<link rel="stylesheet" href="public/theme.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
-		
+			$(function() {
+				$("input[name='giveamount']").on('input', function(e) {
+					if ($(this).val().length > 1) { $(this).val($(this).val().replace(/^[0]/g, '')); }
+					$(this).val($(this).val().replace(/[^0-9]/g, ''));
+				});
+			});
+			$(function() {
+				$("input[name='takeamount']").on('input', function(e) {
+					if ($(this).val().length > 1) { $(this).val($(this).val().replace(/^[0]/g, '')); }
+					$(this).val($(this).val().replace(/[^0-9]/g, ''));
+				});
+			});
+		</script>
+		<script>
+			function give_limit() {
+				var amount = document.getElementById("giveamount");
+				if (amount.value != '') {
+					if (amount.value > 9999) {
+						amount.value = 9999;
+						return false;
+					}
+					else {
+						return true;
+					}
+				}
+				else {
+					return false;
+				}
+			}
+			function take_limit() {
+				var amount = document.getElementById("takeamount");
+				if (amount.value != '') {
+					if (amount.value > 9999) {
+						amount.value = 9999;
+						return false;
+					}
+					else {
+						return true;
+					}
+				}
+				else {
+					return false;
+				}
+			}
+			function load() {
+				const xhttp = new XMLHttpRequest();
+				xhttp.onload = function() {
+					document.getElementById("idgoeshere").innerHTML = "";
+				}
+				xhttp.open("GET", "");
+				xhttp.send();
+			}
 		</script>
 	</head>
 	<body>
@@ -18,241 +69,262 @@
 					NOTE: This is an unfinished, non-functional template demo.
 				</div>
 				<div style="padding-left: 10px;" class="container">
-					<label for="pl_username">Username:</label> <input id="pl_username" name="pl_username" title="Your Username (max 32 characters, uppercase letters, lowercase letters, and numbers only)" placeholder="Your Username Here" required="required" maxlength="32" pattern="[0-9A-Za-z]{1,32}" size="32" type="text">
+					<label for="pl_username">Username:</label> <input id="pl_username" name="pl_username" title="Your Username (max 32 characters, uppercase letters, lowercase letters, and numbers only)" placeholder="Your Username Here" required="required" maxlength="32" pattern="[0-9A-Za-z]{1,32}" size="24" type="text">
 				</div>
 				<div style="height: 1200px;" class="container">
 					<ul id="dropdownmenu" class="topmenu">
-						<li class="switch"><label onclick="" for="menu-switcher"></label></li>
-						<li class="topfirst"><a><span><img src="public/images/icons/chest_32.png" alt=""/>Items</span></a>
-							<ul style="width:100px;">
-								<li class="subfirst"><a><span><img src="public/images/icons/give_32.png" alt=""/>Give</span></a>
-									<ul style="width:180px;">
-										<li class="subfirst"><a><img src="public/images/icons/normalbow_32.png" alt=""/>Bow</a></li>
-										<li><a><img src="public/images/icons/silverbow_32.png" alt=""/>Silver Bow</a></li>
-										<li><a><img src="public/images/icons/blueboomer_32.png" alt=""/>Boomerang</a></li>
-										<li><a><img src="public/images/icons/redboomer_32.png" alt=""/>Magic Boomerang</a></li>
-										<li><a><img src="public/images/icons/hookshot_32.png" alt=""/>Hookshot</a></li>
-										<li><a><img src="public/images/icons/mushroom_32.png" alt=""/>Mushroom</a></li>
-										<li><a><img src="public/images/icons/powder_32.png" alt=""/>Magic Powder</a></li>
-										<li><a><img src="public/images/icons/firerod_32.png" alt=""/>Fire Rod</a></li>
-										<li><a><img src="public/images/icons/icerod_32.png" alt=""/>Ice Rod</a></li>
-										<li><a><img src="public/images/icons/bombos_32.png" alt=""/>Bombos Medallion</a></li>
-										<li><a><img src="public/images/icons/ether_32.png" alt=""/>Ether Medallion</a></li>
-										<li><a><img src="public/images/icons/quake_32.png" alt=""/>Quake Medallion</a></li>
-										<li><a><img src="public/images/icons/lamp_32.png" alt=""/>Lamp</a></li>
-										<li><a><img src="public/images/icons/hammer_32.png" alt=""/>Magic Hammer</a></li>
-										<li><a><img src="public/images/icons/shovel_32.png" alt=""/>Shovel</a></li>
-										<li><a><span><img src="public/images/icons/ocarinafake_32.png" alt=""/>Ocarina</span></a>
-											<ul style="width:160px;">
-												<li class="subfirst"><a><img src="public/images/icons/bird_32.png" alt=""/>Activate Bird</a></li>
-												<li><a><img src="public/images/icons/nobird_32.png" alt=""/>Deactivate Bird</a></li>
-											</ul>
-										</li>
-										<li><a><img src="public/images/icons/bugnet_32.png" alt=""/>Bug Net</a></li>
-										<li><a><img src="public/images/icons/book_32.png" alt=""/>Book of Modura</a></li>
-										<li><a><span><img src="public/images/icons/bottle_32.png" alt=""/>Bottles</span></a>
-											<ul style="width:130px;">
-												<li class="subfirst"><a><span><img src="public/images/icons/bottle1_32.png" alt=""/>Bottle #1</span></a>
-													<ul style="width:150px;">
-														<li class="subfirst"><a><img src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
-														<li><a><img src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
-														<li><a><img src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
-														<li><a><img src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
-														<li><a><img src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
-														<li><a><img src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
-														<li><a><img src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+						<li class="topfirst"><a><span><img class="icon" src="public/images/icons/skull_32.png" alt=""/>Commands</span></a>
+							<ul class="menu-160">
+								<li class="topfirst"><a><span><img class="icon" src="public/images/icons/chest_32.png" alt=""/>Items</span></a>
+									<ul class="menu-100">
+										<li class="subfirst"><a><span><img class="icon" src="public/images/icons/give_32.png" alt=""/>Give</span></a>
+											<ul class="menu-180">
+												<li class="subfirst"><a><img class="icon" src="public/images/icons/normalbow_32.png" alt=""/>Bow</a></li>
+												<li><a><img class="icon" src="public/images/icons/silverbow_32.png" alt=""/>Silver Bow</a></li>
+												<li><a><img class="icon" src="public/images/icons/blueboomer_32.png" alt=""/>Boomerang</a></li>
+												<li><a><img class="icon" src="public/images/icons/redboomer_32.png" alt=""/>Magic Boomerang</a></li>
+												<li><a><img class="icon" src="public/images/icons/hookshot_32.png" alt=""/>Hookshot</a></li>
+												<li><a><img class="icon" src="public/images/icons/mushroom_32.png" alt=""/>Mushroom</a></li>
+												<li><a><img class="icon" src="public/images/icons/powder_32.png" alt=""/>Magic Powder</a></li>
+												<li><a><img class="icon" src="public/images/icons/firerod_32.png" alt=""/>Fire Rod</a></li>
+												<li><a><img class="icon" src="public/images/icons/icerod_32.png" alt=""/>Ice Rod</a></li>
+												<li><a><img class="icon" src="public/images/icons/bombos_32.png" alt=""/>Bombos Medallion</a></li>
+												<li><a><img class="icon" src="public/images/icons/ether_32.png" alt=""/>Ether Medallion</a></li>
+												<li><a><img class="icon" src="public/images/icons/quake_32.png" alt=""/>Quake Medallion</a></li>
+												<li><a><img class="icon" src="public/images/icons/lamp_32.png" alt=""/>Lamp</a></li>
+												<li><a><img class="icon" src="public/images/icons/hammer_32.png" alt=""/>Magic Hammer</a></li>
+												<li><a><img class="icon" src="public/images/icons/shovel_32.png" alt=""/>Shovel</a></li>
+												<li><a><span><img class="icon" src="public/images/icons/ocarinafake_32.png" alt=""/>Ocarina</span></a>
+													<ul class="menu-160">
+														<li class="subfirst"><a><img class="icon" src="public/images/icons/bird_32.png" alt=""/>Activate Bird</a></li>
+														<li><a><img class="icon" src="public/images/icons/nobird_32.png" alt=""/>Deactivate Bird</a></li>
 													</ul>
 												</li>
-												<li><a><span><img src="public/images/icons/bottle2_32.png" alt=""/>Bottle #2</span></a>
-													<ul style="width:150px;">
-														<li class="subfirst"><a><img src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
-														<li><a><img src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
-														<li><a><img src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
-														<li><a><img src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
-														<li><a><img src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
-														<li><a><img src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
-														<li><a><img src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+												<li><a><img class="icon" src="public/images/icons/bugnet_32.png" alt=""/>Bug Net</a></li>
+												<li><a><img class="icon" src="public/images/icons/book_32.png" alt=""/>Book of Modura</a></li>
+												<li><a><span><img class="icon" src="public/images/icons/bottle_32.png" alt=""/>Bottles</span></a>
+													<ul class="menu-130">
+														<li class="subfirst"><a><span><img class="icon" src="public/images/icons/bottle1_32.png" alt=""/>Bottle #1</span></a>
+															<ul class="menu-150">
+																<li class="subfirst"><a><img class="icon" src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
+																<li><a><img class="icon" src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
+																<li><a><img class="icon" src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
+																<li><a><img class="icon" src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+															</ul>
+														</li>
+														<li><a><span><img class="icon" src="public/images/icons/bottle2_32.png" alt=""/>Bottle #2</span></a>
+															<ul class="menu-150">
+																<li class="subfirst"><a><img class="icon" src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
+																<li><a><img class="icon" src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
+																<li><a><img class="icon" src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
+																<li><a><img class="icon" src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+															</ul>
+														</li>
+														<li><a><span><img class="icon" src="public/images/icons/bottle3_32.png" alt=""/>Bottle #3</span></a>
+															<ul class="menu-150">
+																<li class="subfirst"><a><img class="icon" src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
+																<li><a><img class="icon" src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
+																<li><a><img class="icon" src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
+																<li><a><img class="icon" src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+															</ul>
+														</li>
+														<li><a><span><img class="icon" src="public/images/icons/bottle4_32.png" alt=""/>Bottle #4</span></a>
+															<ul class="menu-150">
+																<li class="subfirst"><a><img class="icon" src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
+																<li><a><img class="icon" src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
+																<li><a><img class="icon" src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
+																<li><a><img class="icon" src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
+																<li><a><img class="icon" src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+															</ul>
+														</li>
 													</ul>
 												</li>
-												<li><a><span><img src="public/images/icons/bottle3_32.png" alt=""/>Bottle #3</span></a>
-													<ul style="width:150px;">
-														<li class="subfirst"><a><img src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
-														<li><a><img src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
-														<li><a><img src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
-														<li><a><img src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
-														<li><a><img src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
-														<li><a><img src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
-														<li><a><img src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+												<li><a><img class="icon" src="public/images/icons/canesomaria_32.png" alt=""/>Cane of Somaria</a></li>
+												<li><a><img class="icon" src="public/images/icons/canebyrna_32.png" alt=""/>Cane of Byrna</a></li>
+												<li><a><img class="icon" src="public/images/icons/cape_32.png" alt=""/>Magic Cape</a></li>
+												<li><a><img class="icon" src="public/images/icons/mirror_32.png" alt=""/>Magic Mirror</a></li>
+												<li><a><img class="icon" src="public/images/icons/boots_32.png" alt=""/>Pegasus Boots</a></li>
+												<li><a><span><img class="icon" src="public/images/icons/gloves_32.png" alt=""/>Gloves</span></a>
+													<ul class="menu-140">
+														<li class="subfirst"><a><img class="icon" src="public/images/icons/powerglove_32.png" alt=""/>Power Glove</a></li>
+														<li><a><img class="icon" src="public/images/icons/titanmitt_32.png" alt=""/>Titan's Mitt</a></li>
 													</ul>
 												</li>
-												<li><a><span><img src="public/images/icons/bottle4_32.png" alt=""/>Bottle #4</span></a>
-													<ul style="width:150px;">
-														<li class="subfirst"><a><img src="public/images/icons/bottle_32.png" alt=""/>Empty</a></li>
-														<li><a><img src="public/images/icons/redpotion_32.png" alt=""/>Red Potion</a></li>
-														<li><a><img src="public/images/icons/greenpotion_32.png" alt=""/>Green Potion</a></li>
-														<li><a><img src="public/images/icons/bluepotion_32.png" alt=""/>Blue Potion</a></li>
-														<li><a><img src="public/images/icons/fairy_32.png" alt=""/>Fairy</a></li>
-														<li><a><img src="public/images/icons/bee_32.png" alt=""/>Bee</a></li>
-														<li><a><img src="public/images/icons/superbee_32.png" alt=""/>Super Bee</a></li>
+												<li><a><img class="icon" src="public/images/icons/flippers_32.png" alt=""/>Zora's Flippers</a></li>
+												<li><a><img class="icon" src="public/images/icons/pearl_32.png" alt=""/>Moon Pearl</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/take_32.png" alt=""/>Take</span></a>
+											<ul class="menu-180">
+												<li class="subfirst"><a><img class="icon" src="public/images/icons/normalbow_32.png" alt=""/>Bow</a></li>
+												<li><a><img class="icon" src="public/images/icons/silverbow_32.png" alt=""/>Silver Bow</a></li>
+												<li><a><img class="icon" src="public/images/icons/blueboomer_32.png" alt=""/>Boomerang</a></li>
+												<li><a><img class="icon" src="public/images/icons/redboomer_32.png" alt=""/>Magic Boomerang</a></li>
+												<li><a><img class="icon" src="public/images/icons/hookshot_32.png" alt=""/>Hookshot</a></li>
+												<li><a><img class="icon" src="public/images/icons/mushroom_32.png" alt=""/>Mushroom</a></li>
+												<li><a><img class="icon" src="public/images/icons/powder_32.png" alt=""/>Magic Powder</a></li>
+												<li><a><img class="icon" src="public/images/icons/firerod_32.png" alt=""/>Fire Rod</a></li>
+												<li><a><img class="icon" src="public/images/icons/icerod_32.png" alt=""/>Ice Rod</a></li>
+												<li><a><img class="icon" src="public/images/icons/bombos_32.png" alt=""/>Bombos Medallion</a></li>
+												<li><a><img class="icon" src="public/images/icons/ether_32.png" alt=""/>Ether Medallion</a></li>
+												<li><a><img class="icon" src="public/images/icons/quake_32.png" alt=""/>Quake Medallion</a></li>
+												<li><a><img class="icon" src="public/images/icons/lamp_32.png" alt=""/>Lamp</a></li>
+												<li><a><img class="icon" src="public/images/icons/hammer_32.png" alt=""/>Magic Hammer</a></li>
+												<li><a><img class="icon" src="public/images/icons/shovel_32.png" alt=""/>Shovel</a></li>
+												<li><a><img class="icon" src="public/images/icons/ocarinafake_32.png" alt=""/>Ocarina</a></li>
+												<li><a><img class="icon" src="public/images/icons/bugnet_32.png" alt=""/>Bug Net</a></li>
+												<li><a><img class="icon" src="public/images/icons/book_32.png" alt=""/>Book of Modura</a></li>
+												<li><a><span><img class="icon" src="public/images/icons/bottle_32.png" alt=""/>Bottles</span></a>
+													<ul class="menu-130">
+														<li class="subfirst"><a><img class="icon" src="public/images/icons/bottle1_32.png" alt=""/>Bottle #1</a></li>
+														<li><a><img class="icon" src="public/images/icons/bottle2_32.png" alt=""/>Bottle #2</a></li>
+														<li><a><img class="icon" src="public/images/icons/bottle3_32.png" alt=""/>Bottle #3</a></li>
+														<li><a><img class="icon" src="public/images/icons/bottle4_32.png" alt=""/>Bottle #4</a></li>
 													</ul>
 												</li>
+												<li><a><img class="icon" src="public/images/icons/canesomaria_32.png" alt=""/>Cane of Somaria</a></li>
+												<li><a><img class="icon" src="public/images/icons/canebyrna_32.png" alt=""/>Cane of Byrna</a></li>
+												<li><a><img class="icon" src="public/images/icons/cape_32.png" alt=""/>Magic Cape</a></li>
+												<li><a><img class="icon" src="public/images/icons/mirror_32.png" alt=""/>Magic Mirror</a></li>
+												<li><a><img class="icon" src="public/images/icons/boots_32.png" alt=""/>Pegasus Boots</a></li>
+												<li><a><img class="icon" src="public/images/icons/gloves_32.png" alt=""/>Gloves</a></li>
+												<li><a><img class="icon" src="public/images/icons/flippers_32.png" alt=""/>Zora's Flippers</a></li>
+												<li><a><img class="icon" src="public/images/icons/pearl_32.png" alt=""/>Moon Pearl</a></li>
 											</ul>
 										</li>
-										<li><a><img src="public/images/icons/canesomaria_32.png" alt=""/>Cane of Somaria</a></li>
-										<li><a><img src="public/images/icons/canebyrna_32.png" alt=""/>Cane of Byrna</a></li>
-										<li><a><img src="public/images/icons/cape_32.png" alt=""/>Magic Cape</a></li>
-										<li><a><img src="public/images/icons/mirror_32.png" alt=""/>Magic Mirror</a></li>
-										<li><a><img src="public/images/icons/boots_32.png" alt=""/>Pegasus Boots</a></li>
-										<li><a><span><img src="public/images/icons/gloves_32.png" alt=""/>Gloves</span></a>
-											<ul style="width:140px;">
-												<li class="subfirst"><a><img src="public/images/icons/powerglove_32.png" alt=""/>Power Glove</a></li>
-												<li><a><img src="public/images/icons/titanmitt_32.png" alt=""/>Titan's Mitt</a></li>
+									</ul>
+								</li>
+								<li class="topfirst"><a><span><img class="icon" src="public/images/icons/consumables_32.png" alt=""/>Consumables</span></a>
+									<ul class="menu-100">
+										<li><a><span><img class="icon" src="public/images/icons/give_32.png" alt=""/>Give</span></a>
+											<ul class="menu-120">
+												<input style="margin:10px 0 0 10px;width:100px;" name="giveamount" id="giveamount" oninput="return give_limit()" type="number" placeholder="Amount #" min="0" max="9999"><br>
+												<li class="subfirst"><a><img class="icon" src="public/images/icons/rupee_32.png" alt=""/>Rupees</a></li>
+												<li><a><img class="icon" src="public/images/icons/bomb_32.png" alt=""/>Bombs</a></li>
+												<li><a><img class="icon" src="public/images/icons/arrow_32.png" alt=""/>Arrows</a></li>
 											</ul>
 										</li>
-										<li><a><img src="public/images/icons/flippers_32.png" alt=""/>Zora's Flippers</a></li>
-										<li><a><img src="public/images/icons/pearl_32.png" alt=""/>Moon Pearl</a></li>
-									</ul>
-								</li>
-								<li><a><span><img src="public/images/icons/take_32.png" alt=""/>Take</span></a>
-									<ul style="width:200px;">
-										<li class="subfirst"><a><img src="public/images/icons/normalbow_32.png" alt=""/>Bow</a></li>
-										<li><a><img src="public/images/icons/silverbow_32.png" alt=""/>Silver Bow</a></li>
-										<li><a><img src="public/images/icons/blueboomer_32.png" alt=""/>Boomerang</a></li>
-										<li><a><img src="public/images/icons/redboomer_32.png" alt=""/>Magic Boomerang</a></li>
-										<li><a><img src="public/images/icons/hookshot_32.png" alt=""/>Hookshot</a></li>
-										<li><a><img src="public/images/icons/mushroom_32.png" alt=""/>Mushroom</a></li>
-										<li><a><img src="public/images/icons/powder_32.png" alt=""/>Magic Powder</a></li>
-										<li><a><img src="public/images/icons/firerod_32.png" alt=""/>Fire Rod</a></li>
-										<li><a><img src="public/images/icons/icerod_32.png" alt=""/>Ice Rod</a></li>
-										<li><a><img src="public/images/icons/bombos_32.png" alt=""/>Bombos Medallion</a></li>
-										<li><a><img src="public/images/icons/ether_32.png" alt=""/>Ether Medallion</a></li>
-										<li><a><img src="public/images/icons/quake_32.png" alt=""/>Quake Medallion</a></li>
-										<li><a><img src="public/images/icons/lamp_32.png" alt=""/>Lamp</a></li>
-										<li><a><img src="public/images/icons/hammer_32.png" alt=""/>Magic Hammer</a></li>
-										<li><a><img src="public/images/icons/shovel_32.png" alt=""/>Shovel</a></li>
-										<li><a><img src="public/images/icons/ocarinafake_32.png" alt=""/>Ocarina</a></li>
-										<li><a><img src="public/images/icons/bugnet_32.png" alt=""/>Bug Net</a></li>
-										<li><a><img src="public/images/icons/book_32.png" alt=""/>Book of Modura</a></li>
-										<li><a><span><img src="public/images/icons/bottle_32.png" alt=""/>Bottles</span></a>
-											<ul style="width:130px;">
-												<li class="subfirst"><a><img src="public/images/icons/bottle1_32.png" alt=""/>Bottle #1</a></li>
-												<li><a><img src="public/images/icons/bottle2_32.png" alt=""/>Bottle #2</a></li>
-												<li><a><img src="public/images/icons/bottle3_32.png" alt=""/>Bottle #3</a></li>
-												<li><a><img src="public/images/icons/bottle4_32.png" alt=""/>Bottle #4</a></li>
+										<li><a><span><img class="icon" src="public/images/icons/take_32.png" alt=""/>Take</span></a>
+											<ul class="menu-120">
+												<input style="margin:10px 0 0 10px;width:100px;" name="takeamount" id="takeamount" oninput="return take_limit()" type="number" placeholder="Amount #" min="0" max="9999"><br>
+												<li class="subfirst"><a><img class="icon" src="public/images/icons/rupee_32.png" alt=""/>Rupees</a></li>
+												<li><a><img class="icon" src="public/images/icons/bomb_32.png" alt=""/>Bombs</a></li>
+												<li><a><img class="icon" src="public/images/icons/arrow_32.png" alt=""/>Arrows</a></li>
 											</ul>
 										</li>
-										<li><a><img src="public/images/icons/canesomaria_32.png" alt=""/>Cane of Somaria</a></li>
-										<li><a><img src="public/images/icons/canebyrna_32.png" alt=""/>Cane of Byrna</a></li>
-										<li><a><img src="public/images/icons/cape_32.png" alt=""/>Magic Cape</a></li>
-										<li><a><img src="public/images/icons/mirror_32.png" alt=""/>Magic Mirror</a></li>
-										<li><a><img src="public/images/icons/boots_32.png" alt=""/>Pegasus Boots</a></li>
-										<li><a><img src="public/images/icons/gloves_32.png" alt=""/>Gloves</a></li>
-										<li><a><img src="public/images/icons/flippers_32.png" alt=""/>Zora's Flippers</a></li>
-										<li><a><img src="public/images/icons/pearl_32.png" alt=""/>Moon Pearl</a></li>
 									</ul>
 								</li>
-							</ul>
-						</li>
-						<li class="topfirst"><a><span><img src="public/images/icons/consumables_32.png" alt=""/>Consumables</span></a>
-							<ul style="width:100px;">
-							<li><a><span><img src="public/images/icons/give_32.png" alt=""/>Give</span></a>
-								<ul style="width:200px;">
-									<table border="0"><tbody>
-										<tr><td><li class="subfirst"><a style="width:110px;"><img src="public/images/icons/rupee_32.png" alt=""/>Rupees</a></li></td><td><input style="width:70px;" name="rupee_amount" type="number" min="0" max="9999" maxlength="4"></td></tr>
-										<tr><td><li><a style="width:110px;"><img src="public/images/icons/bomb_32.png" alt=""/>Bombs</a></li></td><td><input style="width:70px;" name="bomb_amount" type="number" min="0" max="50" maxlength="2"></td></tr>
-										<tr><td><li><a style="width:110px;"><img src="public/images/icons/arrow_32.png" alt=""/>Arrows</a></li></td><td><input style="width:70px;" name="arrow_amount" type="number" min="0" max="70" maxlength="2"></td></tr>
-									</tbody></table>
-								</ul>
-							</li>
-							<li><a><span><img src="public/images/icons/take_32.png" alt=""/>Take</span></a>
-								<ul style="width:200px;">
-									<table border="0"><tbody>
-										<tr><td><li class="subfirst"><a style="width:110px;"><img src="public/images/icons/rupee_32.png" alt=""/>Rupees</a></li></td><td><input style="width:70px;" name="n_rupee_amount" type="number" min="0" max="9999" maxlength="4"></td></tr>
-										<tr><td><li><a style="width:110px;"><img src="public/images/icons/bomb_32.png" alt=""/>Bombs</a></li></td><td><input style="width:70px;" name="n_bomb_amount" type="number" min="0" max="50" maxlength="2"></td></tr>
-										<tr><td><li><a style="width:110px;"><img src="public/images/icons/arrow_32.png" alt=""/>Arrows</a></li></td><td><input style="width:70px;" name="n_arrow_amount" type="number" min="0" max="70" maxlength="2"></td></tr>
-									</tbody></table>
-								</ul>							
-							</li>
-							</ul>
-						</li>
-						<li class="topfirst"><a><span><img src="public/images/icons/equipment_32.png" alt=""/>Equipment</span></a>
-							<ul style="width:140px;">
-								<li class="subfirst"><a><span><img src="public/images/icons/upgrade_32.png" alt=""/>Upgrade</span></a>
-									<ul style="width:100px;">
-										<li><a><img src="public/images/icons/nosword_32.png" alt=""/>Sword</a></li>
-										<li><a><img src="public/images/icons/noshield_32.png" alt=""/>Shield</a></li>
-										<li><a><img src="public/images/icons/greenmail_32.png" alt=""/>Mail</a></li>
+								<li class="topfirst"><a><span><img class="icon" src="public/images/icons/equipment_32.png" alt=""/>Equipment</span></a>
+									<ul class="menu-140">
+										<li class="subfirst"><a><span><img class="icon" src="public/images/icons/upgrade_32.png" alt=""/>Upgrade</span></a>
+											<ul class="menu-100">
+												<li><a><img class="icon" src="public/images/icons/nosword_32.png" alt=""/>Sword</a></li>
+												<li><a><img class="icon" src="public/images/icons/noshield_32.png" alt=""/>Shield</a></li>
+												<li><a><img class="icon" src="public/images/icons/greenmail_32.png" alt=""/>Mail</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/downgrade_32.png" alt=""/>Downgrade</span></a>
+											<ul class="menu-100">
+												<li><a><img class="icon" src="public/images/icons/nosword_32.png" alt=""/>Sword</a></li>
+												<li><a><img class="icon" src="public/images/icons/noshield_32.png" alt=""/>Shield</a></li>
+												<li><a><img class="icon" src="public/images/icons/greenmail_32.png" alt=""/>Mail</a></li>
+											</ul>
+										</li>
 									</ul>
 								</li>
-								<li><a><span><img src="public/images/icons/downgrade_32.png" alt=""/>Downgrade</span></a>
-									<ul style="width:100px;">
-										<li><a><img src="public/images/icons/nosword_32.png" alt=""/>Sword</a></li>
-										<li><a><img src="public/images/icons/noshield_32.png" alt=""/>Shield</a></li>
-										<li><a><img src="public/images/icons/greenmail_32.png" alt=""/>Mail</a></li>
+								<li class="topfirst"><a><span><img class="icon" src="public/images/icons/orbswitch_32.png" alt=""/>Game Control</span></a>
+									<ul class="menu-180">
+										<li class="subfirst"><a><span><img class="icon" src="public/images/icons/normal_32.png" alt=""/>Player State</span></a>
+											<ul class="menu-120">
+												<li><a><img class="icon" src="public/images/icons/normal_32.png" alt=""/>Normal</a></li>
+												<li><a><img class="icon" src="public/images/icons/slow_32.png" alt=""/>Slow</a></li>
+												<li><a><img class="icon" src="public/images/icons/fast_32.png" alt=""/>Fast</a></li>
+												<li><a><img class="icon" src="public/images/icons/confused_32.png" alt=""/>Confused</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/invincible_32.png" alt=""/>Invincibility</span></a>
+											<ul class="menu-130">
+												<li><a><img class="icon" src="public/images/icons/invincible_32.png" alt=""/>Activate</a></li>
+												<li><a><img class="icon" src="public/images/icons/noinvincible_32.png" alt=""/>Deactivate</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/invisible_32.png" alt=""/>Invisibility</span></a>
+											<ul class="menu-130">
+												<li><a><img class="icon" src="public/images/icons/invisible_32.png" alt=""/>Activate</a></li>
+												<li><a><img class="icon" src="public/images/icons/normal_32.png" alt=""/>Deactivate</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/bunny_32.png" alt=""/>Bunnify</span></a>
+											<ul class="menu-130">
+												<li><a><img class="icon" src="public/images/icons/bunny_32.png" alt=""/>Activate</a></li>
+												<li><a><img class="icon" src="public/images/icons/normal_32.png" alt=""/>Deactivate</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/enemyhealth_32.png" alt=""/>Enemy Health</span></a>
+											<ul class="menu-90">
+												<li><a><img class="icon" src="public/images/icons/buffenemy_32.png" alt=""/>Buff</a></li>
+												<li><a><img class="icon" src="public/images/icons/nerfenemy_32.png" alt=""/>Nerf</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/enemyintelligence_32.png" alt=""/>Enemy Intelligence</span></a>
+											<ul class="menu-110">
+												<li><a><img class="icon" src="public/images/icons/enemynormal_32.png" alt=""/>Normal</a></li>
+												<li><a><img class="icon" src="public/images/icons/enemydumb_32.png" alt=""/>Dumb</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/brazierlit_32.png" alt=""/>Lighting</span></a>
+											<ul class="menu-140">
+												<li><a><img class="icon" src="public/images/icons/brazierpartlit_32.png" alt=""/>Default</a></li>
+												<li><a><img class="icon" src="public/images/icons/brazierlit_32.png" alt=""/>Always Lit</a></li>
+												<li><a><img class="icon" src="public/images/icons/brazierunlit_32.png" alt=""/>Always Dark</a></li>
+											</ul>
+										</li>
 									</ul>
 								</li>
-							</ul>
-						</li>
-						<li class="topfirst"><a><span><img src="public/images/icons/orbswitch_32.png" alt=""/>Game Control</span></a>
-							<ul style="width:140px;">
-								<li class="subfirst"><a><span><img src="public/images/icons/normal_32.png" alt=""/>Player State</span></a>
-									<ul>
-										<li><a><img src="public/images/icons/normal_32.png" alt=""/>Normal</a></li>
-										<li><a><img src="public/images/icons/slow_32.png" alt=""/>Slow</a></li>
-										<li><a><img src="public/images/icons/fast_32.png" alt=""/>Fast</a></li>
-										<li><a><img src="public/images/icons/confused_32.png" alt=""/>Confused</a></li>
+								<li class="topfirst"><a><span><img class="icon" src="public/images/icons/surprise_32.png" alt=""/>Surprises</span></a>
+									<ul class="menu-150">
+										<li class="subfirst"><a><img class="icon" src="public/images/icons/death_32.png" alt=""/>Insta-Death!</a>
+										
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/cuccostorm_32.png" alt=""/>Cucco Storm</span></a>
+											<ul class="menu-130">
+												<li><a><img class="icon" src="public/images/icons/cuccostorm_32.png" alt=""/>Activate</a></li>
+												<li><a><img class="icon" src="public/images/icons/cucco_32.png" alt=""/>Deactivate</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/nochest_32.png" alt=""/>Seal Chests</span></a>
+											<ul class="menu-110">
+												<li><a><img class="icon" src="public/images/icons/nochest_32.png" alt=""/>Seal</a></li>
+												<li><a><img class="icon" src="public/images/icons/chest_32.png" alt=""/>Unseal</a></li>
+											</ul>
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/skull_32.png" alt=""/>???</span></a>
+										
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/skull_32.png" alt=""/>???</span></a>
+										
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/skull_32.png" alt=""/>???</span></a>
+										
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/skull_32.png" alt=""/>???</span></a>
+										
+										</li>
+										<li><a><span><img class="icon" src="public/images/icons/skull_32.png" alt=""/>???</span></a>
+										
+										</li>
 									</ul>
-								</li>
-								<li><a><span><img src="public/images/icons/invincible_32.png" alt=""/>Invincibility</span></a>
-									<li><a>Activate</a></li>
-									<li><a>Deactivate</a></li>
-								</li>
-								<li><a><span><img src="public/images/icons/invisible_32.png" alt=""/>Invisibility</span></a>
-									<li><a>Activate</a></li>
-									<li><a>Deactivate</a></li>
-								</li>
-								<li><a><span><img src="public/images/icons/bunny_32.png" alt=""/>Bunnify</span></a>
-									<li><a>Activate</a></li>
-									<li><a>Deactivate</a></li>
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>Enemy Health</span></a>
-									<li><a>Buff</a></li>
-									<li><a>Nerf</a></li>
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>Enemy Intelligence</span></a>
-									<li><a>Normal</a></li>
-									<li><a>Dumb</a></li>
-								</li>
-								<li><a><span><img src="public/images/icons/brazier_32.png" alt=""/>Lighting</span></a>
-									<li><a>Default</a></li>
-									<li><a>Always Lit</a></li>
-									<li><a>Always Dark</a></li>
-								</li>
-							</ul>
-						</li>
-						<li class="topfirst"><a><span><img src="public/images/icons/surprise_32.png" alt=""/>Surprises</span></a>
-							<ul style="width:140px;">
-								<li class="subfirst"><a><img src="public/images/icons/skull_32.png" alt=""/>???</a></li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
-								</li>
-								<li><a><span><img src="public/images/icons/skull_32.png" alt=""/>???</span></a>
-								
 								</li>
 							</ul>
 						</li>

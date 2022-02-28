@@ -9,7 +9,7 @@
 }
 
 body {
-	min-width: 320px;
+	min-width: 590px;
 	background-color: black;
 	background-image: url("images/z3map.png");
 	background-position: center center;
@@ -27,8 +27,14 @@ img {
 	max-height: 100%;
 }
 
+.icon {
+	width: 32px;
+	height: 32px;
+}
+
 .container {
-	width: 700px;
+	width: 100%;
+	max-width: 700px;
 	margin: auto;
 	background-image: url("images/z3map_blur.png");
 	background-position: center center;
@@ -130,7 +136,8 @@ ul#dropdownmenu a {
 	color: #FFFFFF;
 	cursor: pointer;
 	display: block;
-	font: 14px Trebuchet MS;
+	font-size: 14px;
+	font-family: 'Jua', Arial, Helvetica, sans-serif;
 	padding-left: 6px;
 	text-align: left;
 	text-decoration: none;
@@ -215,4 +222,74 @@ ul#dropdownmenu li.topfirst > a {
 }
 ul#dropdownmenu li.subfirst > a {
 	border-width: 0;
+}
+.menu-90 {
+	width: 90px;
+}
+.menu-100 {
+	width: 100px;
+}
+.menu-110 {
+	width: 110px;
+}
+.menu-120 {
+	width: 120px;
+}
+.menu-130 {
+	width: 130px;	
+}
+.menu-140 {
+	width: 140px;
+}
+.menu-150 {
+	width: 150px;
+}
+.menu-160 {
+	width: 160px;
+}
+.menu-180 {
+	width: 180px;
+}
+@media only screen and (max-width: 970px) {
+	img.icon {
+		width: 16px;
+		height: 16px;
+	}
+	ul#dropdownmenu a {
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		font-size: 11px;
+		padding-left: 1px;
+	}
+	ul#dropdownmenu img {
+		margin-right: 3px;
+	}
+	.menu-90 {
+		width: 50px;
+	}
+	.menu-100 {
+		width: 60px;
+	}
+	.menu-110 {
+		width: 60px;
+	}
+	.menu-120 {
+		width: 70px;
+	}
+	.menu-130 {
+		width: 90px;	
+	}
+	.menu-140 {
+		width: 90px;
+	}
+	.menu-150 {
+		width: 100px;
+	}
+	.menu-160 {
+		width: 110px;
+	}
+	.menu-180 {
+		width: 130px;
+	}
 }
