@@ -1,2 +1,7 @@
 # If this file exists, we put the site in maintenance mode.
 .maintenance
+*.txt
+*.wch
+*.clip
+icons.png
+icons32.png
