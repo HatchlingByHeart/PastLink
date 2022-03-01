@@ -1,4 +1,3 @@
-# If this file exists, we put the site in maintenance mode.
 .maintenance
 *.txt
 *.wch
