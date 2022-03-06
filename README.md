@@ -11,7 +11,7 @@ Crowd Control is popular and quite robust, but has some drawbacks:
 
 - Crowd Control is paid software, and closed source, making it not very accessible for a lot of people. PastLink is **free** and **open source**, and always will be.
 - Crowd Control requires a Windows PC. As of the time of writing this, there are no versions for Linux or Mac. The core of PastLink runs on a PHP-based web server, and can hence be used on any operating system where PHP is available.  
-- Crowd Control is 100% a Twitch integration, and can only be used for a Twitch stream. PastLink can be used for any streaming platform, and the web interface can be used on any OS/Browser.
+- PastLink can be used for any streaming platform, and the web interface can be used on any OS/Browser.
 - While designed for A Link to the Past, PastLink could be adapted in future to support more games. Because it's open source, you are free to tweak to code to support more games yourself!
 
 # Requirements
