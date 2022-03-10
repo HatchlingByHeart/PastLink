@@ -13,6 +13,84 @@ key = "****************"
 refreshtime = 60
 refresh = refreshtime
 
+-- FUNCTION: Edit Rupees
+-- Argument quantity (sint): The number of rupees to set, give, or take.
+function editrupees(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		-- Check for modifiers (- or +) and subtract or add quantity respectively if modifiers are found.
+		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
+		if (bizstring.startswith(quantity, "+")) then
+			quantity = tonumber(bizstring.remove(quantity,0,1))
+			mainmemory.write_s16_le(0x00F360, mainmemory.read_s16_le(0x00F360)+quantity)
+		elseif (bizstring.startswith(quantity, "-")) then
+			quantity = tonumber(bizstring.remove(quantity,0,1))
+			mainmemory.write_s16_le(0x00F360, mainmemory.read_s16_le(0x00F360)-quantity)
+		else
+			quantity = tonumber(quantity)
+			mainmemory.write_s16_le(0x00F360, quantity)
+		end
+		-- Make sure rupee limit is never broken.
+		if (mainmemory.read_s16_le(0x00F360) > 9999) then
+			mainmemory.write_s16_le(0x00F360, 9999)
+		end
+	else
+		console.writeline("ERROR: Function giverupees(): Quantity not provided.")
+	end
+end
+
+-- FUNCTION: Edit Bombs
+-- Argument quantity (sint): The number of bombs to set, give, or take.
+function editbombs(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		-- Check for modifiers (- or +) and subtract or add quantity respectively if modifiers are found.
+		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
+		if (bizstring.startswith(quantity, "+")) then
+			quantity = tonumber(bizstring.remove(quantity,0,1))
+			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+quantity)
+		elseif (bizstring.startswith(quantity, "-")) then
+			quantity = tonumber(bizstring.remove(quantity,0,1))
+			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)-quantity)
+		else
+			quantity = tonumber(quantity)
+			mainmemory.writebyte(0x00F343, quantity)
+		end
+		-- Make sure bomb limit is never broken.
+		if (mainmemory.readbyte(0x00F343) > 50) then
+			mainmemory.writebyte(0x00F343, 50)
+		end
+	else
+		console.writeline("ERROR: Function givebombs(): Quantity not provided.")
+	end
+end
+
+-- FUNCTION: Edit Arrows
+-- Argument quantity (sint): The number of arrows to set, give, or take.
+function editarrows(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		-- Check for modifiers (- or +) and subtract or add quantity respectively if modifiers are found.
+		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
+		if (bizstring.startswith(quantity, "+")) then
+			quantity = tonumber(bizstring.remove(quantity,0,1))
+			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)+quantity)
+		elseif (bizstring.startswith(quantity, "-")) then
+			quantity = tonumber(bizstring.remove(quantity,0,1))
+			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)-quantity)
+		else
+			quantity = tonumber(quantity)
+			mainmemory.writebyte(0x00F377, quantity)
+		end
+		-- Make sure arrow limit is never broken.
+		if (mainmemory.readbyte(0x00F377) > 70) then
+			mainmemory.writebyte(0x00F377, 70)
+		end
+	else
+		console.writeline("ERROR: Function givearrows(): Quantity not provided.")
+	end
+end
+
 -- FUNCTION: Edit Item
 -- Argument id (int): The ID number of the item to be received/ktaen.
 -- Argument take (bool): If true, take item away instead of giving it. (Default: false)
@@ -337,47 +415,6 @@ function edititem(id,take)
 			mainmemory.writebyte(0x00F37B, 0)
 		else
 			mainmemory.writebyte(0x00F37B, 2)
-	end
-end
-
--- FUNCTION: Edit Consumable Items
--- Argument id (int): The ID number of the item to be received/taken.
--- Argument take (bool): If true, take item away instead of giving it. (Default: false)
--- Argument amount (int): Amount of the item to give or take. (Default: 1)
-function editconsumable(id,take,amount)
-	if id == 0 then
-		-- Bombs
-		if take then
-			if mainmemory.readbyte(0x00F343) > amount then
-				mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)-tonumber(amount))
-			else
-				mainmemory.writebyte(0x00F343, 0)
-			end
-		else
-			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+tonumber(amount))
-		end
-	else if id == 1 then
-		-- Arrows
-		if take then
-			if mainmemory.readbyte(0x00F377) > amount then
-				mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)-tonumber(amount))
-			else
-				mainmemory.writebyte(0x00F377, 0)
-			end
-		else
-			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)+tonumber(amount))
-		end
-	else if id == 2 then
-		-- Rupees
-		if take then
-			if mainmemory.read_u16_le(0x00F360) > amount then
-				mainmemory.write_s16_le(0x00F360, mainmemory.read_u16_le(0x00F360)-tonumber(amount))
-			else
-				mainmemory.write_s16_le(0x00F360, 0)
-			end
-		else
-			mainmemory.write_s16_le(0x00F360, mainmemory.read_u16_le(0x00F360)+tonumber(amount))
-		end
 	end
 end
 
