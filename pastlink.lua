@@ -13,6 +13,132 @@ key = "****************"
 refreshtime = 60
 refresh = refreshtime
 
+-- Define Pokeable SNES Memory Addresses
+ADDR_PROGRAM1 = 0x000010
+ADDR_PROGRAM2 = 0x000011
+ADDR_INDOORS = 0x00001B
+ADDR_YPOS = 0x000020
+ADDR_XPOS = 0x000022
+ADDR_SHOWBUNNY = 0x000056
+ADDR_LINKSTATE = 0x00005D
+ADDR_LINKSPEED = 0x00005E
+ADDR_DOORID = 0x00006C
+ADDR_ROOMID = 0x0000A0
+ADDR_SFX1 = 0x00012E
+ADDR_SFX2 = 0x00012F
+ADDR_BUNNYTIMER = 0x0003F5
+ADDR_DUNGEONID = 0x00040C
+ADDR_LOWSPRITEY = 0x000D00
+ADDR_LOWSPRITEX = 0x000D10
+ADDR_HIGHSPRITEY = 0x000D20
+ADDR_HIGHSPRITEX = 0x000D30
+ADDR_AUXSPRITE1 = 0x000DA0
+ADDR_AUXSPRITE2 = 0x000DA1
+ADDR_AUXSPRITE3 = 0x000DA2
+ADDR_AUXSPRITE4 = 0x000DA3
+ADDR_AUXSPRITE5 = 0x000DA4
+ADDR_AUXSPRITE6 = 0x000DA5
+ADDR_AUXSPRITE7 = 0x000DA6
+ADDR_AUXSPRITE8 = 0x000DA7
+ADDR_AUXSPRITE9 = 0x000DA8
+ADDR_AUXSPRITE10 = 0x000DA9
+ADDR_AUXSPRITE11 = 0x000DAA
+ADDR_AUXSPRITE12 = 0x000DAB
+ADDR_AUXSPRITE13 = 0x000DAC
+ADDR_AUXSPRITE14 = 0x000DAD
+ADDR_AUXSPRITE15 = 0x000DAE
+ADDR_AUXSPRITE16 = 0x000DAF
+ADDR_AUXSPRITE17 = 0x000DB0
+ADDR_AUXSPRITE18 = 0x000DB1
+ADDR_AUXSPRITE19 = 0x000DB2
+ADDR_AUXSPRITE20 = 0x000DB3
+ADDR_SPRITESTATUS = 0x000DD0
+ADDR_SPRITETYPE1 = 0x000E20
+ADDR_SPRITETYPE2 = 0x000E21
+ADDR_SPRITETYPE3 = 0x000E22
+ADDR_SPRITETYPE4 = 0x000E23
+ADDR_SPRITETYPE5 = 0x000E24
+ADDR_SPRITETYPE6 = 0x000E25
+ADDR_SPRITETYPE7 = 0x000E26
+ADDR_SPRITETYPE8 = 0x000E27
+ADDR_SPRITETYPE9 = 0x000E28
+ADDR_SPRITETYPE10 = 0x000E29
+ADDR_SPRITETYPE11 = 0x000E2A
+ADDR_SPRITETYPE12 = 0x000E2B
+ADDR_SPRITETYPE13 = 0x000E2C
+ADDR_SPRITETYPE14 = 0x000E2D
+ADDR_SPRITETYPE15 = 0x000E2E
+ADDR_SPRITETYPE16 = 0x000E2F
+ADDR_SPRITETYPE17 = 0x000E30
+ADDR_SPRITETYPE18 = 0x000E31
+ADDR_SPRITETYPE19 = 0x000E32
+ADDR_SPRITETYPE20 = 0x000E33
+ADDR_SPRITEDIRECTION = 0x000EB0
+ADDR_GAMESTATE = 0x00F000
+ADDR_BOW = 0x00F340
+ADDR_BOOMERANG = 0x00F341
+ADDR_HOOKSHOT = 0x00F342
+ADDR_BOMBS = 0x00F343
+ADDR_MUSHROOMPOWDER = 0x00F344
+ADDR_FIREROD = 0x00F345
+ADDR_ICEROD = 0x00F346
+ADDR_BOMBOS = 0x00F347
+ADDR_ETHER = 0x00F348
+ADDR_QUAKE = 0x00F349
+ADDR_LAMP = 0x00F34A
+ADDR_HAMMER = 0x00F34B
+ADDR_SHOVELOCARINA = 0x00F34C
+ADDR_BUGNET = 0x00F34D
+ADDR_BOOK = 0x00F34E
+ADDR_BOTTLES = 0x00F34F
+ADDR_SOMARIA = 0x00F350
+ADDR_BYRNA = 0x00F351
+ADDR_CAPE = 0x00F352
+ADDR_MIRROR = 0x00F353
+ADDR_GLOVE = 0x00F354
+ADDR_BOOTS1 = 0x00F355
+ADDR_BOOTS2 = 0x00F379
+ADDR_FLIPPERS = 0x00F356
+ADDR_PEARL = 0x00F357
+ADDR_SWORD = 0x00F359
+ADDR_SHIELD = 0x00F35A
+ADDR_MAIL = 0x00F35B
+ADDR_BOTTLE1 = 0x00F35C
+ADDR_BOTTLE2 = 0x00F35D
+ADDR_BOTTLE3 = 0x00F35E
+ADDR_BOTTLE4 = 0x00F35F
+ADDR_RUPEES = 0x00F360
+ADDR_HEARTPIECES = 0x00F36B
+ADDR_MAXHEARTS = 0x00F36C
+ADDR_HEARTS = 0x00F36D
+ADDR_MAGIC = 0x00F36E
+ADDR_FILLHEARTS = 0x00F372
+ADDR_FILLMAGIC = 0x00F373
+ADDR_ARROWS = 0x00F377
+ADDR_CRYSTALS = 0x00F37A
+ADDR_MAGICBOOST = 0x00F37B
+ADDR_ITEMSTACK = 0x00F38C
+ADDR_BOWSTACK = 0x00F38E
+ADDR_ARMORLEVEL = 0x00F3BA
+ADDR_SWORDBUFF = 0x0150C0
+ADDR_SHIELDBUFF = 0x0150C1
+ADDR_ARMORBUFF = 0x0150C2
+ADDR_MAGICBUFF = 0x0150C3
+ADDR_LIGHTBUFF = 0x0150C4
+ADDR_UNUSEDEFFECT = 0x0150C5
+ADDR_SLOWDASH = 0x0150C6
+ADDR_ICEPHYSICS = 0x0150C7
+ADDR_INFARROWS = 0x0150C8
+ADDR_INFBOMBS = 0x0150C9
+ADDR_INFMAGIC = 0x0150CA
+ADDR_INVERTINPUT = 0x0150CB
+ADDR_OHKOMODE = 0x0150CC
+ADDR_SWAPSPRITE = 0x0150CD
+ADDR_ENABLEBOOTS = 0x0150CE
+
+
+
+
 -- FUNCTION: Edit Rupees
 -- Argument quantity (sint): The number of rupees to set, give, or take.
 function editrupees(quantity)
@@ -22,20 +148,31 @@ function editrupees(quantity)
 		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
 		if (bizstring.startswith(quantity, "+")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
-			mainmemory.write_s16_le(0x00F360, mainmemory.read_s16_le(0x00F360)+quantity)
+			-- Check that the function won't cause internal rupee count to rise above 9999.
+			if (mainmemory.read_s16_le(ADDR_RUPEES)+quantity > 9999) then
+				mainmemory.write_s16_le(ADDR_RUPEES, 9999)
+			else
+				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)+quantity)
+			end
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
-			mainmemory.write_s16_le(0x00F360, mainmemory.read_s16_le(0x00F360)-quantity)
+			-- Check that the function won't cause internal rupee count to fall below 0.
+			if (mainmemory.read_s16_le(ADDR_RUPEES)-quantity < 0) then
+				mainmemory.write_s16_le(ADDR_RUPEES, 0)
+			else
+				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)-quantity)
+			end
 		else
 			quantity = tonumber(quantity)
-			mainmemory.write_s16_le(0x00F360, quantity)
-		end
-		-- Make sure rupee limit is never broken.
-		if (mainmemory.read_s16_le(0x00F360) > 9999) then
-			mainmemory.write_s16_le(0x00F360, 9999)
+			-- Check that the amount specified is valid (0-9999). Output error if it isn't.
+			if (quantity < 0 || quantity > 9999) then
+				console.writeline("ERROR: Function giverupees(): Quantity provided is not valid (should be 0-9999).")
+			else
+				mainmemory.write_s16_le(ADDR_RUPEES, quantity)
+			end
 		end
 	else
-		console.writeline("ERROR: Function giverupees(): Quantity not provided.")
+		console.writeline("ERROR: Function editrupees(): Quantity not provided.")
 	end
 end
 
@@ -48,20 +185,31 @@ function editbombs(quantity)
 		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
 		if (bizstring.startswith(quantity, "+")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
-			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)+quantity)
+			-- Check that the function won't cause internal bomb count to rise above 50.
+			if (mainmemory.readbyte(ADDR_BOMBS)+quantity > 50) then
+				mainmemory.writebyte(ADDR_BOMBS, 50)
+			else
+				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)+quantity)
+			end
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
-			mainmemory.writebyte(0x00F343, mainmemory.readbyte(0x00F343)-quantity)
+			-- Check that the function won't cause internal bomb count to fall below 0.
+			if (mainmemory.readbyte(ADDR_BOMBS)-quantity < 0) then
+				mainmemory.writebyte(ADDR_BOMBS, 0)
+			else
+				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)-quantity)
+			end
 		else
 			quantity = tonumber(quantity)
-			mainmemory.writebyte(0x00F343, quantity)
-		end
-		-- Make sure bomb limit is never broken.
-		if (mainmemory.readbyte(0x00F343) > 50) then
-			mainmemory.writebyte(0x00F343, 50)
+			-- Check that the amount specified is valid (0-50). Output error if it isn't.
+			if (quantity < 0 || quantity > 50) then
+				console.writeline("ERROR: Function givebombs(): Quantity provided is not valid (should be 0-50).")
+			else
+				mainmemory.writebyte(ADDR_BOMBS, quantity)
+			end
 		end
 	else
-		console.writeline("ERROR: Function givebombs(): Quantity not provided.")
+		console.writeline("ERROR: Function editbombs(): Quantity not provided.")
 	end
 end
 
@@ -74,490 +222,610 @@ function editarrows(quantity)
 		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
 		if (bizstring.startswith(quantity, "+")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
-			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)+quantity)
+			-- Check that the function won't cause internal arrow count to rise above 70.
+			if (mainmemory.readbyte(ADDR_ARROWS)+quantity > 70) then
+				mainmemory.writebyte(ADDR_ARROWS, 70)
+			else
+				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)+quantity)
+			end
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
-			mainmemory.writebyte(0x00F377, mainmemory.readbyte(0x00F377)-quantity)
+			-- Check that the function won't cause internal arrow count to fall below 0.
+			if (mainmemory.readbyte(ADDR_ARROWS)-quantity < 0) then
+				mainmemory.writebyte(ADDR_ARROWS, 0)
+			else
+				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)-quantity)
+			end
 		else
 			quantity = tonumber(quantity)
-			mainmemory.writebyte(0x00F377, quantity)
-		end
-		-- Make sure arrow limit is never broken.
-		if (mainmemory.readbyte(0x00F377) > 70) then
-			mainmemory.writebyte(0x00F377, 70)
+			-- Check that the amount specified is valid (0-70). Output error if it isn't.
+			if (quantity < 0 || quantity > 70) then
+				console.writeline("ERROR: Function givearrows(): Quantity provided is not valid (should be 0-70).")
+			else
+				mainmemory.writebyte(ADDR_ARROWS, quantity)
+			end
 		end
 	else
-		console.writeline("ERROR: Function givearrows(): Quantity not provided.")
+		console.writeline("ERROR: Function editarrows(): Quantity not provided.")
 	end
 end
 
--- FUNCTION: Edit Item
--- Argument id (int): The ID number of the item to be received/ktaen.
--- Argument take (bool): If true, take item away instead of giving it. (Default: false)
-function edititem(id,take)
-	if id == 0 then
-		-- Normal Bow
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38E),2) then
-				if (mainmemory.readbyte(0x00F377) >= 1) then
-					mainmemory.writebyte(0x00F340, 4)
-				else
-					mainmemory.writebyte(0x00F340, 3)
-				end
+-- FUNCTION: Edit Normal Bow
+-- Argument val (int): 0: Take, 1: Give
+function editnormalbow(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editnormalbow(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
+			mainmemory.writebyte(ADDR_BOW, 2)
+		else
+			mainmemory.writebyte(ADDR_BOW, 1)
+		end
+		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),1))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),2) && bit.check(mainmemory.readbyte(ADDR_BOWSTACK),3)) then
+			if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
+				mainmemory.writebyte(ADDR_BOW, 4)
 			else
-				mainmemory.writebyte(0x00F340, 0)
+				mainmemory.writebyte(ADDR_BOW, 3)
 			end
-			mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),1))
 		else
-			if (mainmemory.readbyte(0x00F377) >= 1) then
-				mainmemory.writebyte(0x00F340, 2)
-			else
-				mainmemory.writebyte(0x00F340, 1)
-			end
-			mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),1))
+			mainmemory.writebyte(ADDR_BOW, 0)
 		end
-	else if id == 1 then
-		-- Silver Bow
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38E),1) then
-				if (mainmemory.readbyte(0x00F377) >= 1) then
-					mainmemory.writebyte(0x00F340, 2)
-				else
-					mainmemory.writebyte(0x00F340, 1)
-				end
-			else
-				mainmemory.writebyte(0x00F340, 0)
-			end
-			mainmemory.writebyte(0x00F38E, bit.clear(mainmemory.readbyte(0x00F38E),2))
-		else
-			if (mainmemory.readbyte(0x00F377) >= 1) then
-				mainmemory.writebyte(0x00F340, 4)
-			else
-				mainmemory.writebyte(0x00F340, 3)
-			end
-			mainmemory.writebyte(0x00F38E, bit.set(mainmemory.readbyte(0x00F38E),2))
-		end
-	else if id == 2 then
-		-- Shovel
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38C),8) then
-				mainmemory.writebyte(0x00F34C, 3)
-			else if (bit.check(mainmemory.readbyte(0x00F38C),7) then
-				mainmemory.writebyte(0x00F34C, 2)
-			else
-				mainmemory.writebyte(0x00F34C, 0)
-			end
-			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),6))
-		else
-			mainmemory.writebyte(0x00F34C, 1)
-			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),6))
-		end
-	else if id == 3 then
-		-- Inactive Ocarina
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38C),8) then
-				mainmemory.writebyte(0x00F34C, 3)
-			else if (bit.check(mainmemory.readbyte(0x00F38C),6) then
-				mainmemory.writebyte(0x00F34C, 1)
-			else
-				mainmemory.writebyte(0x00F34C, 0)
-			end
-			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),7))
-		else
-			mainmemory.writebyte(0x00F34C, 1)
-			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),7))
-		end
-	else if id == 4 then
-		-- Active Ocarina
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38C),7) then
-				mainmemory.writebyte(0x00F34C, 2)
-			else if (bit.check(mainmemory.readbyte(0x00F38C),6) then
-				mainmemory.writebyte(0x00F34C, 1)
-			else
-				mainmemory.writebyte(0x00F34C, 0)
-			end
-			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),8))
-		else
-			mainmemory.writebyte(0x00F34C, 1)
-			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),8))
-		end
-	else if id == 5 then
-		-- Mushroom
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38C),4) then
-				mainmemory.writebyte(0x00F344, 2)
-			else
-				mainmemory.writebyte(0x00F344, 0)
-			end
-			mushbit1 = bit.clear(mainmemory.readbyte(0x00F38C),5)
-			mushbit2 = bit.clear(mushbit1,3)
-			mainmemory.writebyte(0x00F38C, mushbit2)
-		else
-			mainmemory.writebyte(0x00F344, 1)
-			mushbit1 = bit.set(mainmemory.readbyte(0x00F38C),5)
-			mushbit2 = bit.set(mushbit1,3)
-			mainmemory.writebyte(0x00F38C, mushbit2)
-		end
-	else if id == 6 then
-		-- Magic Powder
-		if take then
-			if (bit.check(mainmemory.readbyte(0x00F38C),5) && bit.check(mainmemory.readbyte(0x00F38C),3)) then
-				mainmemory.writebyte(0x00F344, 1)
-			else
-				mainmemory.writebyte(0x00F344, 0)
-			end
-			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),4))
-		else
-			mainmemory.writebyte(0x00F344, 2)
-			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),4))
-		end
-	else if id == 7 then
-		-- Boomerang
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38C),2) then
-				mainmemory.writebyte(0x00F341, 2)
-			else
-				mainmemory.writebyte(0x00F341, 0)
-			end
-			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),1))
-		else
-			mainmemory.writebyte(0x00F341, 1)
-			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),1))
-		end
-	else if id == 8 then
-		-- Magic Boomerang
-		if take then
-			if bit.check(mainmemory.readbyte(0x00F38C),1) then
-				mainmemory.writebyte(0x00F341, 1)
-			else
-				mainmemory.writebyte(0x00F341, 0)
-			end
-			mainmemory.writebyte(0x00F38C, bit.clear(mainmemory.readbyte(0x00F38C),2))
-		else
-			mainmemory.writebyte(0x00F341, 2)
-			mainmemory.writebyte(0x00F38C, bit.set(mainmemory.readbyte(0x00F38C),2))
-		end
-	else if id == 9 then
-		-- Hookshot
-		if take then
-			mainmemory.writebyte(0x00F342, 0)
-		else
-			mainmemory.writebyte(0x00F342, 1)
-		end
-	else if id == 10 then
-		-- Fire Rod
-		if take then
-			mainmemory.writebyte(0x00F345, 0)
-		else
-			mainmemory.writebyte(0x00F345, 1)
-		end
-	else if id == 11 then
-		-- Ice Rod
-		if take then
-			mainmemory.writebyte(0x00F346, 0)
-		else
-			mainmemory.writebyte(0x00F346, 1)
-		end
-	else if id == 12 then
-		-- Bombos Medallion
-		if take then
-			mainmemory.writebyte(0x00F347, 0)
-		else
-			mainmemory.writebyte(0x00F347, 1)
-		end
-	else if id == 13 then
-		-- Ether Medallion
-		if take then
-			mainmemory.writebyte(0x00F348, 0)
-		else
-			mainmemory.writebyte(0x00F348, 1)
-		end
-	else if id == 14 then
-		-- Quake Medallion
-		if take then
-			mainmemory.writebyte(0x00F349, 0)
-		else
-			mainmemory.writebyte(0x00F349, 1)
-		end
-	else if id == 15 then
-		-- Lamp
-		if take then
-			mainmemory.writebyte(0x00F34A, 0)
-		else
-			mainmemory.writebyte(0x00F34A, 1)
-		end
-	else if id == 16 then
-		-- Magic Hammer
-		if take then
-			mainmemory.writebyte(0x00F34B, 0)
-		else
-			mainmemory.writebyte(0x00F34B, 1)
-		end
-	else if id == 17 then
-		-- Bug Net
-		if take then
-			mainmemory.writebyte(0x00F34D, 0)
-		else
-			mainmemory.writebyte(0x00F34D, 1)
-		end
-	else if id == 18 then
-		-- Book of Mudora
-		if take then
-			mainmemory.writebyte(0x00F34E, 0)
-		else
-			mainmemory.writebyte(0x00F34E, 1)
-		end
-	else if id == 19 then
-		-- Bottle #1
-		if take then
-			mainmemory.writebyte(0x00F35C, 0)
-		else
-			mainmemory.writebyte(0x00F35C, 2)
-		end
-	else if id == 20 then
-		-- Bottle #2
-		if take then
-			mainmemory.writebyte(0x00F35D, 0)
-		else
-			mainmemory.writebyte(0x00F35D, 2)
-		end
-	else if id == 21 then
-		-- Bottle #3
-		if take then
-			mainmemory.writebyte(0x00F35E, 0)
-		else
-			mainmemory.writebyte(0x00F35E, 2)
-		end
-	else if id == 22 then
-		-- Bottle #4
-		if take then
-			mainmemory.writebyte(0x00F35F, 0)
-		else
-			mainmemory.writebyte(0x00F35F, 2)
-		end
-	else if id == 23 then
-		-- Cane Of Somaria
-		if take then
-			mainmemory.writebyte(0x00F350, 0)
-		else
-			mainmemory.writebyte(0x00F350, 1)
-		end
-	else if id == 24 then
-		-- Cane of Byrna
-		if take then
-			mainmemory.writebyte(0x00F351, 0)
-		else
-			mainmemory.writebyte(0x00F351, 1)
-		end
-	else if id == 25 then
-		-- Magic Cape
-		if take then
-			mainmemory.writebyte(0x00F352, 0)
-		else
-			mainmemory.writebyte(0x00F352, 1)
-		end
-	else if id == 26 then
-		-- Magic Mirror
-		if take then
-			mainmemory.writebyte(0x00F353, 0)
-		else
-			mainmemory.writebyte(0x00F353, 2)
-		end
-	else if id == 27 then
-		-- Power Glove
-		if take then
-			mainmemory.writebyte(0x00F354, 0)
-		else
-			mainmemory.writebyte(0x00F354, 1)
-		end
-	else if id == 28 then
-		-- Titan's Mitt
-		if take then
-			mainmemory.writebyte(0x00F354, 0)
-		else
-			mainmemory.writebyte(0x00F354, 2)
-		end
-	else if id == 29 then
-		-- Pegasus Boots
-		if take then
-			mainmemory.writebyte(0x00F355, 0)
-			mainmemory.writebyte(0x00F379, 0)
-		else
-			mainmemory.writebyte(0x00F355, 1)
-			mainmemory.writebyte(0x00F379, 108)
-		end
-	else if id == 30 then
-		-- Zora's Flippers
-		if take then
-			mainmemory.writebyte(0x00F356, 0)
-		else
-			mainmemory.writebyte(0x00F356, 1)
-		end
-	else if id == 31 then
-		-- Moon Pearl
-		if take then
-			mainmemory.writebyte(0x00F357, 0)
-		else
-			mainmemory.writebyte(0x00F357, 1)
-		end
-	else if id == 32 then
-		-- Give Player 1/2 Magic
-		if take then
-			mainmemory.writebyte(0x00F37B, 0)
-		else
-			mainmemory.writebyte(0x00F37B, 1)
-		end
-	end
-	else if id == 33 then
-		-- Give Player 1/4 Magic
-		if take then
-			mainmemory.writebyte(0x00F37B, 0)
-		else
-			mainmemory.writebyte(0x00F37B, 2)
+		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),1))
 	end
 end
 
+-- FUNCTION: Edit Silver Bow
+-- Argument val (int): 0: Take, 1: Give
+function editsilverbow(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editsilverbow(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
+			mainmemory.writebyte(ADDR_BOW, 4)
+		else
+			mainmemory.writebyte(ADDR_BOW, 3)
+		end
+		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),2))
+		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),3))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),1)) then
+			if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
+				mainmemory.writebyte(ADDR_BOW, 2)
+			else
+				mainmemory.writebyte(ADDR_BOW, 1)
+			end
+		else
+			mainmemory.writebyte(ADDR_BOW, 0)
+		end
+		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),2))
+		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),3))
+	end
+end
+
+-- FUNCTION: Edit Boomerang
+-- Argument val (int): 0: Take, 1: Give
+function editboomerang(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editboomerang(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BOOMERANG, 1)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),1))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),2)) then
+			mainmemory.writebyte(ADDR_BOOMERANG, 2)
+		else
+			mainmemory.writebyte(ADDR_BOOMERANG, 0)
+		end
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),1))
+	end
+end
+
+-- FUNCTION: Edit Magical Boomerang
+-- Argument val (int): 0: Take, 1: Give
+function editmagicalboomerang(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmagicalboomerang(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BOOMERANG, 2)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),2))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),1)) then
+			mainmemory.writebyte(ADDR_BOOMERANG, 1)
+		else
+			mainmemory.writebyte(ADDR_BOOMERANG, 0)
+		end
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),2))
+	end
+end
+
+-- FUNCTION: Edit Mushroom
+-- Argument val (int): 0: Take, 1: Give
+function editmushroom(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmushroom(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 1)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),3))
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),5))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),4)) then
+			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
+		else
+			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 0)
+		end
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),3))
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),5))
+	end
+end
+
+-- FUNCTION: Edit Magic Powder
+-- Argument val (int): 0: Take, 1: Give
+function editmagicpowder(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmagicpowder(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),4))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),3) && bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),5)) then
+			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
+		else
+			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 0)
+		end
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),4))
+	end
+end
+
+-- FUNCTION: Edit Shovel
+-- Argument val (int): 0: Take, 1: Give
+function editshovel(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editshovel(): Value is invalid (should be 0-1)")
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_SHOVELOCARINA, 1)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),6))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),8)) then
+			mainmemory.writebyte(ADDR_SHOVELOCARINA, 3)
+		elseif (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),7)) then
+			mainmemory.writebyte(ADDR_SHOVELOCARINA, 2)
+		else
+			mainmemory.writebyte(ADDR_SHOVELOCARINA, 0)
+		end
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),6))
+	end
+end
+
+-- FUNCTION: Edit Ocarina
+-- Argument val (int): 0: Take, 1: Give & Deactivate Bird, 2: Give & Activate Bird
+function editocarina(val)
+	val = tonumber(val)
+	if (val < 0 || val > 2) then
+		console.writeline("ERROR: Function editocarina(): Value is invalid (should be 0-2)")
+	elseif (val == 2) then
+		mainmemory.writebyte(ADDR_SHOVELOCARINA, 3)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),7))
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_SHOVELOCARINA, 2)
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),7))
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+	elseif (val == 0) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),6)) then
+			mainmemory.writebyte(ADDR_SHOVELOCARINA, 1)
+		else
+			mainmemory.writebyte(ADDR_SHOVELOCARINA, 0)
+		end
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),7))
+		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+	end
+end
+
+-- FUNCTION: Edit Hookshot
+-- Argument val (int): 0: Take, 1: Give
+function edithookshot(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function edithookshot(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_HOOKSHOT, val)
+	end
+end
+
+-- FUNCTION: Edit Fire Rod
+-- Argument val (int): 0: Take, 1: Give
+function editfirerod(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editfirerod(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_FIREROD, val)
+	end
+end
+
+-- FUNCTION: Edit Ice Rod
+-- Argument val (int): 0: Take, 1: Give
+function editicerod(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editicerod(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_ICEROD, val)
+	end
+end
+
+-- FUNCTION: Edit Bombos Medallion
+-- Argument val (int): 0: Take, 1: Give
+function editbombos(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editbombos(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_BOMBOS, val)
+	end
+end
+
+-- FUNCTION: Edit Ether Medallion
+-- Argument val (int): 0: Take, 1: Give
+function editether(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editether(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_ETHER, val)
+	end
+end
+
+-- FUNCTION: Edit Quake Medallion
+-- Argument val (int): 0: Take, 1: Give
+function editquake(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editquake(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_QUAKE, val)
+	end
+end
+
+-- FUNCTION: Edit Lamp
+-- Argument val (int): 0: Take, 1: Give
+function editlamp(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editlamp(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_LAMP, val)
+	end
+end
+
+-- FUNCTION: Edit Magic Hammer
+-- Argument val (int): 0: Take, 1: Give
+function editmagichammer(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmagichammer(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_HAMMER, val)
+	end
+end
+
+-- FUNCTION: Edit Bug Net
+-- Argument val (int): 0: Take, 1: Give
+function editbugnet(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editbugnet(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_BUGNET, val)
+	end
+end
+
+-- FUNCTION: Edit Book of Modura
+-- Argument val (int): 0: Take, 1: Give
+function editbookofmodura(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editbookofmodura(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_BOOK, val)
+	end
+end
+
+-- FUNCTION: Edit Bottles
+-- Argument bottle (int): Bottle Number to Edit (1-4)
+-- Argument val (int):
+--		0: Take
+--		1: Give (Empty)
+--		2: Give (Red Potion)
+--		3: Give (Green Potion)
+--		4: Give (Blue Potion)
+--		5: Give (Fairy)
+--		6: Give (Bee)
+--		7: Give (Super Bee)
+function editbottles(bottle,val)
+	bottle = tonumber(bottle)
+	val = tonumber(val)
+	if (bottle < 1 || bottle > 4) then
+		console.writeline("ERROR: Function editbottles(): Bottle Number is invalid (should be 1-4)")
+	elseif (val < 0 || val > 7) then
+		console.writeline("ERROR: Function editbottles(): Value is invalid (should be 0-7)")
+	else
+		if (bottle == 1) then
+			ADDR_BOTTLE = ADDR_BOTTLE1
+		elseif (bottle == 2) then
+			ADDR_BOTTLE = ADDR_BOTTLE2
+		elseif (bottle == 3) then
+			ADDR_BOTTLE = ADDR_BOTTLE3
+		elseif (bottle == 4) then
+			ADDR_BOTTLE = ADDR_BOTTLE4
+		end
+		if (val == 0) then
+			mainmemory.writebyte(ADDR_BOTTLE, 0)
+		else
+			mainmemory.writebyte(ADDR_BOTTLE, val+1)
+		end
+	end
+end
+
+-- FUNCTION: Edit Cane of Somaria
+-- Argument val (int): 0: Take, 1: Give
+function editcaneofsomaria(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editcaneofsomaria(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_SOMARIA, val)
+	end
+end
+
+-- FUNCTION: Edit Cane of Byrna
+-- Argument val (int): 0: Take, 1: Give
+function editcaneofbyrna(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editcaneofbyrna(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_BYRNA, val)
+	end
+end
+
+-- FUNCTION: Edit Magic Cape
+-- Argument val (int): 0: Take, 1: Give
+function editmagiccape(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmagiccape(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_CAPE, val)
+	end
+end
+
+-- FUNCTION: Edit Magic Mirror
+-- Argument val (int): 0: Take, 1: Give
+function editmagicmirror(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmagicmirror(): Value is invalid (should be 0-1)")
+	else
+		if (val == 0) then
+			mainmemory.writebyte(ADDR_MIRROR, 0)
+		elseif (val == 1) then
+			mainmemory.writebyte(ADDR_MIRROR, 2)
+		end
+	end
+end
+
+-- FUNCTION: Edit Gloves
+-- Argument val (int): 0: Take, 1: Give Power Glove, 2: Give Titan's Mitt
+function editgloves(val)
+	val = tonumber(val)
+	if (val < 0 || val > 2) then
+		console.writeline("ERROR: Function editgloves(): Value is invalid (should be 0-2)")
+	else
+		mainmemory.writebyte(ADDR_GLOVE, val)
+	end
+end
+
+-- FUNCTION: Edit Pegasus Boots
+-- Argument val (int): 0: Take, 1: Give
+function editpegasusboots(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editpegasusboots(): Value is invalid (should be 0-1)")
+	else
+		if (val == 0) then
+			mainmemory.writebyte(ADDR_BOOTS1, 0)
+			mainmemory.writebyte(ADDR_BOOTS2, 0)
+		elseif (val == 1) then
+			mainmemory.writebyte(ADDR_BOOTS1, 1)
+			mainmemory.writebyte(ADDR_BOOTS2, 108)
+		end
+	end
+end
+
+-- FUNCTION: Edit Zora's Flippers
+-- Argument val (int): 0: Take, 1: Give
+function editzorasflippers(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editzorasflippers(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_FLIPPERS, val)
+	end
+end
+
+-- FUNCTION: Edit Moon Pearl
+-- Argument val (int): 0: Take, 1: Give
+function editmoonpearl(val)
+	val = tonumber(val)
+	if (val < 0 || val > 1) then
+		console.writeline("ERROR: Function editmoonpearl(): Value is invalid (should be 0-1)")
+	else
+		mainmemory.writebyte(ADDR_PEARL, val)
+	end
+end
+
+-- FUNCTION: Edit Magic Boost
+-- Argument val (int): 0: Take, 1: Give 1/2 Magic, 2: Give 1/4 Magic
+function editmagicboost(val)
+	val = tonumber(val)
+	if (val < 0 || val > 2) then
+		console.writeline("ERROR: Function editmagicboost(): Value is invalid (should be 0-2)")
+	else
+		mainmemory.writebyte(ADDR_MAGICBOOST, val)
+	end
+end
+
+-- FUNCTION: Cucco Storm aka Psychotic Chickens!
+-- Argument enable (bool): false: Disable (Good Chickens), true: Enable (Evil Chickens)
 function cuccostorm(enable)
-	-- Cucco Storm aka Psychotic Chickens!
-	if (mainmemory.readbyte(0x000E20) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA0, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
 		else
-			mainmemory.writebyte(0x000DA0, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E21) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA1, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
 		else
-			mainmemory.writebyte(0x000DA1, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E22) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA2, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
 		else
-			mainmemory.writebyte(0x000DA2, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E23) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA3, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
 		else
-			mainmemory.writebyte(0x000DA3, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E24) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA4, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
 		else
-			mainmemory.writebyte(0x000DA4, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E25) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA5, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
 		else
-			mainmemory.writebyte(0x000DA5, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E26) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA6, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
 		else
-			mainmemory.writebyte(0x000DA6, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E27) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA7, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
 		else
-			mainmemory.writebyte(0x000DA7, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E28) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA8, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
 		else
-			mainmemory.writebyte(0x000DA8, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E29) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DA9, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
 		else
-			mainmemory.writebyte(0x000DA9, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E2A) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DAA, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
 		else
-			mainmemory.writebyte(0x000DAA, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E2B) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DAB, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
 		else
-			mainmemory.writebyte(0x000DAB, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E2C) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DAC, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
 		else
-			mainmemory.writebyte(0x000DAC, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E2D) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DAD, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
 		else
-			mainmemory.writebyte(0x000DAD, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E2E) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DAE, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
 		else
-			mainmemory.writebyte(0x000DAE, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E2F) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DAF, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
 		else
-			mainmemory.writebyte(0x000DAF, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E30) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DB0, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
 		else
-			mainmemory.writebyte(0x000DB0, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E31) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DB1, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
 		else
-			mainmemory.writebyte(0x000DB1, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E32) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DB2, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
 		else
-			mainmemory.writebyte(0x000DB2, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
 		end
 	end
-	if (mainmemory.readbyte(0x000E33) == 11) then
+	if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then
 		if enable then
-			mainmemory.writebyte(0x000DB3, 35)
+			mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
 		else
-			mainmemory.writebyte(0x000DB3, 0)
+			mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
 		end
 	end
 end
