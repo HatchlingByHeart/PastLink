@@ -1,17 +1,17 @@
 -- PastLink is currently in Alpha and NOT READY FOR RELEASE, use only for testing until further notice.
 
 -- URL string of the domain and path of the server to connect to.
-url = "example.com/pastlink"
+URL = "example.com/pastlink"
 
 -- Key string. This value should match the BIZHAWK constant in config.php, or connection will fail.
-key = "****************"
+KEY = "****************"
 
 -- Time (in frames) between calls to server.
 -- Higher values will save server resources but increase command delay.
 -- Values that are too low (0-10) may slow down BizHawk
 -- Default (Recommended) Value: 60
-refreshtime = 60
-refresh = refreshtime
+REFRESHTIME = 60
+REFRESH = REFRESHTIME
 
 -- Define Pokeable SNES Memory Addresses
 ADDR_PROGRAM1 = 0x000010
@@ -135,9 +135,6 @@ ADDR_INVERTINPUT = 0x0150CB
 ADDR_OHKOMODE = 0x0150CC
 ADDR_SWAPSPRITE = 0x0150CD
 ADDR_ENABLEBOOTS = 0x0150CE
-
-
-
 
 -- FUNCTION: Edit Rupees
 -- Argument quantity (sint): The number of rupees to set, give, or take.
@@ -833,38 +830,75 @@ end
 -- Place all main code inside an always true while loop to maintain indefinite operation.
 while true do
 	-- Refresh counter expired, time to make a call to the server.
-	if refresh <= 0 then
-		request = comm.httpGet("https://"..url.."/pastlink.php?mode=readDB&key="..key)
-		if request = "" then
+	if REFRESH <= 0 then
+		REQUEST = comm.httpGet("https://"..URL.."/pastlink.php?mode=readDB&key="..KEY)
+		if REQUEST = "" then
 			-- If nothing is returned, will know the server is offline or unresponsive. Write error info to console.
 			console.writeline("ERROR: BizHawk could not connect to the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
-		else if request == "EMPTY" then
+		elseif REQUEST == "EMPTY" then
 			-- If "EMPTY" is returned, the connection was successful, but there are no requests to process. Literally do nothing.
-		else if request == "FULL" then
-			-- If "FULL" is returned, the connection was successful, but the command queue limit has been reached.
-			-- The command queue limit can be changed in "config.php"
-		else if request == "WRONGKEY" then
+		elseif REQUEST == "WRONGKEY" then
 			-- If "WRONGKEY" is returned, the connection was successful, but the request was made with a non-matching key, and the server will deny access. In this case, output an error.
 			console.writeline("ERROR: BizHawk sent the wrong key to the host. Access is denied! Check that the keys in config.php and pastlink.lua match.")
 		else
-		-- Item Management
-		if (bizstring.startswith(request, "GIVEITEM")) then
-			edititem(tonumber(bizstring.substring(request, 10, 2),false))
+			-- Split single REQUEST string returned from the server into three parts: Username, IP Address, and Message.
+			SPLIT = bizstring.split(REQUEST, ";")
+			USER = SPLIT[0]
+			IP = SPLIT[1]
+			MESSAGE = SPLIT[2]
+			VALUE = bizstring.split(MESSAGE, ":")
+			if (bizstring.startswith(VALUE, "+") || bizstring.startswith(VALUE, "-")) then
+				VALUE = bizstring.remove(VALUE, 1, 1)
+			end
+			VALUE = tonumber(VALUE[1])
+			if (VALUE == 1) then 
+				PLURAL = ""
+			else
+				PLURAL = "s"
+			end
+			if (bizstring.startswith(MESSAGE, "EDITRUPEES:")) then
+				if (bizstring.substring(MESSAGE, 12, 1) == "+") then
+					editrupees(+tonumber(bizstring.substring(MESSAGE, 13, 4)))
+					gui.addmessage(USER.." gave you "..VALUE.." Rupee"..PLURAL.."!")
+				elseif (bizstring.substring(MESSAGE, 12, 1) == "-") then
+					editrupees(-tonumber(bizstring.substring(MESSAGE, 13, 4)))
+					gui.addmessage(USER.." took "..VALUE.." Rupee"..PLURAL.." from you!")
+				else
+					editrupees(tonumber(bizstring.substring(MESSAGE, 12, 4)))
+					gui.addmessage(USER.." set your Rupees to "..VALUE.."!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITBOMBS:")) then
+				if (bizstring.substring(MESSAGE, 11, 1) == "+") then
+					editbombs(+tonumber(bizstring.substring(MESSAGE, 12, 2)))
+					gui.addmessage(USER.." gave you "..VALUE.." Bomb"..PLURAL.."!")
+				elseif (bizstring.substring(MESSAGE, 11, 1) == "-") then
+					editbombs(-tonumber(bizstring.substring(MESSAGE, 12, 2)))
+					gui.addmessage(USER.." took "..VALUE.." Bomb"..PLURAL.." from you!")
+				else
+					editbombs(tonumber(bizstring.substring(MESSAGE, 11, 2)))
+					gui.addmessage(USER.." set your Bombs to "..VALUE.."!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITARROWS:")) then
+				if (bizstring.substring(MESSAGE, 12, 1) == "+") then
+					editarrows(+tonumber(bizstring.substring(MESSAGE, 13, 2)))
+					gui.addmessage(USER.." gave you "..VALUE.." Arrow"..PLURAL.."!")
+				elseif (bizstring.substring(MESSAGE, 12, 1) == "-") then
+					editarrows(-tonumber(bizstring.substring(MESSAGE, 13, 2)))
+					gui.addmessage(USER.." took "..VALUE.." Arrow"..PLURAL.." from you!")
+				else
+					editarrows(tonumber(bizstring.substring(MESSAGE, 12, 2)))
+					gui.addmessage(USER.." set your Arrows to "..VALUE.."!")
+				end
+			end
+			
+			-- TODO: The rest of the commands.
+			
+			-- Reset the refresh counter back to initial value to begin countdown again.
+			REFRESH = REFRESHTIME
 		end
-		if (bizstring.startswith(request, "TAKEITEM")) then
-			edititem(tonumber(bizstring.substring(request, 10, 2),true))
-		end
-		
-		-- Cucco Storm
-		if (bizstring.startswith(request, "CUCOSTRM")) then
-			cuccostorm(tonumber(bizstring.substring(request, 10, 1),true))
-		end
-		
-		-- Reset the refresh counter back to initial value to begin countdown again.
-		refresh = refreshtime
 	else
 		-- Not time yet, decrement one frame from timer.
-		refresh = refresh-1;
+		REFRESH = REFRESH-1;
 	end	
 	-- Once everything is checked, advance BizHawk a frame.
 	emu.frameadvance();
