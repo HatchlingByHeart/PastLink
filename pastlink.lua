@@ -686,140 +686,140 @@ end
 -- Argument enable (bool): false: Disable (Good Chickens), true: Enable (Evil Chickens)
 function cuccostorm(enable)
 	if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
 		end
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then
-		if enable then
+		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
@@ -834,7 +834,7 @@ while true do
 		REQUEST = comm.httpGet("https://"..URL.."/pastlink.php?mode=readDB&key="..KEY)
 		if REQUEST = "" then
 			-- If nothing is returned, will know the server is offline or unresponsive. Write error info to console.
-			console.writeline("ERROR: BizHawk could not connect to the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
+			console.writeline("ERROR: Received no response from the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
 		elseif REQUEST == "EMPTY" then
 			-- If "EMPTY" is returned, the connection was successful, but there are no requests to process. Literally do nothing.
 		elseif REQUEST == "WRONGKEY" then
@@ -847,47 +847,112 @@ while true do
 			IP = SPLIT[1]
 			MESSAGE = SPLIT[2]
 			VALUE = bizstring.split(MESSAGE, ":")
-			if (bizstring.startswith(VALUE, "+") || bizstring.startswith(VALUE, "-")) then
-				VALUE = bizstring.remove(VALUE, 1, 1)
+			if (bizstring.startswith(VALUE[1], "+") then
+				MODIFIER = "+"
+				VALUE = tonumber(bizstring.remove(VALUE[1], 1, 1))
+			elseif (bizstring.startswith(VALUE[1], "-")) then
+				MODIFIER = "-"
+				VALUE = tonumber(bizstring.remove(VALUE[1], 1, 1))
+			else
+				VALUE = tonumber(VALUE[1])
 			end
-			VALUE = tonumber(VALUE[1])
 			if (VALUE == 1) then 
 				PLURAL = ""
 			else
 				PLURAL = "s"
 			end
 			if (bizstring.startswith(MESSAGE, "EDITRUPEES:")) then
-				if (bizstring.substring(MESSAGE, 12, 1) == "+") then
-					editrupees(+tonumber(bizstring.substring(MESSAGE, 13, 4)))
+				if (MODIFIER == "+") then
+					editrupees(+VALUE)
 					gui.addmessage(USER.." gave you "..VALUE.." Rupee"..PLURAL.."!")
-				elseif (bizstring.substring(MESSAGE, 12, 1) == "-") then
-					editrupees(-tonumber(bizstring.substring(MESSAGE, 13, 4)))
+				elseif (MODIFIER == "-") then
+					editrupees(-VALUE)
 					gui.addmessage(USER.." took "..VALUE.." Rupee"..PLURAL.." from you!")
 				else
-					editrupees(tonumber(bizstring.substring(MESSAGE, 12, 4)))
+					editrupees(VALUE)
 					gui.addmessage(USER.." set your Rupees to "..VALUE.."!")
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITBOMBS:")) then
-				if (bizstring.substring(MESSAGE, 11, 1) == "+") then
-					editbombs(+tonumber(bizstring.substring(MESSAGE, 12, 2)))
+				if (MODIFIER == "+") then
+					editbombs(+VALUE)
 					gui.addmessage(USER.." gave you "..VALUE.." Bomb"..PLURAL.."!")
-				elseif (bizstring.substring(MESSAGE, 11, 1) == "-") then
-					editbombs(-tonumber(bizstring.substring(MESSAGE, 12, 2)))
+				elseif (MODIFIER == "-") then
+					editbombs(-VALUE)
 					gui.addmessage(USER.." took "..VALUE.." Bomb"..PLURAL.." from you!")
 				else
-					editbombs(tonumber(bizstring.substring(MESSAGE, 11, 2)))
+					editbombs(VALUE)
 					gui.addmessage(USER.." set your Bombs to "..VALUE.."!")
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITARROWS:")) then
-				if (bizstring.substring(MESSAGE, 12, 1) == "+") then
-					editarrows(+tonumber(bizstring.substring(MESSAGE, 13, 2)))
+				if (MODIFIER == "+") then
+					editarrows(+VALUE)
 					gui.addmessage(USER.." gave you "..VALUE.." Arrow"..PLURAL.."!")
-				elseif (bizstring.substring(MESSAGE, 12, 1) == "-") then
-					editarrows(-tonumber(bizstring.substring(MESSAGE, 13, 2)))
+				elseif (MODIFIER == "-") then
+					editarrows(-VALUE)
 					gui.addmessage(USER.." took "..VALUE.." Arrow"..PLURAL.." from you!")
 				else
-					editarrows(tonumber(bizstring.substring(MESSAGE, 12, 2)))
+					editarrows(VALUE)
 					gui.addmessage(USER.." set your Arrows to "..VALUE.."!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITNORMALBOW:")) then
+				editnormalbow(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Normal Bow!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Normal Bow!")
+				end
+			end
+			elseif (bizstring.startswith(MESSAGE, "EDITSILVERBOW:")) then
+				editsilverbow(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Silver Bow!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Silver Bow!")
+				end
+			end
+			elseif (bizstring.startswith(MESSAGE, "EDITBOOMERANG:")) then
+				editboomerang(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Boomerang!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Boomerang!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMAGICALBOOMERANG:")) then
+				editmagicalboomerang(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Magical Boomerang!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Magical Boomerang!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMUSHROOM:")) then
+				editmushroom(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Mushroom!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Mushroom!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMAGICPOWDER:")) then
+				editmagicpowder(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Magic Powder!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Magic Powder!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITSHOVEL:")) then
+				editshovel(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Shovel!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you a Shovel!")
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITOCARINA:")) then
+				editocarina(VALUE)
+				if (VALUE == 0) then
+					gui.addmessage(USER.." took away your Ocarina!")
+				elseif (VALUE == 1) then
+					gui.addmessage(USER.." gave you an Ocarina!")
+				elseif (VALUE == 2) then
+					gui.addmessage(USER.." gave you an Ocarina, and a free bird!")
 				end
 			end
 			
