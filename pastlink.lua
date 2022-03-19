@@ -763,184 +763,328 @@ function editmagicboost(val)
 	end
 end
 
--- FUNCTION: Cucco Storm aka Psychotic Chickens!
--- Argument enable (bool): false: Disable (Good Chickens), true: Enable (Evil Chickens)
+-- FUNCTION: Cucco Storm aka Psychotic Chickens! (Has a timer of 30 seconds, cannot be stacked.)
+-- Argument enable (int): 0: Disable (Good Chickens), 1+: Enable (Evil Chickens)
 function cuccostorm(enable)
-	RESULT = false
+	RET = false
+	ERR1 = false
 	if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then
-		if (enable) then
-			mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
+		if (enable >= 1) then
+			if (CUCCOTIMER <= 0) then
+				mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
+				CUCCOSTORM = true
+				CUCCOTIMER = 1800
+			else
+				ERR1 = true
+			end
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
+			CUCCOSTORM = false
+			CUCCOTIMER = 0
 		end
-		RESULT = true
 	end
-	return RESULT
+	if (ERR1) then
+		console.writeline("WARNING: Function cuccostorm() activation was attempted before previous timer had expired. Command ignored.")
+	end
+	return RET
 end
 
 -- Place all main code inside an always true while loop to maintain indefinite operation.
 while true do
 	-- Refresh counter expired, time to make a call to the server.
-	if REFRESH <= 0 then
+	if (REFRESH <= 0) then
 		REQUEST = comm.httpGet("https://"..URL.."/pastlink.php?mode=readDB&key="..KEY)
-		if REQUEST = "" then
+		if (REQUEST = "") then
 			-- If nothing is returned, will know the server is offline or unresponsive. Write error info to console.
 			console.writeline("ERROR: Received no response from the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
-		elseif REQUEST == "EMPTY" then
+		elseif (REQUEST == "EMPTY") then
 			-- If "EMPTY" is returned, the connection was successful, but there are no requests to process. Literally do nothing.
-		elseif REQUEST == "WRONGKEY" then
+		elseif (REQUEST == "WRONGKEY") then
 			-- If "WRONGKEY" is returned, the connection was successful, but the request was made with a non-matching key, and the server will deny access. In this case, output an error.
 			console.writeline("ERROR: BizHawk sent the wrong key to the host. Access is denied! Check that the keys in config.php and pastlink.lua match.")
 		else
@@ -1286,17 +1430,36 @@ while true do
 						gui.addmessage(USER.." blessed you with 1/4 Magic Use!")
 					end
 				end
+			elseif (bizstring.startswith(MESSAGE, "CUCCOSTORM:")) then
+				RESULT = cuccostorm(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." has quelled the Chicken Gods' Rage!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." has angered the Chicken Gods!!!")
+					end
+				end
 			end
-			
 			-- TODO: Items are finally all done, but more commands remain to be written.
+			-- I think I've finished Cucco Storm? Testing will be needed.
+			-- UPDATE: I also added a timer (30 Seconds) for Cucco Storm and added stacking prevention.
 			
 			-- Reset the refresh counter back to initial value to begin countdown again.
 			REFRESH = REFRESHTIME
 		end
 	else
 		-- Not time yet, decrement one frame from timer.
-		REFRESH = REFRESH-1;
-	end	
+		REFRESH = REFRESH-1
+	end
+	-- Decrease timers for active effects.
+	if (CUCCOSTORM == true) then
+		if (CUCCOTIMER <= 0) then
+			cuccostorm(0)
+			gui.addmessage("The Chicken Gods have calmed down!")
+		else
+			CUCCOTIMER = CUCCOTIMER-1
+		end
+	end
 	-- Once everything is checked, advance BizHawk a frame.
-	emu.frameadvance();
+	emu.frameadvance()
 end
