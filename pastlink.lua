@@ -151,6 +151,7 @@ function editrupees(quantity)
 			else
 				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)+quantity)
 			end
+			return true
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
 			-- Check that the function won't cause internal rupee count to fall below 0.
@@ -159,17 +160,21 @@ function editrupees(quantity)
 			else
 				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)-quantity)
 			end
+			return true
 		else
 			quantity = tonumber(quantity)
 			-- Check that the amount specified is valid (0-9999). Output error if it isn't.
 			if (quantity < 0 || quantity > 9999) then
 				console.writeline("ERROR: Function giverupees(): Quantity provided is not valid (should be 0-9999).")
+				return false
 			else
 				mainmemory.write_s16_le(ADDR_RUPEES, quantity)
+				return true
 			end
 		end
 	else
 		console.writeline("ERROR: Function editrupees(): Quantity not provided.")
+		return false
 	end
 end
 
@@ -188,6 +193,7 @@ function editbombs(quantity)
 			else
 				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)+quantity)
 			end
+			return true
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
 			-- Check that the function won't cause internal bomb count to fall below 0.
@@ -196,17 +202,21 @@ function editbombs(quantity)
 			else
 				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)-quantity)
 			end
+			return true
 		else
 			quantity = tonumber(quantity)
 			-- Check that the amount specified is valid (0-50). Output error if it isn't.
 			if (quantity < 0 || quantity > 50) then
 				console.writeline("ERROR: Function givebombs(): Quantity provided is not valid (should be 0-50).")
+				return false
 			else
 				mainmemory.writebyte(ADDR_BOMBS, quantity)
+				return true
 			end
 		end
 	else
 		console.writeline("ERROR: Function editbombs(): Quantity not provided.")
+		return false
 	end
 end
 
@@ -225,6 +235,7 @@ function editarrows(quantity)
 			else
 				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)+quantity)
 			end
+			return true
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
 			-- Check that the function won't cause internal arrow count to fall below 0.
@@ -233,17 +244,21 @@ function editarrows(quantity)
 			else
 				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)-quantity)
 			end
+			return true
 		else
 			quantity = tonumber(quantity)
 			-- Check that the amount specified is valid (0-70). Output error if it isn't.
 			if (quantity < 0 || quantity > 70) then
 				console.writeline("ERROR: Function givearrows(): Quantity provided is not valid (should be 0-70).")
+				return false
 			else
 				mainmemory.writebyte(ADDR_ARROWS, quantity)
+				return true
 			end
 		end
 	else
 		console.writeline("ERROR: Function editarrows(): Quantity not provided.")
+		return false
 	end
 end
 
@@ -253,6 +268,7 @@ function editnormalbow(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editnormalbow(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
 			mainmemory.writebyte(ADDR_BOW, 2)
@@ -260,6 +276,7 @@ function editnormalbow(val)
 			mainmemory.writebyte(ADDR_BOW, 1)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),1))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),2) && bit.check(mainmemory.readbyte(ADDR_BOWSTACK),3)) then
 			if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
@@ -271,6 +288,7 @@ function editnormalbow(val)
 			mainmemory.writebyte(ADDR_BOW, 0)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),1))
+		return true
 	end
 end
 
@@ -280,6 +298,7 @@ function editsilverbow(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editsilverbow(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
 			mainmemory.writebyte(ADDR_BOW, 4)
@@ -288,6 +307,7 @@ function editsilverbow(val)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),2))
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),3))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),1)) then
 			if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
@@ -300,6 +320,7 @@ function editsilverbow(val)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),2))
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),3))
+		return true
 	end
 end
 
@@ -309,9 +330,11 @@ function editboomerang(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editboomerang(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_BOOMERANG, 1)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),1))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),2)) then
 			mainmemory.writebyte(ADDR_BOOMERANG, 2)
@@ -319,6 +342,7 @@ function editboomerang(val)
 			mainmemory.writebyte(ADDR_BOOMERANG, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),1))
+		return true
 	end
 end
 
@@ -328,9 +352,11 @@ function editmagicalboomerang(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagicalboomerang(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_BOOMERANG, 2)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),2))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),1)) then
 			mainmemory.writebyte(ADDR_BOOMERANG, 1)
@@ -338,6 +364,7 @@ function editmagicalboomerang(val)
 			mainmemory.writebyte(ADDR_BOOMERANG, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),2))
+		return true
 	end
 end
 
@@ -347,10 +374,12 @@ function editmushroom(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmushroom(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 1)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),3))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),5))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),4)) then
 			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
@@ -359,6 +388,7 @@ function editmushroom(val)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),3))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),5))
+		return true
 	end
 end
 
@@ -368,9 +398,11 @@ function editmagicpowder(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagicpowder(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),4))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),3) && bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),5)) then
 			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
@@ -378,6 +410,7 @@ function editmagicpowder(val)
 			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),4))
+		return true
 	end
 end
 
@@ -387,9 +420,11 @@ function editshovel(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editshovel(): Value is invalid (should be 0-1)")
+		return false
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_SHOVELOCARINA, 1)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),6))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),8)) then
 			mainmemory.writebyte(ADDR_SHOVELOCARINA, 3)
@@ -399,6 +434,7 @@ function editshovel(val)
 			mainmemory.writebyte(ADDR_SHOVELOCARINA, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),6))
+		return true
 	end
 end
 
@@ -408,14 +444,17 @@ function editocarina(val)
 	val = tonumber(val)
 	if (val < 0 || val > 2) then
 		console.writeline("ERROR: Function editocarina(): Value is invalid (should be 0-2)")
+		return false
 	elseif (val == 2) then
 		mainmemory.writebyte(ADDR_SHOVELOCARINA, 3)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),7))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+		return true
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_SHOVELOCARINA, 2)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),7))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),6)) then
 			mainmemory.writebyte(ADDR_SHOVELOCARINA, 1)
@@ -424,6 +463,7 @@ function editocarina(val)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),7))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+		return true
 	end
 end
 
@@ -433,8 +473,10 @@ function edithookshot(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function edithookshot(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_HOOKSHOT, val)
+		return true
 	end
 end
 
@@ -444,8 +486,10 @@ function editfirerod(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editfirerod(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_FIREROD, val)
+		return true
 	end
 end
 
@@ -455,8 +499,10 @@ function editicerod(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editicerod(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_ICEROD, val)
+		return true
 	end
 end
 
@@ -466,8 +512,10 @@ function editbombos(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editbombos(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_BOMBOS, val)
+		return true
 	end
 end
 
@@ -477,8 +525,10 @@ function editether(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editether(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_ETHER, val)
+		return true
 	end
 end
 
@@ -488,8 +538,10 @@ function editquake(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editquake(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_QUAKE, val)
+		return true
 	end
 end
 
@@ -499,8 +551,10 @@ function editlamp(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editlamp(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_LAMP, val)
+		return true
 	end
 end
 
@@ -510,8 +564,10 @@ function editmagichammer(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagichammer(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_HAMMER, val)
+		return true
 	end
 end
 
@@ -521,8 +577,10 @@ function editbugnet(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editbugnet(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_BUGNET, val)
+		return true
 	end
 end
 
@@ -532,8 +590,10 @@ function editbookofmodura(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editbookofmodura(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_BOOK, val)
+		return true
 	end
 end
 
@@ -553,8 +613,10 @@ function editbottles(bottle,val)
 	val = tonumber(val)
 	if (bottle < 1 || bottle > 4) then
 		console.writeline("ERROR: Function editbottles(): Bottle Number is invalid (should be 1-4)")
+		return false
 	elseif (val < 0 || val > 7) then
 		console.writeline("ERROR: Function editbottles(): Value is invalid (should be 0-7)")
+		return false
 	else
 		if (bottle == 1) then
 			ADDR_BOTTLE = ADDR_BOTTLE1
@@ -570,6 +632,7 @@ function editbottles(bottle,val)
 		else
 			mainmemory.writebyte(ADDR_BOTTLE, val+1)
 		end
+		return true
 	end
 end
 
@@ -579,8 +642,10 @@ function editcaneofsomaria(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editcaneofsomaria(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_SOMARIA, val)
+		return true
 	end
 end
 
@@ -590,8 +655,10 @@ function editcaneofbyrna(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editcaneofbyrna(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_BYRNA, val)
+		return true
 	end
 end
 
@@ -601,8 +668,10 @@ function editmagiccape(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagiccape(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_CAPE, val)
+		return true
 	end
 end
 
@@ -612,12 +681,14 @@ function editmagicmirror(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagicmirror(): Value is invalid (should be 0-1)")
+		return false
 	else
 		if (val == 0) then
 			mainmemory.writebyte(ADDR_MIRROR, 0)
 		elseif (val == 1) then
 			mainmemory.writebyte(ADDR_MIRROR, 2)
 		end
+		return true
 	end
 end
 
@@ -625,10 +696,12 @@ end
 -- Argument val (int): 0: Take, 1: Give Power Glove, 2: Give Titan's Mitt
 function editgloves(val)
 	val = tonumber(val)
-	if (val < 0 || val > 2) then
+	if (val < 0 || val > 2) then	
 		console.writeline("ERROR: Function editgloves(): Value is invalid (should be 0-2)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_GLOVE, val)
+		return true
 	end
 end
 
@@ -638,6 +711,7 @@ function editpegasusboots(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editpegasusboots(): Value is invalid (should be 0-1)")
+		return false
 	else
 		if (val == 0) then
 			mainmemory.writebyte(ADDR_BOOTS1, 0)
@@ -646,6 +720,7 @@ function editpegasusboots(val)
 			mainmemory.writebyte(ADDR_BOOTS1, 1)
 			mainmemory.writebyte(ADDR_BOOTS2, 108)
 		end
+		return true
 	end
 end
 
@@ -655,8 +730,10 @@ function editzorasflippers(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editzorasflippers(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_FLIPPERS, val)
+		return true
 	end
 end
 
@@ -666,8 +743,10 @@ function editmoonpearl(val)
 	val = tonumber(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmoonpearl(): Value is invalid (should be 0-1)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_PEARL, val)
+		return true
 	end
 end
 
@@ -677,20 +756,24 @@ function editmagicboost(val)
 	val = tonumber(val)
 	if (val < 0 || val > 2) then
 		console.writeline("ERROR: Function editmagicboost(): Value is invalid (should be 0-2)")
+		return false
 	else
 		mainmemory.writebyte(ADDR_MAGICBOOST, val)
+		return true
 	end
 end
 
 -- FUNCTION: Cucco Storm aka Psychotic Chickens!
 -- Argument enable (bool): false: Disable (Good Chickens), true: Enable (Evil Chickens)
 function cuccostorm(enable)
+	RESULT = false
 	if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then
 		if (enable) then
 			mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then
 		if (enable) then
@@ -698,6 +781,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then
 		if (enable) then
@@ -705,6 +789,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then
 		if (enable) then
@@ -712,6 +797,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then
 		if (enable) then
@@ -719,6 +805,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then
 		if (enable) then
@@ -726,6 +813,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then
 		if (enable) then
@@ -733,6 +821,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then
 		if (enable) then
@@ -740,6 +829,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then
 		if (enable) then
@@ -747,6 +837,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then
 		if (enable) then
@@ -754,6 +845,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then
 		if (enable) then
@@ -761,6 +853,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then
 		if (enable) then
@@ -768,6 +861,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then
 		if (enable) then
@@ -775,6 +869,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then
 		if (enable) then
@@ -782,6 +877,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then
 		if (enable) then
@@ -789,6 +885,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then
 		if (enable) then
@@ -796,6 +893,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then
 		if (enable) then
@@ -803,6 +901,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then
 		if (enable) then
@@ -810,6 +909,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then
 		if (enable) then
@@ -817,6 +917,7 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
 		end
+		RESULT = true
 	end
 	if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then
 		if (enable) then
@@ -824,7 +925,9 @@ function cuccostorm(enable)
 		else
 			mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
 		end
+		RESULT = true
 	end
+	return RESULT
 end
 
 -- Place all main code inside an always true while loop to maintain indefinite operation.
@@ -863,100 +966,253 @@ while true do
 			end
 			if (bizstring.startswith(MESSAGE, "EDITRUPEES:")) then
 				if (MODIFIER == "+") then
-					editrupees(+VALUE)
-					gui.addmessage(USER.." gave you "..VALUE.." Rupee"..PLURAL.."!")
+					RESULT = editrupees(+VALUE)
+					if (RESULT) then 
+						gui.addmessage(USER.." gave you "..VALUE.." Rupee"..PLURAL.."!")
+					end
 				elseif (MODIFIER == "-") then
-					editrupees(-VALUE)
-					gui.addmessage(USER.." took "..VALUE.." Rupee"..PLURAL.." from you!")
+					RESULT = editrupees(-VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." took "..VALUE.." Rupee"..PLURAL.." from you!")
+					end
 				else
-					editrupees(VALUE)
-					gui.addmessage(USER.." set your Rupees to "..VALUE.."!")
+					RESULT = editrupees(VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." set your Rupees to "..VALUE.."!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITBOMBS:")) then
 				if (MODIFIER == "+") then
-					editbombs(+VALUE)
-					gui.addmessage(USER.." gave you "..VALUE.." Bomb"..PLURAL.."!")
+					RESULT = editbombs(+VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." gave you "..VALUE.." Bomb"..PLURAL.."!")
+					end
 				elseif (MODIFIER == "-") then
-					editbombs(-VALUE)
-					gui.addmessage(USER.." took "..VALUE.." Bomb"..PLURAL.." from you!")
+					RESULT = editbombs(-VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." took "..VALUE.." Bomb"..PLURAL.." from you!")
+					end
 				else
-					editbombs(VALUE)
-					gui.addmessage(USER.." set your Bombs to "..VALUE.."!")
+					RESULT = editbombs(VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." set your Bombs to "..VALUE.."!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITARROWS:")) then
 				if (MODIFIER == "+") then
-					editarrows(+VALUE)
-					gui.addmessage(USER.." gave you "..VALUE.." Arrow"..PLURAL.."!")
+					RESULT = editarrows(+VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." gave you "..VALUE.." Arrow"..PLURAL.."!")
+					end
 				elseif (MODIFIER == "-") then
-					editarrows(-VALUE)
-					gui.addmessage(USER.." took "..VALUE.." Arrow"..PLURAL.." from you!")
+					RESULT = editarrows(-VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." took "..VALUE.." Arrow"..PLURAL.." from you!")
+					end
 				else
-					editarrows(VALUE)
-					gui.addmessage(USER.." set your Arrows to "..VALUE.."!")
+					RESULT = editarrows(VALUE)
+					if (RESULT) then
+						gui.addmessage(USER.." set your Arrows to "..VALUE.."!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITNORMALBOW:")) then
-				editnormalbow(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Normal Bow!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Normal Bow!")
+				RESULT = editnormalbow(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Normal Bow!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Normal Bow!")
+					end
 				end
-			end
 			elseif (bizstring.startswith(MESSAGE, "EDITSILVERBOW:")) then
-				editsilverbow(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Silver Bow!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Silver Bow!")
+				RESULT = editsilverbow(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Silver Bow!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Silver Bow!")
+					end
 				end
-			end
 			elseif (bizstring.startswith(MESSAGE, "EDITBOOMERANG:")) then
-				editboomerang(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Boomerang!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Boomerang!")
+				RESULT = editboomerang(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Boomerang!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Boomerang!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITMAGICALBOOMERANG:")) then
-				editmagicalboomerang(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Magical Boomerang!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Magical Boomerang!")
+				RESULT = editmagicalboomerang(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Magical Boomerang!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Magical Boomerang!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITMUSHROOM:")) then
-				editmushroom(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Mushroom!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Mushroom!")
+				RESULT = editmushroom(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Mushroom!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Mushroom!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITMAGICPOWDER:")) then
-				editmagicpowder(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Magic Powder!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Magic Powder!")
+				RESULT = editmagicpowder(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Magic Powder!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Magic Powder!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITSHOVEL:")) then
-				editshovel(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Shovel!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you a Shovel!")
+				RESULT = editshovel(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Shovel!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Shovel!")
+					end
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITOCARINA:")) then
-				editocarina(VALUE)
-				if (VALUE == 0) then
-					gui.addmessage(USER.." took away your Ocarina!")
-				elseif (VALUE == 1) then
-					gui.addmessage(USER.." gave you an Ocarina!")
-				elseif (VALUE == 2) then
-					gui.addmessage(USER.." gave you an Ocarina, and a free bird!")
+				RESULT = editocarina(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Ocarina!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you an Ocarina!")
+					elseif (VALUE == 2) then
+						gui.addmessage(USER.." gave you an Ocarina, and a free bird!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITHOOKSHOT:")) then
+				RESULT = edithookshot(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Hookshot!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Hookshot!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITFIREROD:")) then
+				RESULT = editfirerod(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Fire Rod!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Fire Rod!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITICEROD:")) then
+				RESULT = editicerod(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Ice Rod!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Ice Rod!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITBOMBOS:")) then
+				RESULT = editbombos(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Bombos Medallion!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Bombos Medallion!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITETHER:")) then
+				RESULT = editether(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Ether Medallion!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Ether Medallion!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITQUAKE:")) then
+				RESULT = editquake(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Quake Medallion!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Quake Medallion!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITLAMP:")) then
+				RESULT = editlamp(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Lamp!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Lamp!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMAGICHAMMER:")) then
+				RESULT = editmagichammer(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Magic Hammer!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Magic Hammer!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITBUGNET:")) then
+				RESULT = editbugnet(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Bug Net!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Bug Net!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITBOOKOFMODURA:")) then
+				RESULT = editbookofmodura(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Book of Modura!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Book of Modura!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITBOTTLES:")) then
+				BSPLT = bizstring.split(VALUE, ",")
+				editbottles(BSPLT[0], BSPLT[1])
+				if (RESULT) then
+					if (BSPLT[1] == 0) then
+						gui.addmessage(USER.." took away your Bottle!")
+					elseif (BSPLT[1] == 1) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..")!")
+					elseif (BSPLT[1] == 2) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and filled it with Red Potion!")
+					elseif (BSPLT[1] == 3) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and filled it with Green Potion!")
+					elseif (BSPLT[1] == 4) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and filled it with Blue Potion!")
+					elseif (BSPLT[1] == 5) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and put a Fairy in it!")
+					elseif (BSPLT[1] == 6) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and put a Bee in it!")
+					elseif (BSPLT[1] == 7) then
+						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and put a Super Bee in it!")
+					end
 				end
 			end
 			
-			-- TODO: The rest of the commands.
+			-- TODO:
+			-- Cane of Somaria
+			-- Cane of Byrna
+			-- Magic Cape
+			-- Magic Mirror
+			-- Gloves
+			-- Pegasus Boots
+			-- Zora's Flippers
+			-- Moon Pearl
+			-- Magic Boost
 			
 			-- Reset the refresh counter back to initial value to begin countdown again.
 			REFRESH = REFRESHTIME
