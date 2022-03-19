@@ -1201,18 +1201,94 @@ while true do
 						gui.addmessage(USER.." gave you a Bottle ("..BSPLT[0]..") and put a Super Bee in it!")
 					end
 				end
+			elseif (bizstring.startswith(MESSAGE, "EDITCANEOFSOMARIA:")) then
+				RESULT = editcaneofsomaria(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Cane of Somaria!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Cane of Somaria!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITCANEOFBYRNA:")) then
+				RESULT = editcaneofbyrna(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Cane of Byrna!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Cane of Byrna!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMAGICCAPE:")) then
+				RESULT = editmagiccape(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Magic Cape!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Book of Magic Cape!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMAGICMIRROR:")) then
+				RESULT = editmagicmirror(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Magic Mirror!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Magic Mirror!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITGLOVES:")) then
+				RESULT = editgloves(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Gloves!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Power Glove!")
+					elseif (VALUE == 2) then
+						gui.addmessage(USER.." gave you a Titan's Mitt!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITPEGASUSBOOTS:")) then
+				RESULT = editpegasusboots(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Pegasus Boots!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a pair of Pegasus Boots!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITZORASFLIPPERS:")) then
+				RESULT = editzorasflippers(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Zora's Flippers!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a pair of Zora's Flippers!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMOONPEARL:")) then
+				RESULT = editmoonpearl(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away your Moon Pearl!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." gave you a Moon Pearl!")
+					end
+				end
+			elseif (bizstring.startswith(MESSAGE, "EDITMAGICBOOST:")) then
+				RESULT = editmagicboost(VALUE)
+				if (RESULT) then
+					if (VALUE == 0) then
+						gui.addmessage(USER.." took away all Magic Boosts!")
+					elseif (VALUE == 1) then
+						gui.addmessage(USER.." blessed you with 1/2 Magic Use!")
+					elseif (VALUE == 2) then
+						gui.addmessage(USER.." blessed you with 1/4 Magic Use!")
+					end
+				end
 			end
 			
-			-- TODO:
-			-- Cane of Somaria
-			-- Cane of Byrna
-			-- Magic Cape
-			-- Magic Mirror
-			-- Gloves
-			-- Pegasus Boots
-			-- Zora's Flippers
-			-- Moon Pearl
-			-- Magic Boost
+			-- TODO: Items are finally all done, but more commands remain to be written.
 			
 			-- Reset the refresh counter back to initial value to begin countdown again.
 			REFRESH = REFRESHTIME
