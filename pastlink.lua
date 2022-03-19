@@ -1181,7 +1181,7 @@ while true do
 				end
 			elseif (bizstring.startswith(MESSAGE, "EDITBOTTLES:")) then
 				BSPLT = bizstring.split(VALUE, ",")
-				editbottles(BSPLT[0], BSPLT[1])
+				RESULT = editbottles(BSPLT[0], BSPLT[1])
 				if (RESULT) then
 					if (BSPLT[1] == 0) then
 						gui.addmessage(USER.." took away your Bottle!")
