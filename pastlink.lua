@@ -136,6 +136,13 @@ ADDR_OHKOMODE = 0x0150CC
 ADDR_SWAPSPRITE = 0x0150CD
 ADDR_ENABLEBOOTS = 0x0150CE
 
+-- Coroutine control for HTTP GET requests (attempt to make BizHawk not stutter)
+function getrequest()
+	coroutine.create(function()
+		REQUEST = comm.httpGet("https://"..URL.."/pastlink.php?mode=readDB&key="..KEY)
+	end)
+end
+
 -- FUNCTION: Edit Rupees
 -- Argument quantity (sint): The number of rupees to set, give, or take.
 function editrupees(quantity)
@@ -1193,7 +1200,7 @@ end
 while true do
 	-- Refresh counter expired, time to make a call to the server.
 	if (REFRESH <= 0) then
-		REQUEST = comm.httpGet("https://"..URL.."/pastlink.php?mode=readDB&key="..KEY)
+		getrequest()
 		if (REQUEST = "") then
 			-- If nothing is returned, will know the server is offline or unresponsive. Write error info to console.
 			console.writeline("ERROR: Received no response from the host. Please check the server is online, and that BizHawk was started via 'bizhawk-http.bat'.")
