@@ -4,7 +4,8 @@
 
 PastLink is a web-based alternative to Crowd Control for manipulating an A Link to the Past Randomizer game. Useful as a Streamer vs Chat tool.
 
-#ATTENTION followers of this project:
+# ATTENTION followers of this project!
+
 Due to unforeseen difficulties, the development focus for PastLink is shifting. In testing, the HTTP GET function built into BizHawk is too slow and causes severe stuttering when executing PastLink due to BizHawk waiting until the data is fetched. It was then I was made aware of a Lua feature known as Coroutines, which supposedly alleviates issues such as this by running functions in parallel with the main one.
 
 Unfortunately, performance was **still** not satisfactory after using Coroutines in testing (said testing was not committed to the repo). It improved a little but still stuttered overall. I have decided to shift the approach to creating a companion application to run alongside BizHawk to fetch the commands from the server, and pass them on to BizHawk via a file. As far as I know, reading from local files on BizHawk does not incur a performance hit.
