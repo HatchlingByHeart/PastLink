@@ -102,9 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -215,9 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\death_16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\downgrade_16.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\enemydumb_16.png" />
@@ -613,13 +610,16 @@
     <None Include="Resources\sword4_16.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\sworddown_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swordup_16.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\take_16.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\titanmitt_16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\upgrade_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

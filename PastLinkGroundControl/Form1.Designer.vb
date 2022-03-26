@@ -48,10 +48,6 @@ Partial Class frmMain
         Me.tsmItemsGiveBookOfModura = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsGiveBottles = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsGiveBottle1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmConsumables = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmEquipment = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmGameControl = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmSurprises = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsGiveBottle1Empty = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsGiveBottle1RedPotion = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsGiveBottle1GreenPotion = New System.Windows.Forms.ToolStripMenuItem()
@@ -125,22 +121,26 @@ Partial Class frmMain
         Me.tsmItemsTakeGloves = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsTakeZorasFlippers = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmItemsTakeMoonPearl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumables = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesGive = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmConsumablesTake = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesGiveRupees = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesGiveBombs = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesGiveArrows = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesTake = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesTakeRupees = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesTakeBombs = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmConsumablesTakeArrows = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipment = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentUpgrade = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmEquipmentDowngrade = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentUpgradeSword = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentUpgradeShield = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentUpgradeMail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentDowngrade = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentDowngradeSword = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentDowngradeShield = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmEquipmentDowngradeMail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmGameControl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmSurprises = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -149,7 +149,7 @@ Partial Class frmMain
         Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmOverride})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
         Me.menuMain.Name = "menuMain"
-        Me.menuMain.Size = New System.Drawing.Size(1308, 24)
+        Me.menuMain.Size = New System.Drawing.Size(586, 24)
         Me.menuMain.Stretch = False
         Me.menuMain.TabIndex = 0
         '
@@ -331,32 +331,6 @@ Partial Class frmMain
         Me.tsmItemsGiveBottle1.Name = "tsmItemsGiveBottle1"
         Me.tsmItemsGiveBottle1.Size = New System.Drawing.Size(180, 22)
         Me.tsmItemsGiveBottle1.Text = "Bottle #1"
-        '
-        'tsmConsumables
-        '
-        Me.tsmConsumables.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesGive, Me.tsmConsumablesTake})
-        Me.tsmConsumables.Name = "tsmConsumables"
-        Me.tsmConsumables.Size = New System.Drawing.Size(180, 22)
-        Me.tsmConsumables.Text = "Consumables"
-        '
-        'tsmEquipment
-        '
-        Me.tsmEquipment.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentUpgrade, Me.tsmEquipmentDowngrade})
-        Me.tsmEquipment.Name = "tsmEquipment"
-        Me.tsmEquipment.Size = New System.Drawing.Size(180, 22)
-        Me.tsmEquipment.Text = "Equipment"
-        '
-        'tsmGameControl
-        '
-        Me.tsmGameControl.Name = "tsmGameControl"
-        Me.tsmGameControl.Size = New System.Drawing.Size(180, 22)
-        Me.tsmGameControl.Text = "Game Control"
-        '
-        'tsmSurprises
-        '
-        Me.tsmSurprises.Name = "tsmSurprises"
-        Me.tsmSurprises.Size = New System.Drawing.Size(180, 22)
-        Me.tsmSurprises.Text = "Surprises"
         '
         'tsmItemsGiveBottle1Empty
         '
@@ -875,121 +849,137 @@ Partial Class frmMain
         Me.tsmItemsTakeMoonPearl.Size = New System.Drawing.Size(180, 22)
         Me.tsmItemsTakeMoonPearl.Text = "Moon Pearl"
         '
+        'tsmConsumables
+        '
+        Me.tsmConsumables.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesGive, Me.tsmConsumablesTake})
+        Me.tsmConsumables.Name = "tsmConsumables"
+        Me.tsmConsumables.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumables.Text = "Consumables"
+        '
         'tsmConsumablesGive
         '
         Me.tsmConsumablesGive.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesGiveRupees, Me.tsmConsumablesGiveBombs, Me.tsmConsumablesGiveArrows})
-        Me.tsmConsumablesGive.Image = Global.PastLinkGroundControl.My.Resources.Resources.give_16
         Me.tsmConsumablesGive.Name = "tsmConsumablesGive"
         Me.tsmConsumablesGive.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGive.Text = "Give"
         '
-        'tsmConsumablesTake
-        '
-        Me.tsmConsumablesTake.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesTakeRupees, Me.tsmConsumablesTakeBombs, Me.tsmConsumablesTakeArrows})
-        Me.tsmConsumablesTake.Image = Global.PastLinkGroundControl.My.Resources.Resources.take_16
-        Me.tsmConsumablesTake.Name = "tsmConsumablesTake"
-        Me.tsmConsumablesTake.Size = New System.Drawing.Size(180, 22)
-        Me.tsmConsumablesTake.Text = "Take"
-        '
         'tsmConsumablesGiveRupees
         '
-        Me.tsmConsumablesGiveRupees.Image = Global.PastLinkGroundControl.My.Resources.Resources.rupee_16
         Me.tsmConsumablesGiveRupees.Name = "tsmConsumablesGiveRupees"
         Me.tsmConsumablesGiveRupees.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGiveRupees.Text = "Rupees"
         '
         'tsmConsumablesGiveBombs
         '
-        Me.tsmConsumablesGiveBombs.Image = Global.PastLinkGroundControl.My.Resources.Resources.bomb_16
         Me.tsmConsumablesGiveBombs.Name = "tsmConsumablesGiveBombs"
         Me.tsmConsumablesGiveBombs.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGiveBombs.Text = "Bombs"
         '
         'tsmConsumablesGiveArrows
         '
-        Me.tsmConsumablesGiveArrows.Image = Global.PastLinkGroundControl.My.Resources.Resources.arrow_16
         Me.tsmConsumablesGiveArrows.Name = "tsmConsumablesGiveArrows"
         Me.tsmConsumablesGiveArrows.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGiveArrows.Text = "Arrows"
         '
+        'tsmConsumablesTake
+        '
+        Me.tsmConsumablesTake.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesTakeRupees, Me.tsmConsumablesTakeBombs, Me.tsmConsumablesTakeArrows})
+        Me.tsmConsumablesTake.Name = "tsmConsumablesTake"
+        Me.tsmConsumablesTake.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTake.Text = "Take"
+        '
         'tsmConsumablesTakeRupees
         '
-        Me.tsmConsumablesTakeRupees.Image = Global.PastLinkGroundControl.My.Resources.Resources.rupee_16
         Me.tsmConsumablesTakeRupees.Name = "tsmConsumablesTakeRupees"
-        Me.tsmConsumablesTakeRupees.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTakeRupees.Size = New System.Drawing.Size(112, 22)
         Me.tsmConsumablesTakeRupees.Text = "Rupees"
         '
         'tsmConsumablesTakeBombs
         '
-        Me.tsmConsumablesTakeBombs.Image = Global.PastLinkGroundControl.My.Resources.Resources.bomb_16
         Me.tsmConsumablesTakeBombs.Name = "tsmConsumablesTakeBombs"
-        Me.tsmConsumablesTakeBombs.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTakeBombs.Size = New System.Drawing.Size(112, 22)
         Me.tsmConsumablesTakeBombs.Text = "Bombs"
         '
         'tsmConsumablesTakeArrows
         '
-        Me.tsmConsumablesTakeArrows.Image = Global.PastLinkGroundControl.My.Resources.Resources.arrow_16
         Me.tsmConsumablesTakeArrows.Name = "tsmConsumablesTakeArrows"
-        Me.tsmConsumablesTakeArrows.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTakeArrows.Size = New System.Drawing.Size(112, 22)
         Me.tsmConsumablesTakeArrows.Text = "Arrows"
+        '
+        'tsmEquipment
+        '
+        Me.tsmEquipment.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentUpgrade, Me.tsmEquipmentDowngrade})
+        Me.tsmEquipment.Name = "tsmEquipment"
+        Me.tsmEquipment.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipment.Text = "Equipment"
         '
         'tsmEquipmentUpgrade
         '
         Me.tsmEquipmentUpgrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentUpgradeSword, Me.tsmEquipmentUpgradeShield, Me.tsmEquipmentUpgradeMail})
-        Me.tsmEquipmentUpgrade.Image = Global.PastLinkGroundControl.My.Resources.Resources.upgrade_16
         Me.tsmEquipmentUpgrade.Name = "tsmEquipmentUpgrade"
         Me.tsmEquipmentUpgrade.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentUpgrade.Text = "Upgrade"
         '
-        'tsmEquipmentDowngrade
-        '
-        Me.tsmEquipmentDowngrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentDowngradeSword, Me.tsmEquipmentDowngradeShield, Me.tsmEquipmentDowngradeMail})
-        Me.tsmEquipmentDowngrade.Image = Global.PastLinkGroundControl.My.Resources.Resources.downgrade_16
-        Me.tsmEquipmentDowngrade.Name = "tsmEquipmentDowngrade"
-        Me.tsmEquipmentDowngrade.Size = New System.Drawing.Size(180, 22)
-        Me.tsmEquipmentDowngrade.Text = "Downgrade"
-        '
         'tsmEquipmentUpgradeSword
         '
         Me.tsmEquipmentUpgradeSword.Name = "tsmEquipmentUpgradeSword"
-        Me.tsmEquipmentUpgradeSword.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgradeSword.Size = New System.Drawing.Size(107, 22)
         Me.tsmEquipmentUpgradeSword.Text = "Sword"
         '
         'tsmEquipmentUpgradeShield
         '
         Me.tsmEquipmentUpgradeShield.Name = "tsmEquipmentUpgradeShield"
-        Me.tsmEquipmentUpgradeShield.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgradeShield.Size = New System.Drawing.Size(107, 22)
         Me.tsmEquipmentUpgradeShield.Text = "Shield"
         '
         'tsmEquipmentUpgradeMail
         '
         Me.tsmEquipmentUpgradeMail.Name = "tsmEquipmentUpgradeMail"
-        Me.tsmEquipmentUpgradeMail.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgradeMail.Size = New System.Drawing.Size(107, 22)
         Me.tsmEquipmentUpgradeMail.Text = "Mail"
+        '
+        'tsmEquipmentDowngrade
+        '
+        Me.tsmEquipmentDowngrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentDowngradeSword, Me.tsmEquipmentDowngradeShield, Me.tsmEquipmentDowngradeMail})
+        Me.tsmEquipmentDowngrade.Name = "tsmEquipmentDowngrade"
+        Me.tsmEquipmentDowngrade.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngrade.Text = "Downgrade"
         '
         'tsmEquipmentDowngradeSword
         '
         Me.tsmEquipmentDowngradeSword.Name = "tsmEquipmentDowngradeSword"
-        Me.tsmEquipmentDowngradeSword.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngradeSword.Size = New System.Drawing.Size(107, 22)
         Me.tsmEquipmentDowngradeSword.Text = "Sword"
         '
         'tsmEquipmentDowngradeShield
         '
         Me.tsmEquipmentDowngradeShield.Name = "tsmEquipmentDowngradeShield"
-        Me.tsmEquipmentDowngradeShield.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngradeShield.Size = New System.Drawing.Size(107, 22)
         Me.tsmEquipmentDowngradeShield.Text = "Shield"
         '
         'tsmEquipmentDowngradeMail
         '
         Me.tsmEquipmentDowngradeMail.Name = "tsmEquipmentDowngradeMail"
-        Me.tsmEquipmentDowngradeMail.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngradeMail.Size = New System.Drawing.Size(107, 22)
         Me.tsmEquipmentDowngradeMail.Text = "Mail"
+        '
+        'tsmGameControl
+        '
+        Me.tsmGameControl.Name = "tsmGameControl"
+        Me.tsmGameControl.Size = New System.Drawing.Size(180, 22)
+        Me.tsmGameControl.Text = "Game Control"
+        '
+        'tsmSurprises
+        '
+        Me.tsmSurprises.Name = "tsmSurprises"
+        Me.tsmSurprises.Size = New System.Drawing.Size(180, 22)
+        Me.tsmSurprises.Text = "Surprises"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(1308, 701)
+        Me.ClientSize = New System.Drawing.Size(586, 364)
         Me.Controls.Add(Me.menuMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.menuMain
