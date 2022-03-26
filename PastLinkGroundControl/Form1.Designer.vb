@@ -23,460 +23,973 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.menuMain = New System.Windows.Forms.MenuStrip()
-        Me.OverrideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItemsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SilverBowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BoomerangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MagicBoomerangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HookshotToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MushroomToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MagicPowderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FireRodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IceRodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BombosMedallionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EtherMedallionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QuakeMedallionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LampToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MagicHammerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShovelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OcarinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmOverride = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItems = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGive = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBow = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveSilverBow = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBoomerang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMagicBoomerang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveHookshot = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMushroom = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMagicPowder = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveFireRod = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveIceRod = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBombosMedallion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveEtherMedallion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveQuakeMedallion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveLamp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMagicHammer = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveShovel = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveOcarina = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActivateBirdToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeactivateBirdToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BugNetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BookOfModuraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BottlesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Bottle1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TakeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsumablesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EquipmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GameControlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SurprisesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmptyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RedPotionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GreenPotionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BluePotionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FairyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SuperBeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem24 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBugNet = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBookOfModura = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumables = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipment = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmGameControl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmSurprises = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1Empty = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1RedPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1GreenPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1BluePotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1Fairy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1Bee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle1SuperBee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2Empty = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2RedPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2GreenPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2BluePotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2Fairy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2Bee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle2SuperBee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3Empty = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3RedPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3GreenPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3BluePotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3Fairy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3Bee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle3SuperBee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4Empty = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4RedPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4GreenPotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4BluePotion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4Fairy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4Bee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveBottle4SuperBee = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveCaneOfSomaria = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveCaneOfByrna = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMagicCape = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMagicMirror = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGivePegasusBoots = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveGloves = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGivePowerGlove = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveTitansMitt = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveZorasFlippers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsGiveMoonPearl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTake = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBow = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeSilverBow = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBoomerang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMagicBoomerang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeHookshot = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMushroom = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMagicPowder = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeFireRod = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeIceRod = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBombosMedallion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeEtherMedallion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeQuakeMedallion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeLamp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMagicHammer = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeShovel = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeOcarina = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBugNet = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBookOfModura = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBottles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBottle1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBottle2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBottle3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeBottle4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeCaneOfSomaria = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeCaneOfByrna = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMagicCape = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMagicMirror = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakePegasusBoots = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeGloves = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeZorasFlippers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmItemsTakeMoonPearl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesGive = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesTake = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesGiveRupees = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesGiveBombs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesGiveArrows = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesTakeRupees = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesTakeBombs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConsumablesTakeArrows = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentUpgrade = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentDowngrade = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentUpgradeSword = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentUpgradeShield = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentUpgradeMail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentDowngradeSword = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentDowngradeShield = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEquipmentDowngradeMail = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuMain.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuMain
         '
-        Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OverrideToolStripMenuItem})
+        Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmOverride})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
         Me.menuMain.Name = "menuMain"
-        Me.menuMain.Size = New System.Drawing.Size(1018, 24)
+        Me.menuMain.Size = New System.Drawing.Size(1308, 24)
         Me.menuMain.Stretch = False
         Me.menuMain.TabIndex = 0
-        Me.menuMain.Text = "MenuStrip1"
         '
-        'OverrideToolStripMenuItem
+        'tsmOverride
         '
-        Me.OverrideToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemsToolStripMenuItem, Me.ConsumablesToolStripMenuItem, Me.EquipmentToolStripMenuItem, Me.GameControlToolStripMenuItem, Me.SurprisesToolStripMenuItem})
-        Me.OverrideToolStripMenuItem.Name = "OverrideToolStripMenuItem"
-        Me.OverrideToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
-        Me.OverrideToolStripMenuItem.Text = "Override"
+        Me.tsmOverride.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItems, Me.tsmConsumables, Me.tsmEquipment, Me.tsmGameControl, Me.tsmSurprises})
+        Me.tsmOverride.Name = "tsmOverride"
+        Me.tsmOverride.Size = New System.Drawing.Size(64, 20)
+        Me.tsmOverride.Text = "Override"
         '
-        'ItemsToolStripMenuItem
+        'tsmItems
         '
-        Me.ItemsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GiveToolStripMenuItem, Me.TakeToolStripMenuItem})
-        Me.ItemsToolStripMenuItem.Name = "ItemsToolStripMenuItem"
-        Me.ItemsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ItemsToolStripMenuItem.Text = "Items"
+        Me.tsmItems.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGive, Me.tsmItemsTake})
+        Me.tsmItems.Name = "tsmItems"
+        Me.tsmItems.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItems.Text = "Items"
         '
-        'GiveToolStripMenuItem
+        'tsmItemsGive
         '
-        Me.GiveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BowToolStripMenuItem, Me.SilverBowToolStripMenuItem, Me.BoomerangToolStripMenuItem, Me.MagicBoomerangToolStripMenuItem, Me.HookshotToolStripMenuItem, Me.MushroomToolStripMenuItem, Me.MagicPowderToolStripMenuItem, Me.FireRodToolStripMenuItem, Me.IceRodToolStripMenuItem, Me.BombosMedallionToolStripMenuItem, Me.EtherMedallionToolStripMenuItem, Me.QuakeMedallionToolStripMenuItem, Me.LampToolStripMenuItem, Me.MagicHammerToolStripMenuItem, Me.ShovelToolStripMenuItem, Me.OcarinaToolStripMenuItem, Me.BugNetToolStripMenuItem, Me.BookOfModuraToolStripMenuItem, Me.BottlesToolStripMenuItem})
-        Me.GiveToolStripMenuItem.Name = "GiveToolStripMenuItem"
-        Me.GiveToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.GiveToolStripMenuItem.Text = "Give"
+        Me.tsmItemsGive.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBow, Me.tsmItemsGiveSilverBow, Me.tsmItemsGiveBoomerang, Me.tsmItemsGiveMagicBoomerang, Me.tsmItemsGiveHookshot, Me.tsmItemsGiveMushroom, Me.tsmItemsGiveMagicPowder, Me.tsmItemsGiveFireRod, Me.tsmItemsGiveIceRod, Me.tsmItemsGiveBombosMedallion, Me.tsmItemsGiveEtherMedallion, Me.tsmItemsGiveQuakeMedallion, Me.tsmItemsGiveLamp, Me.tsmItemsGiveMagicHammer, Me.tsmItemsGiveShovel, Me.tsmItemsGiveOcarina, Me.tsmItemsGiveBugNet, Me.tsmItemsGiveBookOfModura, Me.tsmItemsGiveBottles, Me.tsmItemsGiveCaneOfSomaria, Me.tsmItemsGiveCaneOfByrna, Me.tsmItemsGiveMagicCape, Me.tsmItemsGiveMagicMirror, Me.tsmItemsGivePegasusBoots, Me.tsmItemsGiveGloves, Me.tsmItemsGiveZorasFlippers, Me.tsmItemsGiveMoonPearl})
+        Me.tsmItemsGive.Image = Global.PastLinkGroundControl.My.Resources.Resources.give_16
+        Me.tsmItemsGive.Name = "tsmItemsGive"
+        Me.tsmItemsGive.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGive.Text = "Give"
         '
-        'BowToolStripMenuItem
+        'tsmItemsGiveBow
         '
-        Me.BowToolStripMenuItem.Name = "BowToolStripMenuItem"
-        Me.BowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BowToolStripMenuItem.Text = "Bow"
+        Me.tsmItemsGiveBow.Image = Global.PastLinkGroundControl.My.Resources.Resources.normalbow_16
+        Me.tsmItemsGiveBow.Name = "tsmItemsGiveBow"
+        Me.tsmItemsGiveBow.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBow.Text = "Bow"
         '
-        'SilverBowToolStripMenuItem
+        'tsmItemsGiveSilverBow
         '
-        Me.SilverBowToolStripMenuItem.Name = "SilverBowToolStripMenuItem"
-        Me.SilverBowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SilverBowToolStripMenuItem.Text = "Silver Bow"
+        Me.tsmItemsGiveSilverBow.Image = Global.PastLinkGroundControl.My.Resources.Resources.silverbow_16
+        Me.tsmItemsGiveSilverBow.Name = "tsmItemsGiveSilverBow"
+        Me.tsmItemsGiveSilverBow.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveSilverBow.Text = "Silver Bow"
         '
-        'BoomerangToolStripMenuItem
+        'tsmItemsGiveBoomerang
         '
-        Me.BoomerangToolStripMenuItem.Name = "BoomerangToolStripMenuItem"
-        Me.BoomerangToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BoomerangToolStripMenuItem.Text = "Boomerang"
+        Me.tsmItemsGiveBoomerang.Image = Global.PastLinkGroundControl.My.Resources.Resources.blueboomer_16
+        Me.tsmItemsGiveBoomerang.Name = "tsmItemsGiveBoomerang"
+        Me.tsmItemsGiveBoomerang.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBoomerang.Text = "Boomerang"
         '
-        'MagicBoomerangToolStripMenuItem
+        'tsmItemsGiveMagicBoomerang
         '
-        Me.MagicBoomerangToolStripMenuItem.Name = "MagicBoomerangToolStripMenuItem"
-        Me.MagicBoomerangToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MagicBoomerangToolStripMenuItem.Text = "Magic Boomerang"
+        Me.tsmItemsGiveMagicBoomerang.Image = Global.PastLinkGroundControl.My.Resources.Resources.redboomer_16
+        Me.tsmItemsGiveMagicBoomerang.Name = "tsmItemsGiveMagicBoomerang"
+        Me.tsmItemsGiveMagicBoomerang.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMagicBoomerang.Text = "Magic Boomerang"
         '
-        'HookshotToolStripMenuItem
+        'tsmItemsGiveHookshot
         '
-        Me.HookshotToolStripMenuItem.Name = "HookshotToolStripMenuItem"
-        Me.HookshotToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.HookshotToolStripMenuItem.Text = "Hookshot"
+        Me.tsmItemsGiveHookshot.Image = Global.PastLinkGroundControl.My.Resources.Resources.hookshot_16
+        Me.tsmItemsGiveHookshot.Name = "tsmItemsGiveHookshot"
+        Me.tsmItemsGiveHookshot.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveHookshot.Text = "Hookshot"
         '
-        'MushroomToolStripMenuItem
+        'tsmItemsGiveMushroom
         '
-        Me.MushroomToolStripMenuItem.Name = "MushroomToolStripMenuItem"
-        Me.MushroomToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MushroomToolStripMenuItem.Text = "Mushroom"
+        Me.tsmItemsGiveMushroom.Image = Global.PastLinkGroundControl.My.Resources.Resources.mushroom_16
+        Me.tsmItemsGiveMushroom.Name = "tsmItemsGiveMushroom"
+        Me.tsmItemsGiveMushroom.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMushroom.Text = "Mushroom"
         '
-        'MagicPowderToolStripMenuItem
+        'tsmItemsGiveMagicPowder
         '
-        Me.MagicPowderToolStripMenuItem.Name = "MagicPowderToolStripMenuItem"
-        Me.MagicPowderToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MagicPowderToolStripMenuItem.Text = "Magic Powder"
+        Me.tsmItemsGiveMagicPowder.Image = Global.PastLinkGroundControl.My.Resources.Resources.powder_16
+        Me.tsmItemsGiveMagicPowder.Name = "tsmItemsGiveMagicPowder"
+        Me.tsmItemsGiveMagicPowder.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMagicPowder.Text = "Magic Powder"
         '
-        'FireRodToolStripMenuItem
+        'tsmItemsGiveFireRod
         '
-        Me.FireRodToolStripMenuItem.Name = "FireRodToolStripMenuItem"
-        Me.FireRodToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.FireRodToolStripMenuItem.Text = "Fire Rod"
+        Me.tsmItemsGiveFireRod.Image = Global.PastLinkGroundControl.My.Resources.Resources.firerod_16
+        Me.tsmItemsGiveFireRod.Name = "tsmItemsGiveFireRod"
+        Me.tsmItemsGiveFireRod.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveFireRod.Text = "Fire Rod"
         '
-        'IceRodToolStripMenuItem
+        'tsmItemsGiveIceRod
         '
-        Me.IceRodToolStripMenuItem.Name = "IceRodToolStripMenuItem"
-        Me.IceRodToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.IceRodToolStripMenuItem.Text = "Ice Rod"
+        Me.tsmItemsGiveIceRod.Image = Global.PastLinkGroundControl.My.Resources.Resources.icerod_16
+        Me.tsmItemsGiveIceRod.Name = "tsmItemsGiveIceRod"
+        Me.tsmItemsGiveIceRod.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveIceRod.Text = "Ice Rod"
         '
-        'BombosMedallionToolStripMenuItem
+        'tsmItemsGiveBombosMedallion
         '
-        Me.BombosMedallionToolStripMenuItem.Name = "BombosMedallionToolStripMenuItem"
-        Me.BombosMedallionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BombosMedallionToolStripMenuItem.Text = "Bombos Medallion"
+        Me.tsmItemsGiveBombosMedallion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bombos_16
+        Me.tsmItemsGiveBombosMedallion.Name = "tsmItemsGiveBombosMedallion"
+        Me.tsmItemsGiveBombosMedallion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBombosMedallion.Text = "Bombos Medallion"
         '
-        'EtherMedallionToolStripMenuItem
+        'tsmItemsGiveEtherMedallion
         '
-        Me.EtherMedallionToolStripMenuItem.Name = "EtherMedallionToolStripMenuItem"
-        Me.EtherMedallionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.EtherMedallionToolStripMenuItem.Text = "Ether Medallion"
+        Me.tsmItemsGiveEtherMedallion.Image = Global.PastLinkGroundControl.My.Resources.Resources.ether_16
+        Me.tsmItemsGiveEtherMedallion.Name = "tsmItemsGiveEtherMedallion"
+        Me.tsmItemsGiveEtherMedallion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveEtherMedallion.Text = "Ether Medallion"
         '
-        'QuakeMedallionToolStripMenuItem
+        'tsmItemsGiveQuakeMedallion
         '
-        Me.QuakeMedallionToolStripMenuItem.Name = "QuakeMedallionToolStripMenuItem"
-        Me.QuakeMedallionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.QuakeMedallionToolStripMenuItem.Text = "Quake Medallion"
+        Me.tsmItemsGiveQuakeMedallion.Image = Global.PastLinkGroundControl.My.Resources.Resources.quake_16
+        Me.tsmItemsGiveQuakeMedallion.Name = "tsmItemsGiveQuakeMedallion"
+        Me.tsmItemsGiveQuakeMedallion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveQuakeMedallion.Text = "Quake Medallion"
         '
-        'LampToolStripMenuItem
+        'tsmItemsGiveLamp
         '
-        Me.LampToolStripMenuItem.Name = "LampToolStripMenuItem"
-        Me.LampToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LampToolStripMenuItem.Text = "Lamp"
+        Me.tsmItemsGiveLamp.Image = Global.PastLinkGroundControl.My.Resources.Resources.lamp_16
+        Me.tsmItemsGiveLamp.Name = "tsmItemsGiveLamp"
+        Me.tsmItemsGiveLamp.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveLamp.Text = "Lamp"
         '
-        'MagicHammerToolStripMenuItem
+        'tsmItemsGiveMagicHammer
         '
-        Me.MagicHammerToolStripMenuItem.Name = "MagicHammerToolStripMenuItem"
-        Me.MagicHammerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MagicHammerToolStripMenuItem.Text = "Magic Hammer"
+        Me.tsmItemsGiveMagicHammer.Image = Global.PastLinkGroundControl.My.Resources.Resources.hammer_16
+        Me.tsmItemsGiveMagicHammer.Name = "tsmItemsGiveMagicHammer"
+        Me.tsmItemsGiveMagicHammer.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMagicHammer.Text = "Magic Hammer"
         '
-        'ShovelToolStripMenuItem
+        'tsmItemsGiveShovel
         '
-        Me.ShovelToolStripMenuItem.Name = "ShovelToolStripMenuItem"
-        Me.ShovelToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ShovelToolStripMenuItem.Text = "Shovel"
+        Me.tsmItemsGiveShovel.Image = Global.PastLinkGroundControl.My.Resources.Resources.shovel_16
+        Me.tsmItemsGiveShovel.Name = "tsmItemsGiveShovel"
+        Me.tsmItemsGiveShovel.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveShovel.Text = "Shovel"
         '
-        'OcarinaToolStripMenuItem
+        'tsmItemsGiveOcarina
         '
-        Me.OcarinaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivateBirdToolStripMenuItem, Me.DeactivateBirdToolStripMenuItem})
-        Me.OcarinaToolStripMenuItem.Name = "OcarinaToolStripMenuItem"
-        Me.OcarinaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.OcarinaToolStripMenuItem.Text = "Ocarina"
+        Me.tsmItemsGiveOcarina.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivateBirdToolStripMenuItem, Me.DeactivateBirdToolStripMenuItem})
+        Me.tsmItemsGiveOcarina.Image = Global.PastLinkGroundControl.My.Resources.Resources.ocarinafake_16
+        Me.tsmItemsGiveOcarina.Name = "tsmItemsGiveOcarina"
+        Me.tsmItemsGiveOcarina.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveOcarina.Text = "Ocarina"
         '
         'ActivateBirdToolStripMenuItem
         '
+        Me.ActivateBirdToolStripMenuItem.Image = Global.PastLinkGroundControl.My.Resources.Resources.bird_16
         Me.ActivateBirdToolStripMenuItem.Name = "ActivateBirdToolStripMenuItem"
         Me.ActivateBirdToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ActivateBirdToolStripMenuItem.Text = "Activate Bird"
         '
         'DeactivateBirdToolStripMenuItem
         '
+        Me.DeactivateBirdToolStripMenuItem.Image = Global.PastLinkGroundControl.My.Resources.Resources.nobird_16
         Me.DeactivateBirdToolStripMenuItem.Name = "DeactivateBirdToolStripMenuItem"
         Me.DeactivateBirdToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DeactivateBirdToolStripMenuItem.Text = "Deactivate Bird"
         '
-        'BugNetToolStripMenuItem
+        'tsmItemsGiveBugNet
         '
-        Me.BugNetToolStripMenuItem.Name = "BugNetToolStripMenuItem"
-        Me.BugNetToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BugNetToolStripMenuItem.Text = "Bug Net"
+        Me.tsmItemsGiveBugNet.Image = Global.PastLinkGroundControl.My.Resources.Resources.bugnet_16
+        Me.tsmItemsGiveBugNet.Name = "tsmItemsGiveBugNet"
+        Me.tsmItemsGiveBugNet.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBugNet.Text = "Bug Net"
         '
-        'BookOfModuraToolStripMenuItem
+        'tsmItemsGiveBookOfModura
         '
-        Me.BookOfModuraToolStripMenuItem.Name = "BookOfModuraToolStripMenuItem"
-        Me.BookOfModuraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BookOfModuraToolStripMenuItem.Text = "Book of Modura"
+        Me.tsmItemsGiveBookOfModura.Image = Global.PastLinkGroundControl.My.Resources.Resources.book_16
+        Me.tsmItemsGiveBookOfModura.Name = "tsmItemsGiveBookOfModura"
+        Me.tsmItemsGiveBookOfModura.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBookOfModura.Text = "Book of Modura"
         '
-        'BottlesToolStripMenuItem
+        'tsmItemsGiveBottles
         '
-        Me.BottlesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Bottle1ToolStripMenuItem, Me.ToolStripMenuItem1, Me.ToolStripMenuItem9, Me.ToolStripMenuItem17})
-        Me.BottlesToolStripMenuItem.Name = "BottlesToolStripMenuItem"
-        Me.BottlesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BottlesToolStripMenuItem.Text = "Bottles"
+        Me.tsmItemsGiveBottles.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle1, Me.tsmItemsGiveBottle2, Me.tsmItemsGiveBottle3, Me.tsmItemsGiveBottle4})
+        Me.tsmItemsGiveBottles.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
+        Me.tsmItemsGiveBottles.Name = "tsmItemsGiveBottles"
+        Me.tsmItemsGiveBottles.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottles.Text = "Bottles"
         '
-        'Bottle1ToolStripMenuItem
+        'tsmItemsGiveBottle1
         '
-        Me.Bottle1ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmptyToolStripMenuItem, Me.RedPotionToolStripMenuItem, Me.GreenPotionToolStripMenuItem, Me.BluePotionToolStripMenuItem, Me.FairyToolStripMenuItem, Me.BeeToolStripMenuItem, Me.SuperBeeToolStripMenuItem})
-        Me.Bottle1ToolStripMenuItem.Name = "Bottle1ToolStripMenuItem"
-        Me.Bottle1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.Bottle1ToolStripMenuItem.Text = "Bottle #1"
+        Me.tsmItemsGiveBottle1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle1Empty, Me.tsmItemsGiveBottle1RedPotion, Me.tsmItemsGiveBottle1GreenPotion, Me.tsmItemsGiveBottle1BluePotion, Me.tsmItemsGiveBottle1Fairy, Me.tsmItemsGiveBottle1Bee, Me.tsmItemsGiveBottle1SuperBee})
+        Me.tsmItemsGiveBottle1.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle1_16
+        Me.tsmItemsGiveBottle1.Name = "tsmItemsGiveBottle1"
+        Me.tsmItemsGiveBottle1.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1.Text = "Bottle #1"
         '
-        'TakeToolStripMenuItem
+        'tsmConsumables
         '
-        Me.TakeToolStripMenuItem.Name = "TakeToolStripMenuItem"
-        Me.TakeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TakeToolStripMenuItem.Text = "Take"
+        Me.tsmConsumables.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesGive, Me.tsmConsumablesTake})
+        Me.tsmConsumables.Name = "tsmConsumables"
+        Me.tsmConsumables.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumables.Text = "Consumables"
         '
-        'ConsumablesToolStripMenuItem
+        'tsmEquipment
         '
-        Me.ConsumablesToolStripMenuItem.Name = "ConsumablesToolStripMenuItem"
-        Me.ConsumablesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ConsumablesToolStripMenuItem.Text = "Consumables"
+        Me.tsmEquipment.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentUpgrade, Me.tsmEquipmentDowngrade})
+        Me.tsmEquipment.Name = "tsmEquipment"
+        Me.tsmEquipment.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipment.Text = "Equipment"
         '
-        'EquipmentToolStripMenuItem
+        'tsmGameControl
         '
-        Me.EquipmentToolStripMenuItem.Name = "EquipmentToolStripMenuItem"
-        Me.EquipmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.EquipmentToolStripMenuItem.Text = "Equipment"
+        Me.tsmGameControl.Name = "tsmGameControl"
+        Me.tsmGameControl.Size = New System.Drawing.Size(180, 22)
+        Me.tsmGameControl.Text = "Game Control"
         '
-        'GameControlToolStripMenuItem
+        'tsmSurprises
         '
-        Me.GameControlToolStripMenuItem.Name = "GameControlToolStripMenuItem"
-        Me.GameControlToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.GameControlToolStripMenuItem.Text = "Game Control"
+        Me.tsmSurprises.Name = "tsmSurprises"
+        Me.tsmSurprises.Size = New System.Drawing.Size(180, 22)
+        Me.tsmSurprises.Text = "Surprises"
         '
-        'SurprisesToolStripMenuItem
+        'tsmItemsGiveBottle1Empty
         '
-        Me.SurprisesToolStripMenuItem.Name = "SurprisesToolStripMenuItem"
-        Me.SurprisesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SurprisesToolStripMenuItem.Text = "Surprises"
+        Me.tsmItemsGiveBottle1Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
+        Me.tsmItemsGiveBottle1Empty.Name = "tsmItemsGiveBottle1Empty"
+        Me.tsmItemsGiveBottle1Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1Empty.Text = "Empty"
         '
-        'EmptyToolStripMenuItem
+        'tsmItemsGiveBottle1RedPotion
         '
-        Me.EmptyToolStripMenuItem.Name = "EmptyToolStripMenuItem"
-        Me.EmptyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.EmptyToolStripMenuItem.Text = "Empty"
+        Me.tsmItemsGiveBottle1RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
+        Me.tsmItemsGiveBottle1RedPotion.Name = "tsmItemsGiveBottle1RedPotion"
+        Me.tsmItemsGiveBottle1RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1RedPotion.Text = "Red Potion"
         '
-        'RedPotionToolStripMenuItem
+        'tsmItemsGiveBottle1GreenPotion
         '
-        Me.RedPotionToolStripMenuItem.Name = "RedPotionToolStripMenuItem"
-        Me.RedPotionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RedPotionToolStripMenuItem.Text = "Red Potion"
+        Me.tsmItemsGiveBottle1GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
+        Me.tsmItemsGiveBottle1GreenPotion.Name = "tsmItemsGiveBottle1GreenPotion"
+        Me.tsmItemsGiveBottle1GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1GreenPotion.Text = "Green Potion"
         '
-        'GreenPotionToolStripMenuItem
+        'tsmItemsGiveBottle1BluePotion
         '
-        Me.GreenPotionToolStripMenuItem.Name = "GreenPotionToolStripMenuItem"
-        Me.GreenPotionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.GreenPotionToolStripMenuItem.Text = "Green Potion"
+        Me.tsmItemsGiveBottle1BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
+        Me.tsmItemsGiveBottle1BluePotion.Name = "tsmItemsGiveBottle1BluePotion"
+        Me.tsmItemsGiveBottle1BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1BluePotion.Text = "Blue Potion"
         '
-        'BluePotionToolStripMenuItem
+        'tsmItemsGiveBottle1Fairy
         '
-        Me.BluePotionToolStripMenuItem.Name = "BluePotionToolStripMenuItem"
-        Me.BluePotionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BluePotionToolStripMenuItem.Text = "Blue Potion"
+        Me.tsmItemsGiveBottle1Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
+        Me.tsmItemsGiveBottle1Fairy.Name = "tsmItemsGiveBottle1Fairy"
+        Me.tsmItemsGiveBottle1Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1Fairy.Text = "Fairy"
         '
-        'FairyToolStripMenuItem
+        'tsmItemsGiveBottle1Bee
         '
-        Me.FairyToolStripMenuItem.Name = "FairyToolStripMenuItem"
-        Me.FairyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.FairyToolStripMenuItem.Text = "Fairy"
+        Me.tsmItemsGiveBottle1Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
+        Me.tsmItemsGiveBottle1Bee.Name = "tsmItemsGiveBottle1Bee"
+        Me.tsmItemsGiveBottle1Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1Bee.Text = "Bee"
         '
-        'BeeToolStripMenuItem
+        'tsmItemsGiveBottle1SuperBee
         '
-        Me.BeeToolStripMenuItem.Name = "BeeToolStripMenuItem"
-        Me.BeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BeeToolStripMenuItem.Text = "Bee"
+        Me.tsmItemsGiveBottle1SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
+        Me.tsmItemsGiveBottle1SuperBee.Name = "tsmItemsGiveBottle1SuperBee"
+        Me.tsmItemsGiveBottle1SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1SuperBee.Text = "Super Bee"
         '
-        'SuperBeeToolStripMenuItem
+        'tsmItemsGiveBottle2
         '
-        Me.SuperBeeToolStripMenuItem.Name = "SuperBeeToolStripMenuItem"
-        Me.SuperBeeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SuperBeeToolStripMenuItem.Text = "Super Bee"
+        Me.tsmItemsGiveBottle2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle2Empty, Me.tsmItemsGiveBottle2RedPotion, Me.tsmItemsGiveBottle2GreenPotion, Me.tsmItemsGiveBottle2BluePotion, Me.tsmItemsGiveBottle2Fairy, Me.tsmItemsGiveBottle2Bee, Me.tsmItemsGiveBottle2SuperBee})
+        Me.tsmItemsGiveBottle2.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle2_16
+        Me.tsmItemsGiveBottle2.Name = "tsmItemsGiveBottle2"
+        Me.tsmItemsGiveBottle2.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2.Text = "Bottle #2"
         '
-        'ToolStripMenuItem1
+        'tsmItemsGiveBottle2Empty
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.ToolStripMenuItem7, Me.ToolStripMenuItem8})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem1.Text = "Bottle #2"
+        Me.tsmItemsGiveBottle2Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
+        Me.tsmItemsGiveBottle2Empty.Name = "tsmItemsGiveBottle2Empty"
+        Me.tsmItemsGiveBottle2Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2Empty.Text = "Empty"
         '
-        'ToolStripMenuItem2
+        'tsmItemsGiveBottle2RedPotion
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem2.Text = "Empty"
+        Me.tsmItemsGiveBottle2RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
+        Me.tsmItemsGiveBottle2RedPotion.Name = "tsmItemsGiveBottle2RedPotion"
+        Me.tsmItemsGiveBottle2RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2RedPotion.Text = "Red Potion"
         '
-        'ToolStripMenuItem3
+        'tsmItemsGiveBottle2GreenPotion
         '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem3.Text = "Red Potion"
+        Me.tsmItemsGiveBottle2GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
+        Me.tsmItemsGiveBottle2GreenPotion.Name = "tsmItemsGiveBottle2GreenPotion"
+        Me.tsmItemsGiveBottle2GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2GreenPotion.Text = "Green Potion"
         '
-        'ToolStripMenuItem4
+        'tsmItemsGiveBottle2BluePotion
         '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem4.Text = "Green Potion"
+        Me.tsmItemsGiveBottle2BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
+        Me.tsmItemsGiveBottle2BluePotion.Name = "tsmItemsGiveBottle2BluePotion"
+        Me.tsmItemsGiveBottle2BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2BluePotion.Text = "Blue Potion"
         '
-        'ToolStripMenuItem5
+        'tsmItemsGiveBottle2Fairy
         '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem5.Text = "Blue Potion"
+        Me.tsmItemsGiveBottle2Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
+        Me.tsmItemsGiveBottle2Fairy.Name = "tsmItemsGiveBottle2Fairy"
+        Me.tsmItemsGiveBottle2Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2Fairy.Text = "Fairy"
         '
-        'ToolStripMenuItem6
+        'tsmItemsGiveBottle2Bee
         '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem6.Text = "Fairy"
+        Me.tsmItemsGiveBottle2Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
+        Me.tsmItemsGiveBottle2Bee.Name = "tsmItemsGiveBottle2Bee"
+        Me.tsmItemsGiveBottle2Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2Bee.Text = "Bee"
         '
-        'ToolStripMenuItem7
+        'tsmItemsGiveBottle2SuperBee
         '
-        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem7.Text = "Bee"
+        Me.tsmItemsGiveBottle2SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
+        Me.tsmItemsGiveBottle2SuperBee.Name = "tsmItemsGiveBottle2SuperBee"
+        Me.tsmItemsGiveBottle2SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2SuperBee.Text = "Super Bee"
         '
-        'ToolStripMenuItem8
+        'tsmItemsGiveBottle3
         '
-        Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
-        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem8.Text = "Super Bee"
+        Me.tsmItemsGiveBottle3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle3Empty, Me.tsmItemsGiveBottle3RedPotion, Me.tsmItemsGiveBottle3GreenPotion, Me.tsmItemsGiveBottle3BluePotion, Me.tsmItemsGiveBottle3Fairy, Me.tsmItemsGiveBottle3Bee, Me.tsmItemsGiveBottle3SuperBee})
+        Me.tsmItemsGiveBottle3.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle3_16
+        Me.tsmItemsGiveBottle3.Name = "tsmItemsGiveBottle3"
+        Me.tsmItemsGiveBottle3.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3.Text = "Bottle #3"
         '
-        'ToolStripMenuItem9
+        'tsmItemsGiveBottle3Empty
         '
-        Me.ToolStripMenuItem9.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem10, Me.ToolStripMenuItem11, Me.ToolStripMenuItem12, Me.ToolStripMenuItem13, Me.ToolStripMenuItem14, Me.ToolStripMenuItem15, Me.ToolStripMenuItem16})
-        Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem9.Text = "Bottle #3"
+        Me.tsmItemsGiveBottle3Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
+        Me.tsmItemsGiveBottle3Empty.Name = "tsmItemsGiveBottle3Empty"
+        Me.tsmItemsGiveBottle3Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3Empty.Text = "Empty"
         '
-        'ToolStripMenuItem10
+        'tsmItemsGiveBottle3RedPotion
         '
-        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem10.Text = "Empty"
+        Me.tsmItemsGiveBottle3RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
+        Me.tsmItemsGiveBottle3RedPotion.Name = "tsmItemsGiveBottle3RedPotion"
+        Me.tsmItemsGiveBottle3RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3RedPotion.Text = "Red Potion"
         '
-        'ToolStripMenuItem11
+        'tsmItemsGiveBottle3GreenPotion
         '
-        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem11.Text = "Red Potion"
+        Me.tsmItemsGiveBottle3GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
+        Me.tsmItemsGiveBottle3GreenPotion.Name = "tsmItemsGiveBottle3GreenPotion"
+        Me.tsmItemsGiveBottle3GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3GreenPotion.Text = "Green Potion"
         '
-        'ToolStripMenuItem12
+        'tsmItemsGiveBottle3BluePotion
         '
-        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem12.Text = "Green Potion"
+        Me.tsmItemsGiveBottle3BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
+        Me.tsmItemsGiveBottle3BluePotion.Name = "tsmItemsGiveBottle3BluePotion"
+        Me.tsmItemsGiveBottle3BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3BluePotion.Text = "Blue Potion"
         '
-        'ToolStripMenuItem13
+        'tsmItemsGiveBottle3Fairy
         '
-        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem13.Text = "Blue Potion"
+        Me.tsmItemsGiveBottle3Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
+        Me.tsmItemsGiveBottle3Fairy.Name = "tsmItemsGiveBottle3Fairy"
+        Me.tsmItemsGiveBottle3Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3Fairy.Text = "Fairy"
         '
-        'ToolStripMenuItem14
+        'tsmItemsGiveBottle3Bee
         '
-        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
-        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem14.Text = "Fairy"
+        Me.tsmItemsGiveBottle3Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
+        Me.tsmItemsGiveBottle3Bee.Name = "tsmItemsGiveBottle3Bee"
+        Me.tsmItemsGiveBottle3Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3Bee.Text = "Bee"
         '
-        'ToolStripMenuItem15
+        'tsmItemsGiveBottle3SuperBee
         '
-        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem15.Text = "Bee"
+        Me.tsmItemsGiveBottle3SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
+        Me.tsmItemsGiveBottle3SuperBee.Name = "tsmItemsGiveBottle3SuperBee"
+        Me.tsmItemsGiveBottle3SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3SuperBee.Text = "Super Bee"
         '
-        'ToolStripMenuItem16
+        'tsmItemsGiveBottle4
         '
-        Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
-        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem16.Text = "Super Bee"
+        Me.tsmItemsGiveBottle4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle4Empty, Me.tsmItemsGiveBottle4RedPotion, Me.tsmItemsGiveBottle4GreenPotion, Me.tsmItemsGiveBottle4BluePotion, Me.tsmItemsGiveBottle4Fairy, Me.tsmItemsGiveBottle4Bee, Me.tsmItemsGiveBottle4SuperBee})
+        Me.tsmItemsGiveBottle4.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle4_16
+        Me.tsmItemsGiveBottle4.Name = "tsmItemsGiveBottle4"
+        Me.tsmItemsGiveBottle4.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4.Text = "Bottle #4"
         '
-        'ToolStripMenuItem17
+        'tsmItemsGiveBottle4Empty
         '
-        Me.ToolStripMenuItem17.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem18, Me.ToolStripMenuItem19, Me.ToolStripMenuItem20, Me.ToolStripMenuItem21, Me.ToolStripMenuItem22, Me.ToolStripMenuItem23, Me.ToolStripMenuItem24})
-        Me.ToolStripMenuItem17.Name = "ToolStripMenuItem17"
-        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem17.Text = "Bottle #4"
+        Me.tsmItemsGiveBottle4Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
+        Me.tsmItemsGiveBottle4Empty.Name = "tsmItemsGiveBottle4Empty"
+        Me.tsmItemsGiveBottle4Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4Empty.Text = "Empty"
         '
-        'ToolStripMenuItem18
+        'tsmItemsGiveBottle4RedPotion
         '
-        Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem18.Text = "Empty"
+        Me.tsmItemsGiveBottle4RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
+        Me.tsmItemsGiveBottle4RedPotion.Name = "tsmItemsGiveBottle4RedPotion"
+        Me.tsmItemsGiveBottle4RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4RedPotion.Text = "Red Potion"
         '
-        'ToolStripMenuItem19
+        'tsmItemsGiveBottle4GreenPotion
         '
-        Me.ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem19.Text = "Red Potion"
+        Me.tsmItemsGiveBottle4GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
+        Me.tsmItemsGiveBottle4GreenPotion.Name = "tsmItemsGiveBottle4GreenPotion"
+        Me.tsmItemsGiveBottle4GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4GreenPotion.Text = "Green Potion"
         '
-        'ToolStripMenuItem20
+        'tsmItemsGiveBottle4BluePotion
         '
-        Me.ToolStripMenuItem20.Name = "ToolStripMenuItem20"
-        Me.ToolStripMenuItem20.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem20.Text = "Green Potion"
+        Me.tsmItemsGiveBottle4BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
+        Me.tsmItemsGiveBottle4BluePotion.Name = "tsmItemsGiveBottle4BluePotion"
+        Me.tsmItemsGiveBottle4BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4BluePotion.Text = "Blue Potion"
         '
-        'ToolStripMenuItem21
+        'tsmItemsGiveBottle4Fairy
         '
-        Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
-        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem21.Text = "Blue Potion"
+        Me.tsmItemsGiveBottle4Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
+        Me.tsmItemsGiveBottle4Fairy.Name = "tsmItemsGiveBottle4Fairy"
+        Me.tsmItemsGiveBottle4Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4Fairy.Text = "Fairy"
         '
-        'ToolStripMenuItem22
+        'tsmItemsGiveBottle4Bee
         '
-        Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
-        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem22.Text = "Fairy"
+        Me.tsmItemsGiveBottle4Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
+        Me.tsmItemsGiveBottle4Bee.Name = "tsmItemsGiveBottle4Bee"
+        Me.tsmItemsGiveBottle4Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4Bee.Text = "Bee"
         '
-        'ToolStripMenuItem23
+        'tsmItemsGiveBottle4SuperBee
         '
-        Me.ToolStripMenuItem23.Name = "ToolStripMenuItem23"
-        Me.ToolStripMenuItem23.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem23.Text = "Bee"
+        Me.tsmItemsGiveBottle4SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
+        Me.tsmItemsGiveBottle4SuperBee.Name = "tsmItemsGiveBottle4SuperBee"
+        Me.tsmItemsGiveBottle4SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4SuperBee.Text = "Super Bee"
         '
-        'ToolStripMenuItem24
+        'tsmItemsGiveCaneOfSomaria
         '
-        Me.ToolStripMenuItem24.Name = "ToolStripMenuItem24"
-        Me.ToolStripMenuItem24.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem24.Text = "Super Bee"
+        Me.tsmItemsGiveCaneOfSomaria.Image = Global.PastLinkGroundControl.My.Resources.Resources.canesomaria_16
+        Me.tsmItemsGiveCaneOfSomaria.Name = "tsmItemsGiveCaneOfSomaria"
+        Me.tsmItemsGiveCaneOfSomaria.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveCaneOfSomaria.Text = "Cane of Somaria"
+        '
+        'tsmItemsGiveCaneOfByrna
+        '
+        Me.tsmItemsGiveCaneOfByrna.Image = Global.PastLinkGroundControl.My.Resources.Resources.canebyrna_16
+        Me.tsmItemsGiveCaneOfByrna.Name = "tsmItemsGiveCaneOfByrna"
+        Me.tsmItemsGiveCaneOfByrna.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveCaneOfByrna.Text = "Cane of Byrna"
+        '
+        'tsmItemsGiveMagicCape
+        '
+        Me.tsmItemsGiveMagicCape.Image = Global.PastLinkGroundControl.My.Resources.Resources.cape_16
+        Me.tsmItemsGiveMagicCape.Name = "tsmItemsGiveMagicCape"
+        Me.tsmItemsGiveMagicCape.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMagicCape.Text = "Magic Cape"
+        '
+        'tsmItemsGiveMagicMirror
+        '
+        Me.tsmItemsGiveMagicMirror.Image = Global.PastLinkGroundControl.My.Resources.Resources.mirror_16
+        Me.tsmItemsGiveMagicMirror.Name = "tsmItemsGiveMagicMirror"
+        Me.tsmItemsGiveMagicMirror.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMagicMirror.Text = "Magic Mirror"
+        '
+        'tsmItemsGivePegasusBoots
+        '
+        Me.tsmItemsGivePegasusBoots.Image = Global.PastLinkGroundControl.My.Resources.Resources.boots_16
+        Me.tsmItemsGivePegasusBoots.Name = "tsmItemsGivePegasusBoots"
+        Me.tsmItemsGivePegasusBoots.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGivePegasusBoots.Text = "Pegasus Boots"
+        '
+        'tsmItemsGiveGloves
+        '
+        Me.tsmItemsGiveGloves.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGivePowerGlove, Me.tsmItemsGiveTitansMitt})
+        Me.tsmItemsGiveGloves.Image = Global.PastLinkGroundControl.My.Resources.Resources.gloves_16
+        Me.tsmItemsGiveGloves.Name = "tsmItemsGiveGloves"
+        Me.tsmItemsGiveGloves.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveGloves.Text = "Gloves"
+        '
+        'tsmItemsGivePowerGlove
+        '
+        Me.tsmItemsGivePowerGlove.Image = Global.PastLinkGroundControl.My.Resources.Resources.powerglove_16
+        Me.tsmItemsGivePowerGlove.Name = "tsmItemsGivePowerGlove"
+        Me.tsmItemsGivePowerGlove.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGivePowerGlove.Text = "Power Glove"
+        '
+        'tsmItemsGiveTitansMitt
+        '
+        Me.tsmItemsGiveTitansMitt.Image = Global.PastLinkGroundControl.My.Resources.Resources.titanmitt_16
+        Me.tsmItemsGiveTitansMitt.Name = "tsmItemsGiveTitansMitt"
+        Me.tsmItemsGiveTitansMitt.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveTitansMitt.Text = "Titan's Mitt"
+        '
+        'tsmItemsGiveZorasFlippers
+        '
+        Me.tsmItemsGiveZorasFlippers.Image = Global.PastLinkGroundControl.My.Resources.Resources.flippers_16
+        Me.tsmItemsGiveZorasFlippers.Name = "tsmItemsGiveZorasFlippers"
+        Me.tsmItemsGiveZorasFlippers.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveZorasFlippers.Text = "Zora's Flippers"
+        '
+        'tsmItemsGiveMoonPearl
+        '
+        Me.tsmItemsGiveMoonPearl.Image = Global.PastLinkGroundControl.My.Resources.Resources.pearl_16
+        Me.tsmItemsGiveMoonPearl.Name = "tsmItemsGiveMoonPearl"
+        Me.tsmItemsGiveMoonPearl.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveMoonPearl.Text = "Moon Pearl"
+        '
+        'tsmItemsTake
+        '
+        Me.tsmItemsTake.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsTakeBow, Me.tsmItemsTakeSilverBow, Me.tsmItemsTakeBoomerang, Me.tsmItemsTakeMagicBoomerang, Me.tsmItemsTakeHookshot, Me.tsmItemsTakeMushroom, Me.tsmItemsTakeMagicPowder, Me.tsmItemsTakeFireRod, Me.tsmItemsTakeIceRod, Me.tsmItemsTakeBombosMedallion, Me.tsmItemsTakeEtherMedallion, Me.tsmItemsTakeQuakeMedallion, Me.tsmItemsTakeLamp, Me.tsmItemsTakeMagicHammer, Me.tsmItemsTakeShovel, Me.tsmItemsTakeOcarina, Me.tsmItemsTakeBugNet, Me.tsmItemsTakeBookOfModura, Me.tsmItemsTakeBottles, Me.tsmItemsTakeCaneOfSomaria, Me.tsmItemsTakeCaneOfByrna, Me.tsmItemsTakeMagicCape, Me.tsmItemsTakeMagicMirror, Me.tsmItemsTakePegasusBoots, Me.tsmItemsTakeGloves, Me.tsmItemsTakeZorasFlippers, Me.tsmItemsTakeMoonPearl})
+        Me.tsmItemsTake.Image = Global.PastLinkGroundControl.My.Resources.Resources.take_16
+        Me.tsmItemsTake.Name = "tsmItemsTake"
+        Me.tsmItemsTake.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTake.Text = "Take"
+        '
+        'tsmItemsTakeBow
+        '
+        Me.tsmItemsTakeBow.Image = Global.PastLinkGroundControl.My.Resources.Resources.normalbow_16
+        Me.tsmItemsTakeBow.Name = "tsmItemsTakeBow"
+        Me.tsmItemsTakeBow.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBow.Text = "Bow"
+        '
+        'tsmItemsTakeSilverBow
+        '
+        Me.tsmItemsTakeSilverBow.Image = Global.PastLinkGroundControl.My.Resources.Resources.silverbow_16
+        Me.tsmItemsTakeSilverBow.Name = "tsmItemsTakeSilverBow"
+        Me.tsmItemsTakeSilverBow.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeSilverBow.Text = "Silver Bow"
+        '
+        'tsmItemsTakeBoomerang
+        '
+        Me.tsmItemsTakeBoomerang.Image = Global.PastLinkGroundControl.My.Resources.Resources.blueboomer_16
+        Me.tsmItemsTakeBoomerang.Name = "tsmItemsTakeBoomerang"
+        Me.tsmItemsTakeBoomerang.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBoomerang.Text = "Boomerang"
+        '
+        'tsmItemsTakeMagicBoomerang
+        '
+        Me.tsmItemsTakeMagicBoomerang.Image = Global.PastLinkGroundControl.My.Resources.Resources.redboomer_16
+        Me.tsmItemsTakeMagicBoomerang.Name = "tsmItemsTakeMagicBoomerang"
+        Me.tsmItemsTakeMagicBoomerang.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMagicBoomerang.Text = "Magic Boomerang"
+        '
+        'tsmItemsTakeHookshot
+        '
+        Me.tsmItemsTakeHookshot.Image = Global.PastLinkGroundControl.My.Resources.Resources.hookshot_16
+        Me.tsmItemsTakeHookshot.Name = "tsmItemsTakeHookshot"
+        Me.tsmItemsTakeHookshot.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeHookshot.Text = "Hookshot"
+        '
+        'tsmItemsTakeMushroom
+        '
+        Me.tsmItemsTakeMushroom.Image = Global.PastLinkGroundControl.My.Resources.Resources.mushroom_16
+        Me.tsmItemsTakeMushroom.Name = "tsmItemsTakeMushroom"
+        Me.tsmItemsTakeMushroom.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMushroom.Text = "Mushroom"
+        '
+        'tsmItemsTakeMagicPowder
+        '
+        Me.tsmItemsTakeMagicPowder.Image = Global.PastLinkGroundControl.My.Resources.Resources.powder_16
+        Me.tsmItemsTakeMagicPowder.Name = "tsmItemsTakeMagicPowder"
+        Me.tsmItemsTakeMagicPowder.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMagicPowder.Text = "Magic Powder"
+        '
+        'tsmItemsTakeFireRod
+        '
+        Me.tsmItemsTakeFireRod.Image = Global.PastLinkGroundControl.My.Resources.Resources.firerod_16
+        Me.tsmItemsTakeFireRod.Name = "tsmItemsTakeFireRod"
+        Me.tsmItemsTakeFireRod.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeFireRod.Text = "Fire Rod"
+        '
+        'tsmItemsTakeIceRod
+        '
+        Me.tsmItemsTakeIceRod.Image = Global.PastLinkGroundControl.My.Resources.Resources.icerod_16
+        Me.tsmItemsTakeIceRod.Name = "tsmItemsTakeIceRod"
+        Me.tsmItemsTakeIceRod.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeIceRod.Text = "Ice Rod"
+        '
+        'tsmItemsTakeBombosMedallion
+        '
+        Me.tsmItemsTakeBombosMedallion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bombos_16
+        Me.tsmItemsTakeBombosMedallion.Name = "tsmItemsTakeBombosMedallion"
+        Me.tsmItemsTakeBombosMedallion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBombosMedallion.Text = "Bombos Medallion"
+        '
+        'tsmItemsTakeEtherMedallion
+        '
+        Me.tsmItemsTakeEtherMedallion.Image = Global.PastLinkGroundControl.My.Resources.Resources.ether_16
+        Me.tsmItemsTakeEtherMedallion.Name = "tsmItemsTakeEtherMedallion"
+        Me.tsmItemsTakeEtherMedallion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeEtherMedallion.Text = "Ether Medallion"
+        '
+        'tsmItemsTakeQuakeMedallion
+        '
+        Me.tsmItemsTakeQuakeMedallion.Image = Global.PastLinkGroundControl.My.Resources.Resources.quake_16
+        Me.tsmItemsTakeQuakeMedallion.Name = "tsmItemsTakeQuakeMedallion"
+        Me.tsmItemsTakeQuakeMedallion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeQuakeMedallion.Text = "Quake Medallion"
+        '
+        'tsmItemsTakeLamp
+        '
+        Me.tsmItemsTakeLamp.Image = Global.PastLinkGroundControl.My.Resources.Resources.lamp_16
+        Me.tsmItemsTakeLamp.Name = "tsmItemsTakeLamp"
+        Me.tsmItemsTakeLamp.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeLamp.Text = "Lamp"
+        '
+        'tsmItemsTakeMagicHammer
+        '
+        Me.tsmItemsTakeMagicHammer.Image = Global.PastLinkGroundControl.My.Resources.Resources.hammer_16
+        Me.tsmItemsTakeMagicHammer.Name = "tsmItemsTakeMagicHammer"
+        Me.tsmItemsTakeMagicHammer.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMagicHammer.Text = "Magic Hammer"
+        '
+        'tsmItemsTakeShovel
+        '
+        Me.tsmItemsTakeShovel.Image = Global.PastLinkGroundControl.My.Resources.Resources.shovel_16
+        Me.tsmItemsTakeShovel.Name = "tsmItemsTakeShovel"
+        Me.tsmItemsTakeShovel.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeShovel.Text = "Shovel"
+        '
+        'tsmItemsTakeOcarina
+        '
+        Me.tsmItemsTakeOcarina.Image = Global.PastLinkGroundControl.My.Resources.Resources.ocarinafake_16
+        Me.tsmItemsTakeOcarina.Name = "tsmItemsTakeOcarina"
+        Me.tsmItemsTakeOcarina.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeOcarina.Text = "Ocarina"
+        '
+        'tsmItemsTakeBugNet
+        '
+        Me.tsmItemsTakeBugNet.Image = Global.PastLinkGroundControl.My.Resources.Resources.bugnet_16
+        Me.tsmItemsTakeBugNet.Name = "tsmItemsTakeBugNet"
+        Me.tsmItemsTakeBugNet.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBugNet.Text = "Bug Net"
+        '
+        'tsmItemsTakeBookOfModura
+        '
+        Me.tsmItemsTakeBookOfModura.Image = Global.PastLinkGroundControl.My.Resources.Resources.book_16
+        Me.tsmItemsTakeBookOfModura.Name = "tsmItemsTakeBookOfModura"
+        Me.tsmItemsTakeBookOfModura.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBookOfModura.Text = "Book of Modura"
+        '
+        'tsmItemsTakeBottles
+        '
+        Me.tsmItemsTakeBottles.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsTakeBottle1, Me.tsmItemsTakeBottle2, Me.tsmItemsTakeBottle3, Me.tsmItemsTakeBottle4})
+        Me.tsmItemsTakeBottles.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
+        Me.tsmItemsTakeBottles.Name = "tsmItemsTakeBottles"
+        Me.tsmItemsTakeBottles.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottles.Text = "Bottles"
+        '
+        'tsmItemsTakeBottle1
+        '
+        Me.tsmItemsTakeBottle1.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle1_16
+        Me.tsmItemsTakeBottle1.Name = "tsmItemsTakeBottle1"
+        Me.tsmItemsTakeBottle1.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle1.Text = "Bottle #1"
+        '
+        'tsmItemsTakeBottle2
+        '
+        Me.tsmItemsTakeBottle2.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle2_16
+        Me.tsmItemsTakeBottle2.Name = "tsmItemsTakeBottle2"
+        Me.tsmItemsTakeBottle2.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle2.Text = "Bottle #2"
+        '
+        'tsmItemsTakeBottle3
+        '
+        Me.tsmItemsTakeBottle3.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle3_16
+        Me.tsmItemsTakeBottle3.Name = "tsmItemsTakeBottle3"
+        Me.tsmItemsTakeBottle3.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle3.Text = "Bottle #3"
+        '
+        'tsmItemsTakeBottle4
+        '
+        Me.tsmItemsTakeBottle4.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle4_16
+        Me.tsmItemsTakeBottle4.Name = "tsmItemsTakeBottle4"
+        Me.tsmItemsTakeBottle4.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle4.Text = "Bottle #4"
+        '
+        'tsmItemsTakeCaneOfSomaria
+        '
+        Me.tsmItemsTakeCaneOfSomaria.Image = Global.PastLinkGroundControl.My.Resources.Resources.canesomaria_16
+        Me.tsmItemsTakeCaneOfSomaria.Name = "tsmItemsTakeCaneOfSomaria"
+        Me.tsmItemsTakeCaneOfSomaria.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeCaneOfSomaria.Text = "Cane of Somaria"
+        '
+        'tsmItemsTakeCaneOfByrna
+        '
+        Me.tsmItemsTakeCaneOfByrna.Image = Global.PastLinkGroundControl.My.Resources.Resources.canebyrna_16
+        Me.tsmItemsTakeCaneOfByrna.Name = "tsmItemsTakeCaneOfByrna"
+        Me.tsmItemsTakeCaneOfByrna.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeCaneOfByrna.Text = "Cane of Byrna"
+        '
+        'tsmItemsTakeMagicCape
+        '
+        Me.tsmItemsTakeMagicCape.Image = Global.PastLinkGroundControl.My.Resources.Resources.cape_16
+        Me.tsmItemsTakeMagicCape.Name = "tsmItemsTakeMagicCape"
+        Me.tsmItemsTakeMagicCape.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMagicCape.Text = "Magic Cape"
+        '
+        'tsmItemsTakeMagicMirror
+        '
+        Me.tsmItemsTakeMagicMirror.Image = Global.PastLinkGroundControl.My.Resources.Resources.mirror_16
+        Me.tsmItemsTakeMagicMirror.Name = "tsmItemsTakeMagicMirror"
+        Me.tsmItemsTakeMagicMirror.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMagicMirror.Text = "Magic Mirror"
+        '
+        'tsmItemsTakePegasusBoots
+        '
+        Me.tsmItemsTakePegasusBoots.Image = Global.PastLinkGroundControl.My.Resources.Resources.boots_16
+        Me.tsmItemsTakePegasusBoots.Name = "tsmItemsTakePegasusBoots"
+        Me.tsmItemsTakePegasusBoots.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakePegasusBoots.Text = "Pegasus Boots"
+        '
+        'tsmItemsTakeGloves
+        '
+        Me.tsmItemsTakeGloves.Image = Global.PastLinkGroundControl.My.Resources.Resources.gloves_16
+        Me.tsmItemsTakeGloves.Name = "tsmItemsTakeGloves"
+        Me.tsmItemsTakeGloves.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeGloves.Text = "Gloves"
+        '
+        'tsmItemsTakeZorasFlippers
+        '
+        Me.tsmItemsTakeZorasFlippers.Image = Global.PastLinkGroundControl.My.Resources.Resources.flippers_16
+        Me.tsmItemsTakeZorasFlippers.Name = "tsmItemsTakeZorasFlippers"
+        Me.tsmItemsTakeZorasFlippers.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeZorasFlippers.Text = "Zora's Flippers"
+        '
+        'tsmItemsTakeMoonPearl
+        '
+        Me.tsmItemsTakeMoonPearl.Image = Global.PastLinkGroundControl.My.Resources.Resources.pearl_16
+        Me.tsmItemsTakeMoonPearl.Name = "tsmItemsTakeMoonPearl"
+        Me.tsmItemsTakeMoonPearl.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeMoonPearl.Text = "Moon Pearl"
+        '
+        'tsmConsumablesGive
+        '
+        Me.tsmConsumablesGive.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesGiveRupees, Me.tsmConsumablesGiveBombs, Me.tsmConsumablesGiveArrows})
+        Me.tsmConsumablesGive.Image = Global.PastLinkGroundControl.My.Resources.Resources.give_16
+        Me.tsmConsumablesGive.Name = "tsmConsumablesGive"
+        Me.tsmConsumablesGive.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesGive.Text = "Give"
+        '
+        'tsmConsumablesTake
+        '
+        Me.tsmConsumablesTake.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesTakeRupees, Me.tsmConsumablesTakeBombs, Me.tsmConsumablesTakeArrows})
+        Me.tsmConsumablesTake.Image = Global.PastLinkGroundControl.My.Resources.Resources.take_16
+        Me.tsmConsumablesTake.Name = "tsmConsumablesTake"
+        Me.tsmConsumablesTake.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTake.Text = "Take"
+        '
+        'tsmConsumablesGiveRupees
+        '
+        Me.tsmConsumablesGiveRupees.Image = Global.PastLinkGroundControl.My.Resources.Resources.rupee_16
+        Me.tsmConsumablesGiveRupees.Name = "tsmConsumablesGiveRupees"
+        Me.tsmConsumablesGiveRupees.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesGiveRupees.Text = "Rupees"
+        '
+        'tsmConsumablesGiveBombs
+        '
+        Me.tsmConsumablesGiveBombs.Image = Global.PastLinkGroundControl.My.Resources.Resources.bomb_16
+        Me.tsmConsumablesGiveBombs.Name = "tsmConsumablesGiveBombs"
+        Me.tsmConsumablesGiveBombs.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesGiveBombs.Text = "Bombs"
+        '
+        'tsmConsumablesGiveArrows
+        '
+        Me.tsmConsumablesGiveArrows.Image = Global.PastLinkGroundControl.My.Resources.Resources.arrow_16
+        Me.tsmConsumablesGiveArrows.Name = "tsmConsumablesGiveArrows"
+        Me.tsmConsumablesGiveArrows.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesGiveArrows.Text = "Arrows"
+        '
+        'tsmConsumablesTakeRupees
+        '
+        Me.tsmConsumablesTakeRupees.Image = Global.PastLinkGroundControl.My.Resources.Resources.rupee_16
+        Me.tsmConsumablesTakeRupees.Name = "tsmConsumablesTakeRupees"
+        Me.tsmConsumablesTakeRupees.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTakeRupees.Text = "Rupees"
+        '
+        'tsmConsumablesTakeBombs
+        '
+        Me.tsmConsumablesTakeBombs.Image = Global.PastLinkGroundControl.My.Resources.Resources.bomb_16
+        Me.tsmConsumablesTakeBombs.Name = "tsmConsumablesTakeBombs"
+        Me.tsmConsumablesTakeBombs.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTakeBombs.Text = "Bombs"
+        '
+        'tsmConsumablesTakeArrows
+        '
+        Me.tsmConsumablesTakeArrows.Image = Global.PastLinkGroundControl.My.Resources.Resources.arrow_16
+        Me.tsmConsumablesTakeArrows.Name = "tsmConsumablesTakeArrows"
+        Me.tsmConsumablesTakeArrows.Size = New System.Drawing.Size(180, 22)
+        Me.tsmConsumablesTakeArrows.Text = "Arrows"
+        '
+        'tsmEquipmentUpgrade
+        '
+        Me.tsmEquipmentUpgrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentUpgradeSword, Me.tsmEquipmentUpgradeShield, Me.tsmEquipmentUpgradeMail})
+        Me.tsmEquipmentUpgrade.Image = Global.PastLinkGroundControl.My.Resources.Resources.upgrade_16
+        Me.tsmEquipmentUpgrade.Name = "tsmEquipmentUpgrade"
+        Me.tsmEquipmentUpgrade.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgrade.Text = "Upgrade"
+        '
+        'tsmEquipmentDowngrade
+        '
+        Me.tsmEquipmentDowngrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentDowngradeSword, Me.tsmEquipmentDowngradeShield, Me.tsmEquipmentDowngradeMail})
+        Me.tsmEquipmentDowngrade.Image = Global.PastLinkGroundControl.My.Resources.Resources.downgrade_16
+        Me.tsmEquipmentDowngrade.Name = "tsmEquipmentDowngrade"
+        Me.tsmEquipmentDowngrade.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngrade.Text = "Downgrade"
+        '
+        'tsmEquipmentUpgradeSword
+        '
+        Me.tsmEquipmentUpgradeSword.Name = "tsmEquipmentUpgradeSword"
+        Me.tsmEquipmentUpgradeSword.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgradeSword.Text = "Sword"
+        '
+        'tsmEquipmentUpgradeShield
+        '
+        Me.tsmEquipmentUpgradeShield.Name = "tsmEquipmentUpgradeShield"
+        Me.tsmEquipmentUpgradeShield.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgradeShield.Text = "Shield"
+        '
+        'tsmEquipmentUpgradeMail
+        '
+        Me.tsmEquipmentUpgradeMail.Name = "tsmEquipmentUpgradeMail"
+        Me.tsmEquipmentUpgradeMail.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentUpgradeMail.Text = "Mail"
+        '
+        'tsmEquipmentDowngradeSword
+        '
+        Me.tsmEquipmentDowngradeSword.Name = "tsmEquipmentDowngradeSword"
+        Me.tsmEquipmentDowngradeSword.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngradeSword.Text = "Sword"
+        '
+        'tsmEquipmentDowngradeShield
+        '
+        Me.tsmEquipmentDowngradeShield.Name = "tsmEquipmentDowngradeShield"
+        Me.tsmEquipmentDowngradeShield.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngradeShield.Text = "Shield"
+        '
+        'tsmEquipmentDowngradeMail
+        '
+        Me.tsmEquipmentDowngradeMail.Name = "tsmEquipmentDowngradeMail"
+        Me.tsmEquipmentDowngradeMail.Size = New System.Drawing.Size(180, 22)
+        Me.tsmEquipmentDowngradeMail.Text = "Mail"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(1018, 701)
+        Me.ClientSize = New System.Drawing.Size(1308, 701)
         Me.Controls.Add(Me.menuMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.menuMain
@@ -491,65 +1004,122 @@ Partial Class frmMain
     End Sub
 
     Friend WithEvents menuMain As MenuStrip
-    Friend WithEvents OverrideToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ItemsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConsumablesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EquipmentToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GameControlToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SurprisesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GiveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BowToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SilverBowToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BoomerangToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MagicBoomerangToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TakeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HookshotToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MushroomToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MagicPowderToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FireRodToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents IceRodToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BombosMedallionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EtherMedallionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QuakeMedallionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LampToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MagicHammerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShovelToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OcarinaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tsmOverride As ToolStripMenuItem
+    Friend WithEvents tsmItems As ToolStripMenuItem
+    Friend WithEvents tsmConsumables As ToolStripMenuItem
+    Friend WithEvents tsmEquipment As ToolStripMenuItem
+    Friend WithEvents tsmGameControl As ToolStripMenuItem
+    Friend WithEvents tsmSurprises As ToolStripMenuItem
+    Friend WithEvents tsmItemsGive As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBow As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveSilverBow As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBoomerang As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMagicBoomerang As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveHookshot As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMushroom As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMagicPowder As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveFireRod As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveIceRod As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBombosMedallion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveEtherMedallion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveQuakeMedallion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveLamp As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMagicHammer As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveShovel As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveOcarina As ToolStripMenuItem
     Friend WithEvents ActivateBirdToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeactivateBirdToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BugNetToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BookOfModuraToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BottlesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Bottle1ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EmptyToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RedPotionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GreenPotionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BluePotionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FairyToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BeeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SuperBeeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem7 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem8 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem9 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem10 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem11 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem12 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem13 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem14 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem15 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem16 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem17 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem18 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem19 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem20 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem21 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem22 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem23 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem24 As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBugNet As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBookOfModura As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottles As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1 As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1Empty As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1RedPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1GreenPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1BluePotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1Fairy As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1Bee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle1SuperBee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2 As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2Empty As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2RedPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2GreenPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2BluePotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2Fairy As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2Bee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle2SuperBee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3 As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3Empty As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3RedPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3GreenPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3BluePotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3Fairy As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3Bee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle3SuperBee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4 As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4Empty As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4RedPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4GreenPotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4BluePotion As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4Fairy As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4Bee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveBottle4SuperBee As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveCaneOfSomaria As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveCaneOfByrna As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMagicCape As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMagicMirror As ToolStripMenuItem
+    Friend WithEvents tsmItemsGivePegasusBoots As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveGloves As ToolStripMenuItem
+    Friend WithEvents tsmItemsGivePowerGlove As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveTitansMitt As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveZorasFlippers As ToolStripMenuItem
+    Friend WithEvents tsmItemsGiveMoonPearl As ToolStripMenuItem
+    Friend WithEvents tsmItemsTake As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBow As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeSilverBow As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBoomerang As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMagicBoomerang As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeHookshot As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMushroom As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMagicPowder As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeFireRod As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeIceRod As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBombosMedallion As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeEtherMedallion As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeQuakeMedallion As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeLamp As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMagicHammer As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeShovel As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeOcarina As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBugNet As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBookOfModura As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBottles As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBottle1 As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBottle2 As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBottle3 As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeBottle4 As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeCaneOfSomaria As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeCaneOfByrna As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMagicCape As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMagicMirror As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakePegasusBoots As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeGloves As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeZorasFlippers As ToolStripMenuItem
+    Friend WithEvents tsmItemsTakeMoonPearl As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesGive As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesGiveRupees As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesGiveBombs As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesGiveArrows As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesTake As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesTakeRupees As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesTakeBombs As ToolStripMenuItem
+    Friend WithEvents tsmConsumablesTakeArrows As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentUpgrade As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentUpgradeSword As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentUpgradeShield As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentUpgradeMail As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentDowngrade As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentDowngradeSword As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentDowngradeShield As ToolStripMenuItem
+    Friend WithEvents tsmEquipmentDowngradeMail As ToolStripMenuItem
 End Class

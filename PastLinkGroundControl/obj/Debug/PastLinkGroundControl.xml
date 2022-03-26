@@ -22,7 +22,837 @@ PastLinkGroundControl
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:PastLinkGroundControl.My.Resources.Resources.give_32">
+<member name="P:PastLinkGroundControl.My.Resources.Resources.arrow_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bee_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bigkey_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bird_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.blueboomer_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bluemail_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bluepotion_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bomb_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bombos_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.book_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.boots_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bottle_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bottle1_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bottle2_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bottle3_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bottle4_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.brazierlit_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.brazierpartlit_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.brazierunlit_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.buffenemy_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bugnet_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.bunny_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.canebyrna_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.canesomaria_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.cape_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.chest_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.compass_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.confused_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.consumables_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.cucco_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.cuccostorm_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.death_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.downgrade_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.enemydumb_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.enemyhealth_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.enemyintelligence_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.enemynormal_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.equipment_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.ether_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.fairy_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.fast_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.firerod_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.flippers_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.give_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.gloves_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.greenmail_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.greenpotion_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.halfmagic_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.hammer_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart1_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart10_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart11_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart12_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart13_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart2_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart3_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart4_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart5_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart6_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart7_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart8_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heart9_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece1_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece10_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece11_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece12_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece13_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece14_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece15_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece16_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece17_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece18_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece19_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece2_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece20_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece21_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece22_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece23_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece24_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece3_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece4_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece5_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece6_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece7_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece8_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.heartpiece9_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.hookshot_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.icerod_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.invincible_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.invisible_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.lamp_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.magic_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.map_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.mirror_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.mushroom_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nerfenemy_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobigkey_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobird_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noblueboomer_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobomb_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobombos_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobook_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noboots_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobottles_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobow_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nobugnet_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nocanebyrna_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nocanesomaria_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nocape_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nochest_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nocompass_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noether_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nofirerod_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noflippers_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noglove_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nohalfmagic_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nohammer_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noheartpieces_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nohearts_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nohookshot_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noicerod_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noinvincible_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nolamp_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nomap_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nomirror_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nomushroom_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noocarina_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nopearl_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nopowder_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noquake_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noredboomer_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.normal_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.normalbow_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noshield_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.noshovel_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nosmallkey_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.nosword_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.ocarinafake_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.ocarinareal_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.orbswitch_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.pearl_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.pot_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.powder_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.powerglove_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.quake_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.redboomer_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.redmail_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.redpotion_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.rupee_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.shield1_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.shield2_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.shield3_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.shovel_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.silverbow_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.skull_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.slow_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.smallkey_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.superbee_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.surprise_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.sword1_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.sword2_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.sword3_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.sword4_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.take_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.titanmitt_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.upgrade_16">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
