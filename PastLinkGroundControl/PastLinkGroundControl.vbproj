@@ -119,7 +119,9 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\equipmentup_16.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_16.png" />
   </ItemGroup>
@@ -620,6 +622,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\titanmitt_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailup_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shieldup_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shielddown_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equipmentdown_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maildown_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -182,11 +182,6 @@ PastLinkGroundControl
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:PastLinkGroundControl.My.Resources.Resources.downgrade_16">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:PastLinkGroundControl.My.Resources.Resources.enemydumb_16">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -842,17 +837,22 @@ PastLinkGroundControl
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.sworddown_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PastLinkGroundControl.My.Resources.Resources.swordup_16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PastLinkGroundControl.My.Resources.Resources.take_16">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:PastLinkGroundControl.My.Resources.Resources.titanmitt_16">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:PastLinkGroundControl.My.Resources.Resources.upgrade_16">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

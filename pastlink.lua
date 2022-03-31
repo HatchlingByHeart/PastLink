@@ -770,315 +770,84 @@ function editmagicboost(val)
 	end
 end
 
--- FUNCTION: Cucco Storm aka Psychotic Chickens! (Has a timer of 30 seconds, cannot be stacked.)
+-- FUNCTION: Cucco Storm aka Psychotic Chickens! (Has a timer of 1 minute, cannot be stacked.)
 -- Argument enable (int): 0: Disable (Good Chickens), 1+: Enable (Evil Chickens)
+-- UPDATE #1: No longer relies on already present Cuccos and turns all present enemies into Cuccos!
+-- UPDATE #2: No longer operates when indoors, since Cuccos cannot attack indoors.
 function cuccostorm(enable)
-	RET = false
-	ERR1 = false
-	if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
+	if (ADDR_INDOORS < 1) then
+		if (enable > 0) then
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE1, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE2, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE3, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE4, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE5, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE6, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE7, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE8, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE9, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE10, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE11, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE12, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE13, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE14, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE15, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE16, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE17, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE18, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE19, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
+			if not (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE20, 11)
+			mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
+			CUCCOTIMER = 3600
+			CUCCOSTORM = true
+			gui.addmessage(USER.." has angered the Chicken Gods!!!")
 		else
-			mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
-			CUCCOSTORM = false
+			if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
+			if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
 			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
 			CUCCOSTORM = false
-			CUCCOTIMER = 0
+			gui.addmessage(USER.." has quelled the Chicken Gods' Rage!")
 		end
+	else
+		gui.addmessage("Cucco Storm cannot be used indoors!")
 	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then
-		if (enable >= 1) then
-			if (CUCCOTIMER <= 0) then
-				mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
-				CUCCOSTORM = true
-				CUCCOTIMER = 1800
-			else
-				ERR1 = true
-			end
-		else
-			mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
-			CUCCOSTORM = false
-			CUCCOTIMER = 0
-		end
-	end
-	if (ERR1) then
-		console.writeline("WARNING: Function cuccostorm() activation was attempted before previous timer had expired. Command ignored.")
-	end
-	return RET
 end
 
 -- Place all main code inside an always true while loop to maintain indefinite operation.

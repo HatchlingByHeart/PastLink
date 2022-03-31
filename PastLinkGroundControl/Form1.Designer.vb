@@ -149,7 +149,7 @@ Partial Class frmMain
         Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmOverride})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
         Me.menuMain.Name = "menuMain"
-        Me.menuMain.Size = New System.Drawing.Size(586, 24)
+        Me.menuMain.Size = New System.Drawing.Size(1091, 24)
         Me.menuMain.Stretch = False
         Me.menuMain.TabIndex = 0
         '
@@ -292,14 +292,14 @@ Partial Class frmMain
         '
         Me.ActivateBirdToolStripMenuItem.Image = Global.PastLinkGroundControl.My.Resources.Resources.bird_16
         Me.ActivateBirdToolStripMenuItem.Name = "ActivateBirdToolStripMenuItem"
-        Me.ActivateBirdToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ActivateBirdToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.ActivateBirdToolStripMenuItem.Text = "Activate Bird"
         '
         'DeactivateBirdToolStripMenuItem
         '
         Me.DeactivateBirdToolStripMenuItem.Image = Global.PastLinkGroundControl.My.Resources.Resources.nobird_16
         Me.DeactivateBirdToolStripMenuItem.Name = "DeactivateBirdToolStripMenuItem"
-        Me.DeactivateBirdToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DeactivateBirdToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.DeactivateBirdToolStripMenuItem.Text = "Deactivate Bird"
         '
         'tsmItemsGiveBugNet
@@ -329,56 +329,56 @@ Partial Class frmMain
         Me.tsmItemsGiveBottle1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle1Empty, Me.tsmItemsGiveBottle1RedPotion, Me.tsmItemsGiveBottle1GreenPotion, Me.tsmItemsGiveBottle1BluePotion, Me.tsmItemsGiveBottle1Fairy, Me.tsmItemsGiveBottle1Bee, Me.tsmItemsGiveBottle1SuperBee})
         Me.tsmItemsGiveBottle1.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle1_16
         Me.tsmItemsGiveBottle1.Name = "tsmItemsGiveBottle1"
-        Me.tsmItemsGiveBottle1.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsGiveBottle1.Text = "Bottle #1"
         '
         'tsmItemsGiveBottle1Empty
         '
         Me.tsmItemsGiveBottle1Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
         Me.tsmItemsGiveBottle1Empty.Name = "tsmItemsGiveBottle1Empty"
-        Me.tsmItemsGiveBottle1Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1Empty.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1Empty.Text = "Empty"
         '
         'tsmItemsGiveBottle1RedPotion
         '
         Me.tsmItemsGiveBottle1RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
         Me.tsmItemsGiveBottle1RedPotion.Name = "tsmItemsGiveBottle1RedPotion"
-        Me.tsmItemsGiveBottle1RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1RedPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1RedPotion.Text = "Red Potion"
         '
         'tsmItemsGiveBottle1GreenPotion
         '
         Me.tsmItemsGiveBottle1GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
         Me.tsmItemsGiveBottle1GreenPotion.Name = "tsmItemsGiveBottle1GreenPotion"
-        Me.tsmItemsGiveBottle1GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1GreenPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1GreenPotion.Text = "Green Potion"
         '
         'tsmItemsGiveBottle1BluePotion
         '
         Me.tsmItemsGiveBottle1BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
         Me.tsmItemsGiveBottle1BluePotion.Name = "tsmItemsGiveBottle1BluePotion"
-        Me.tsmItemsGiveBottle1BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1BluePotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1BluePotion.Text = "Blue Potion"
         '
         'tsmItemsGiveBottle1Fairy
         '
         Me.tsmItemsGiveBottle1Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
         Me.tsmItemsGiveBottle1Fairy.Name = "tsmItemsGiveBottle1Fairy"
-        Me.tsmItemsGiveBottle1Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1Fairy.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1Fairy.Text = "Fairy"
         '
         'tsmItemsGiveBottle1Bee
         '
         Me.tsmItemsGiveBottle1Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
         Me.tsmItemsGiveBottle1Bee.Name = "tsmItemsGiveBottle1Bee"
-        Me.tsmItemsGiveBottle1Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1Bee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1Bee.Text = "Bee"
         '
         'tsmItemsGiveBottle1SuperBee
         '
         Me.tsmItemsGiveBottle1SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
         Me.tsmItemsGiveBottle1SuperBee.Name = "tsmItemsGiveBottle1SuperBee"
-        Me.tsmItemsGiveBottle1SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle1SuperBee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle1SuperBee.Text = "Super Bee"
         '
         'tsmItemsGiveBottle2
@@ -386,56 +386,56 @@ Partial Class frmMain
         Me.tsmItemsGiveBottle2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle2Empty, Me.tsmItemsGiveBottle2RedPotion, Me.tsmItemsGiveBottle2GreenPotion, Me.tsmItemsGiveBottle2BluePotion, Me.tsmItemsGiveBottle2Fairy, Me.tsmItemsGiveBottle2Bee, Me.tsmItemsGiveBottle2SuperBee})
         Me.tsmItemsGiveBottle2.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle2_16
         Me.tsmItemsGiveBottle2.Name = "tsmItemsGiveBottle2"
-        Me.tsmItemsGiveBottle2.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsGiveBottle2.Text = "Bottle #2"
         '
         'tsmItemsGiveBottle2Empty
         '
         Me.tsmItemsGiveBottle2Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
         Me.tsmItemsGiveBottle2Empty.Name = "tsmItemsGiveBottle2Empty"
-        Me.tsmItemsGiveBottle2Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2Empty.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2Empty.Text = "Empty"
         '
         'tsmItemsGiveBottle2RedPotion
         '
         Me.tsmItemsGiveBottle2RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
         Me.tsmItemsGiveBottle2RedPotion.Name = "tsmItemsGiveBottle2RedPotion"
-        Me.tsmItemsGiveBottle2RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2RedPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2RedPotion.Text = "Red Potion"
         '
         'tsmItemsGiveBottle2GreenPotion
         '
         Me.tsmItemsGiveBottle2GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
         Me.tsmItemsGiveBottle2GreenPotion.Name = "tsmItemsGiveBottle2GreenPotion"
-        Me.tsmItemsGiveBottle2GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2GreenPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2GreenPotion.Text = "Green Potion"
         '
         'tsmItemsGiveBottle2BluePotion
         '
         Me.tsmItemsGiveBottle2BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
         Me.tsmItemsGiveBottle2BluePotion.Name = "tsmItemsGiveBottle2BluePotion"
-        Me.tsmItemsGiveBottle2BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2BluePotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2BluePotion.Text = "Blue Potion"
         '
         'tsmItemsGiveBottle2Fairy
         '
         Me.tsmItemsGiveBottle2Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
         Me.tsmItemsGiveBottle2Fairy.Name = "tsmItemsGiveBottle2Fairy"
-        Me.tsmItemsGiveBottle2Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2Fairy.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2Fairy.Text = "Fairy"
         '
         'tsmItemsGiveBottle2Bee
         '
         Me.tsmItemsGiveBottle2Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
         Me.tsmItemsGiveBottle2Bee.Name = "tsmItemsGiveBottle2Bee"
-        Me.tsmItemsGiveBottle2Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2Bee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2Bee.Text = "Bee"
         '
         'tsmItemsGiveBottle2SuperBee
         '
         Me.tsmItemsGiveBottle2SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
         Me.tsmItemsGiveBottle2SuperBee.Name = "tsmItemsGiveBottle2SuperBee"
-        Me.tsmItemsGiveBottle2SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle2SuperBee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle2SuperBee.Text = "Super Bee"
         '
         'tsmItemsGiveBottle3
@@ -443,56 +443,56 @@ Partial Class frmMain
         Me.tsmItemsGiveBottle3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle3Empty, Me.tsmItemsGiveBottle3RedPotion, Me.tsmItemsGiveBottle3GreenPotion, Me.tsmItemsGiveBottle3BluePotion, Me.tsmItemsGiveBottle3Fairy, Me.tsmItemsGiveBottle3Bee, Me.tsmItemsGiveBottle3SuperBee})
         Me.tsmItemsGiveBottle3.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle3_16
         Me.tsmItemsGiveBottle3.Name = "tsmItemsGiveBottle3"
-        Me.tsmItemsGiveBottle3.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsGiveBottle3.Text = "Bottle #3"
         '
         'tsmItemsGiveBottle3Empty
         '
         Me.tsmItemsGiveBottle3Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
         Me.tsmItemsGiveBottle3Empty.Name = "tsmItemsGiveBottle3Empty"
-        Me.tsmItemsGiveBottle3Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3Empty.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3Empty.Text = "Empty"
         '
         'tsmItemsGiveBottle3RedPotion
         '
         Me.tsmItemsGiveBottle3RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
         Me.tsmItemsGiveBottle3RedPotion.Name = "tsmItemsGiveBottle3RedPotion"
-        Me.tsmItemsGiveBottle3RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3RedPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3RedPotion.Text = "Red Potion"
         '
         'tsmItemsGiveBottle3GreenPotion
         '
         Me.tsmItemsGiveBottle3GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
         Me.tsmItemsGiveBottle3GreenPotion.Name = "tsmItemsGiveBottle3GreenPotion"
-        Me.tsmItemsGiveBottle3GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3GreenPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3GreenPotion.Text = "Green Potion"
         '
         'tsmItemsGiveBottle3BluePotion
         '
         Me.tsmItemsGiveBottle3BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
         Me.tsmItemsGiveBottle3BluePotion.Name = "tsmItemsGiveBottle3BluePotion"
-        Me.tsmItemsGiveBottle3BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3BluePotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3BluePotion.Text = "Blue Potion"
         '
         'tsmItemsGiveBottle3Fairy
         '
         Me.tsmItemsGiveBottle3Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
         Me.tsmItemsGiveBottle3Fairy.Name = "tsmItemsGiveBottle3Fairy"
-        Me.tsmItemsGiveBottle3Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3Fairy.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3Fairy.Text = "Fairy"
         '
         'tsmItemsGiveBottle3Bee
         '
         Me.tsmItemsGiveBottle3Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
         Me.tsmItemsGiveBottle3Bee.Name = "tsmItemsGiveBottle3Bee"
-        Me.tsmItemsGiveBottle3Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3Bee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3Bee.Text = "Bee"
         '
         'tsmItemsGiveBottle3SuperBee
         '
         Me.tsmItemsGiveBottle3SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
         Me.tsmItemsGiveBottle3SuperBee.Name = "tsmItemsGiveBottle3SuperBee"
-        Me.tsmItemsGiveBottle3SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle3SuperBee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle3SuperBee.Text = "Super Bee"
         '
         'tsmItemsGiveBottle4
@@ -500,56 +500,56 @@ Partial Class frmMain
         Me.tsmItemsGiveBottle4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmItemsGiveBottle4Empty, Me.tsmItemsGiveBottle4RedPotion, Me.tsmItemsGiveBottle4GreenPotion, Me.tsmItemsGiveBottle4BluePotion, Me.tsmItemsGiveBottle4Fairy, Me.tsmItemsGiveBottle4Bee, Me.tsmItemsGiveBottle4SuperBee})
         Me.tsmItemsGiveBottle4.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle4_16
         Me.tsmItemsGiveBottle4.Name = "tsmItemsGiveBottle4"
-        Me.tsmItemsGiveBottle4.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsGiveBottle4.Text = "Bottle #4"
         '
         'tsmItemsGiveBottle4Empty
         '
         Me.tsmItemsGiveBottle4Empty.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle_16
         Me.tsmItemsGiveBottle4Empty.Name = "tsmItemsGiveBottle4Empty"
-        Me.tsmItemsGiveBottle4Empty.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4Empty.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4Empty.Text = "Empty"
         '
         'tsmItemsGiveBottle4RedPotion
         '
         Me.tsmItemsGiveBottle4RedPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.redpotion_16
         Me.tsmItemsGiveBottle4RedPotion.Name = "tsmItemsGiveBottle4RedPotion"
-        Me.tsmItemsGiveBottle4RedPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4RedPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4RedPotion.Text = "Red Potion"
         '
         'tsmItemsGiveBottle4GreenPotion
         '
         Me.tsmItemsGiveBottle4GreenPotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.greenpotion_16
         Me.tsmItemsGiveBottle4GreenPotion.Name = "tsmItemsGiveBottle4GreenPotion"
-        Me.tsmItemsGiveBottle4GreenPotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4GreenPotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4GreenPotion.Text = "Green Potion"
         '
         'tsmItemsGiveBottle4BluePotion
         '
         Me.tsmItemsGiveBottle4BluePotion.Image = Global.PastLinkGroundControl.My.Resources.Resources.bluepotion_16
         Me.tsmItemsGiveBottle4BluePotion.Name = "tsmItemsGiveBottle4BluePotion"
-        Me.tsmItemsGiveBottle4BluePotion.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4BluePotion.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4BluePotion.Text = "Blue Potion"
         '
         'tsmItemsGiveBottle4Fairy
         '
         Me.tsmItemsGiveBottle4Fairy.Image = Global.PastLinkGroundControl.My.Resources.Resources.fairy_16
         Me.tsmItemsGiveBottle4Fairy.Name = "tsmItemsGiveBottle4Fairy"
-        Me.tsmItemsGiveBottle4Fairy.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4Fairy.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4Fairy.Text = "Fairy"
         '
         'tsmItemsGiveBottle4Bee
         '
         Me.tsmItemsGiveBottle4Bee.Image = Global.PastLinkGroundControl.My.Resources.Resources.bee_16
         Me.tsmItemsGiveBottle4Bee.Name = "tsmItemsGiveBottle4Bee"
-        Me.tsmItemsGiveBottle4Bee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4Bee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4Bee.Text = "Bee"
         '
         'tsmItemsGiveBottle4SuperBee
         '
         Me.tsmItemsGiveBottle4SuperBee.Image = Global.PastLinkGroundControl.My.Resources.Resources.superbee_16
         Me.tsmItemsGiveBottle4SuperBee.Name = "tsmItemsGiveBottle4SuperBee"
-        Me.tsmItemsGiveBottle4SuperBee.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveBottle4SuperBee.Size = New System.Drawing.Size(143, 22)
         Me.tsmItemsGiveBottle4SuperBee.Text = "Super Bee"
         '
         'tsmItemsGiveCaneOfSomaria
@@ -599,14 +599,14 @@ Partial Class frmMain
         '
         Me.tsmItemsGivePowerGlove.Image = Global.PastLinkGroundControl.My.Resources.Resources.powerglove_16
         Me.tsmItemsGivePowerGlove.Name = "tsmItemsGivePowerGlove"
-        Me.tsmItemsGivePowerGlove.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGivePowerGlove.Size = New System.Drawing.Size(140, 22)
         Me.tsmItemsGivePowerGlove.Text = "Power Glove"
         '
         'tsmItemsGiveTitansMitt
         '
         Me.tsmItemsGiveTitansMitt.Image = Global.PastLinkGroundControl.My.Resources.Resources.titanmitt_16
         Me.tsmItemsGiveTitansMitt.Name = "tsmItemsGiveTitansMitt"
-        Me.tsmItemsGiveTitansMitt.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsGiveTitansMitt.Size = New System.Drawing.Size(140, 22)
         Me.tsmItemsGiveTitansMitt.Text = "Titan's Mitt"
         '
         'tsmItemsGiveZorasFlippers
@@ -769,28 +769,28 @@ Partial Class frmMain
         '
         Me.tsmItemsTakeBottle1.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle1_16
         Me.tsmItemsTakeBottle1.Name = "tsmItemsTakeBottle1"
-        Me.tsmItemsTakeBottle1.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle1.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsTakeBottle1.Text = "Bottle #1"
         '
         'tsmItemsTakeBottle2
         '
         Me.tsmItemsTakeBottle2.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle2_16
         Me.tsmItemsTakeBottle2.Name = "tsmItemsTakeBottle2"
-        Me.tsmItemsTakeBottle2.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle2.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsTakeBottle2.Text = "Bottle #2"
         '
         'tsmItemsTakeBottle3
         '
         Me.tsmItemsTakeBottle3.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle3_16
         Me.tsmItemsTakeBottle3.Name = "tsmItemsTakeBottle3"
-        Me.tsmItemsTakeBottle3.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle3.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsTakeBottle3.Text = "Bottle #3"
         '
         'tsmItemsTakeBottle4
         '
         Me.tsmItemsTakeBottle4.Image = Global.PastLinkGroundControl.My.Resources.Resources.bottle4_16
         Me.tsmItemsTakeBottle4.Name = "tsmItemsTakeBottle4"
-        Me.tsmItemsTakeBottle4.Size = New System.Drawing.Size(180, 22)
+        Me.tsmItemsTakeBottle4.Size = New System.Drawing.Size(121, 22)
         Me.tsmItemsTakeBottle4.Text = "Bottle #4"
         '
         'tsmItemsTakeCaneOfSomaria
@@ -859,24 +859,28 @@ Partial Class frmMain
         'tsmConsumablesGive
         '
         Me.tsmConsumablesGive.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesGiveRupees, Me.tsmConsumablesGiveBombs, Me.tsmConsumablesGiveArrows})
+        Me.tsmConsumablesGive.Image = Global.PastLinkGroundControl.My.Resources.Resources.give_16
         Me.tsmConsumablesGive.Name = "tsmConsumablesGive"
         Me.tsmConsumablesGive.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGive.Text = "Give"
         '
         'tsmConsumablesGiveRupees
         '
+        Me.tsmConsumablesGiveRupees.Image = Global.PastLinkGroundControl.My.Resources.Resources.rupee_16
         Me.tsmConsumablesGiveRupees.Name = "tsmConsumablesGiveRupees"
         Me.tsmConsumablesGiveRupees.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGiveRupees.Text = "Rupees"
         '
         'tsmConsumablesGiveBombs
         '
+        Me.tsmConsumablesGiveBombs.Image = Global.PastLinkGroundControl.My.Resources.Resources.bomb_16
         Me.tsmConsumablesGiveBombs.Name = "tsmConsumablesGiveBombs"
         Me.tsmConsumablesGiveBombs.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGiveBombs.Text = "Bombs"
         '
         'tsmConsumablesGiveArrows
         '
+        Me.tsmConsumablesGiveArrows.Image = Global.PastLinkGroundControl.My.Resources.Resources.arrow_16
         Me.tsmConsumablesGiveArrows.Name = "tsmConsumablesGiveArrows"
         Me.tsmConsumablesGiveArrows.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesGiveArrows.Text = "Arrows"
@@ -884,26 +888,30 @@ Partial Class frmMain
         'tsmConsumablesTake
         '
         Me.tsmConsumablesTake.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmConsumablesTakeRupees, Me.tsmConsumablesTakeBombs, Me.tsmConsumablesTakeArrows})
+        Me.tsmConsumablesTake.Image = Global.PastLinkGroundControl.My.Resources.Resources.take_16
         Me.tsmConsumablesTake.Name = "tsmConsumablesTake"
         Me.tsmConsumablesTake.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesTake.Text = "Take"
         '
         'tsmConsumablesTakeRupees
         '
+        Me.tsmConsumablesTakeRupees.Image = Global.PastLinkGroundControl.My.Resources.Resources.rupee_16
         Me.tsmConsumablesTakeRupees.Name = "tsmConsumablesTakeRupees"
-        Me.tsmConsumablesTakeRupees.Size = New System.Drawing.Size(112, 22)
+        Me.tsmConsumablesTakeRupees.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesTakeRupees.Text = "Rupees"
         '
         'tsmConsumablesTakeBombs
         '
+        Me.tsmConsumablesTakeBombs.Image = Global.PastLinkGroundControl.My.Resources.Resources.bomb_16
         Me.tsmConsumablesTakeBombs.Name = "tsmConsumablesTakeBombs"
-        Me.tsmConsumablesTakeBombs.Size = New System.Drawing.Size(112, 22)
+        Me.tsmConsumablesTakeBombs.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesTakeBombs.Text = "Bombs"
         '
         'tsmConsumablesTakeArrows
         '
+        Me.tsmConsumablesTakeArrows.Image = Global.PastLinkGroundControl.My.Resources.Resources.arrow_16
         Me.tsmConsumablesTakeArrows.Name = "tsmConsumablesTakeArrows"
-        Me.tsmConsumablesTakeArrows.Size = New System.Drawing.Size(112, 22)
+        Me.tsmConsumablesTakeArrows.Size = New System.Drawing.Size(180, 22)
         Me.tsmConsumablesTakeArrows.Text = "Arrows"
         '
         'tsmEquipment
@@ -916,51 +924,59 @@ Partial Class frmMain
         'tsmEquipmentUpgrade
         '
         Me.tsmEquipmentUpgrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentUpgradeSword, Me.tsmEquipmentUpgradeShield, Me.tsmEquipmentUpgradeMail})
+        Me.tsmEquipmentUpgrade.Image = Global.PastLinkGroundControl.My.Resources.Resources.equipmentup_16
         Me.tsmEquipmentUpgrade.Name = "tsmEquipmentUpgrade"
         Me.tsmEquipmentUpgrade.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentUpgrade.Text = "Upgrade"
         '
         'tsmEquipmentUpgradeSword
         '
+        Me.tsmEquipmentUpgradeSword.Image = Global.PastLinkGroundControl.My.Resources.Resources.swordup_16
         Me.tsmEquipmentUpgradeSword.Name = "tsmEquipmentUpgradeSword"
-        Me.tsmEquipmentUpgradeSword.Size = New System.Drawing.Size(107, 22)
+        Me.tsmEquipmentUpgradeSword.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentUpgradeSword.Text = "Sword"
         '
         'tsmEquipmentUpgradeShield
         '
+        Me.tsmEquipmentUpgradeShield.Image = Global.PastLinkGroundControl.My.Resources.Resources.shieldup_16
         Me.tsmEquipmentUpgradeShield.Name = "tsmEquipmentUpgradeShield"
-        Me.tsmEquipmentUpgradeShield.Size = New System.Drawing.Size(107, 22)
+        Me.tsmEquipmentUpgradeShield.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentUpgradeShield.Text = "Shield"
         '
         'tsmEquipmentUpgradeMail
         '
+        Me.tsmEquipmentUpgradeMail.Image = Global.PastLinkGroundControl.My.Resources.Resources.mailup_16
         Me.tsmEquipmentUpgradeMail.Name = "tsmEquipmentUpgradeMail"
-        Me.tsmEquipmentUpgradeMail.Size = New System.Drawing.Size(107, 22)
+        Me.tsmEquipmentUpgradeMail.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentUpgradeMail.Text = "Mail"
         '
         'tsmEquipmentDowngrade
         '
         Me.tsmEquipmentDowngrade.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmEquipmentDowngradeSword, Me.tsmEquipmentDowngradeShield, Me.tsmEquipmentDowngradeMail})
+        Me.tsmEquipmentDowngrade.Image = Global.PastLinkGroundControl.My.Resources.Resources.equipmentdown_16
         Me.tsmEquipmentDowngrade.Name = "tsmEquipmentDowngrade"
         Me.tsmEquipmentDowngrade.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentDowngrade.Text = "Downgrade"
         '
         'tsmEquipmentDowngradeSword
         '
+        Me.tsmEquipmentDowngradeSword.Image = Global.PastLinkGroundControl.My.Resources.Resources.sworddown_16
         Me.tsmEquipmentDowngradeSword.Name = "tsmEquipmentDowngradeSword"
-        Me.tsmEquipmentDowngradeSword.Size = New System.Drawing.Size(107, 22)
+        Me.tsmEquipmentDowngradeSword.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentDowngradeSword.Text = "Sword"
         '
         'tsmEquipmentDowngradeShield
         '
+        Me.tsmEquipmentDowngradeShield.Image = Global.PastLinkGroundControl.My.Resources.Resources.shielddown_16
         Me.tsmEquipmentDowngradeShield.Name = "tsmEquipmentDowngradeShield"
-        Me.tsmEquipmentDowngradeShield.Size = New System.Drawing.Size(107, 22)
+        Me.tsmEquipmentDowngradeShield.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentDowngradeShield.Text = "Shield"
         '
         'tsmEquipmentDowngradeMail
         '
+        Me.tsmEquipmentDowngradeMail.Image = Global.PastLinkGroundControl.My.Resources.Resources.maildown_16
         Me.tsmEquipmentDowngradeMail.Name = "tsmEquipmentDowngradeMail"
-        Me.tsmEquipmentDowngradeMail.Size = New System.Drawing.Size(107, 22)
+        Me.tsmEquipmentDowngradeMail.Size = New System.Drawing.Size(180, 22)
         Me.tsmEquipmentDowngradeMail.Text = "Mail"
         '
         'tsmGameControl
@@ -979,7 +995,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(586, 364)
+        Me.ClientSize = New System.Drawing.Size(1091, 727)
         Me.Controls.Add(Me.menuMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.menuMain
