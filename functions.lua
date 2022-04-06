@@ -9,30 +9,36 @@ function editrupees(quantity)
 		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
 		if (bizstring.startswith(quantity, "+")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the function won't cause internal rupee count to rise above 9999.
 			if (mainmemory.read_s16_le(ADDR_RUPEES)+quantity > 9999) then
 				mainmemory.write_s16_le(ADDR_RUPEES, 9999)
 			else
 				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)+quantity)
 			end
+			gui.addmessage(USER.." gave you "..quantity.." Rupee"..PLURAL.."!")
 			return true
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the function won't cause internal rupee count to fall below 0.
 			if (mainmemory.read_s16_le(ADDR_RUPEES)-quantity < 0) then
 				mainmemory.write_s16_le(ADDR_RUPEES, 0)
 			else
 				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)-quantity)
 			end
+			gui.addmessage(USER.." took away "..quantity.." Rupee"..PLURAL.."!")
 			return true
 		else
 			quantity = tonumber(quantity)
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the amount specified is valid (0-9999). Output error if it isn't.
 			if (quantity < 0 || quantity > 9999) then
 				console.writeline("ERROR: Function giverupees(): Quantity provided is not valid (should be 0-9999).")
 				return false
 			else
 				mainmemory.write_s16_le(ADDR_RUPEES, quantity)
+				gui.addmessage(USER.." set your Rupee count to "..quantity.." Rupee"..PLURAL.."!")
 				return true
 			end
 		end
@@ -51,30 +57,36 @@ function editbombs(quantity)
 		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
 		if (bizstring.startswith(quantity, "+")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the function won't cause internal bomb count to rise above 50.
 			if (mainmemory.readbyte(ADDR_BOMBS)+quantity > 50) then
 				mainmemory.writebyte(ADDR_BOMBS, 50)
 			else
 				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)+quantity)
 			end
+			gui.addmessage(USER.." gave you "..quantity.." Bomb"..PLURAL.."!")
 			return true
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the function won't cause internal bomb count to fall below 0.
 			if (mainmemory.readbyte(ADDR_BOMBS)-quantity < 0) then
 				mainmemory.writebyte(ADDR_BOMBS, 0)
 			else
 				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)-quantity)
 			end
+			gui.addmessage(USER.." took away "..quantity.." Bomb"..PLURAL.."!")
 			return true
 		else
 			quantity = tonumber(quantity)
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the amount specified is valid (0-50). Output error if it isn't.
 			if (quantity < 0 || quantity > 50) then
 				console.writeline("ERROR: Function givebombs(): Quantity provided is not valid (should be 0-50).")
 				return false
 			else
 				mainmemory.writebyte(ADDR_BOMBS, quantity)
+				gui.addmessage(USER.." set your Bomb count to "..quantity.." Bomb"..PLURAL.."!")
 				return true
 			end
 		end
@@ -93,30 +105,36 @@ function editarrows(quantity)
 		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
 		if (bizstring.startswith(quantity, "+")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the function won't cause internal arrow count to rise above 70.
 			if (mainmemory.readbyte(ADDR_ARROWS)+quantity > 70) then
 				mainmemory.writebyte(ADDR_ARROWS, 70)
 			else
 				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)+quantity)
 			end
+			gui.addmessage(USER.." gave you "..quantity.." Arrow"..PLURAL.."!")
 			return true
 		elseif (bizstring.startswith(quantity, "-")) then
 			quantity = tonumber(bizstring.remove(quantity,0,1))
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the function won't cause internal arrow count to fall below 0.
 			if (mainmemory.readbyte(ADDR_ARROWS)-quantity < 0) then
 				mainmemory.writebyte(ADDR_ARROWS, 0)
 			else
 				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)-quantity)
 			end
+			gui.addmessage(USER.." took away "..quantity.." Arrow"..PLURAL.."!")
 			return true
 		else
 			quantity = tonumber(quantity)
+			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the amount specified is valid (0-70). Output error if it isn't.
 			if (quantity < 0 || quantity > 70) then
 				console.writeline("ERROR: Function givearrows(): Quantity provided is not valid (should be 0-70).")
 				return false
 			else
 				mainmemory.writebyte(ADDR_ARROWS, quantity)
+				gui.addmessage(USER.." set your Arrow count to "..quantity.." Arrow"..PLURAL.."!")
 				return true
 			end
 		end
@@ -140,6 +158,7 @@ function editnormalbow(val)
 			mainmemory.writebyte(ADDR_BOW, 1)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),1))
+		gui.addmessage(USER.." gave you a Normal Bow!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),2) && bit.check(mainmemory.readbyte(ADDR_BOWSTACK),3)) then
@@ -152,6 +171,7 @@ function editnormalbow(val)
 			mainmemory.writebyte(ADDR_BOW, 0)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),1))
+		gui.addmessage(USER.." took away your Normal Bow!")
 		return true
 	end
 end
@@ -171,6 +191,7 @@ function editsilverbow(val)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),2))
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.set(mainmemory.readbyte(ADDR_BOWSTACK),3))
+		gui.addmessage(USER.." gave you a Silver Bow!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),1)) then
@@ -184,6 +205,7 @@ function editsilverbow(val)
 		end
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),2))
 		mainmemory.writebyte(ADDR_BOWSTACK, bit.clear(mainmemory.readbyte(ADDR_BOWSTACK),3))
+		gui.addmessage(USER.." took away your Silver Bow!")
 		return true
 	end
 end
@@ -198,6 +220,7 @@ function editboomerang(val)
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_BOOMERANG, 1)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),1))
+		gui.addmessage(USER.." gave you a Boomerang!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),2)) then
@@ -206,6 +229,7 @@ function editboomerang(val)
 			mainmemory.writebyte(ADDR_BOOMERANG, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),1))
+		gui.addmessage(USER.." took away your Boomerang!")
 		return true
 	end
 end
@@ -220,6 +244,7 @@ function editmagicalboomerang(val)
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_BOOMERANG, 2)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),2))
+		gui.addmessage(USER.." gave you a Magical Boomerang!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),1)) then
@@ -228,6 +253,7 @@ function editmagicalboomerang(val)
 			mainmemory.writebyte(ADDR_BOOMERANG, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),2))
+		gui.addmessage(USER.." took away your Magical Boomerang!")
 		return true
 	end
 end
@@ -243,6 +269,7 @@ function editmushroom(val)
 		mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 1)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),3))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),5))
+		gui.addmessage(USER.." gave you a Mushroom!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),4)) then
@@ -252,6 +279,7 @@ function editmushroom(val)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),3))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),5))
+		gui.addmessage(USER.." took away your Mushroom!")
 		return true
 	end
 end
@@ -266,6 +294,7 @@ function editmagicpowder(val)
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),4))
+		gui.addmessage(USER.." gave you a Magic Powder!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),3) && bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),5)) then
@@ -274,6 +303,7 @@ function editmagicpowder(val)
 			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),4))
+		gui.addmessage(USER.." took away your Magic Powder!")
 		return true
 	end
 end
@@ -288,6 +318,7 @@ function editshovel(val)
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_SHOVELOCARINA, 1)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),6))
+		gui.addmessage(USER.." gave you a Shovel!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),8)) then
@@ -298,6 +329,7 @@ function editshovel(val)
 			mainmemory.writebyte(ADDR_SHOVELOCARINA, 0)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),6))
+		gui.addmessage(USER.." took away your Shovel!")
 		return true
 	end
 end
@@ -313,11 +345,13 @@ function editocarina(val)
 		mainmemory.writebyte(ADDR_SHOVELOCARINA, 3)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),7))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+		gui.addmessage(USER.." gave you an Ocarina, and a free bird!")
 		return true
 	elseif (val == 1) then
 		mainmemory.writebyte(ADDR_SHOVELOCARINA, 2)
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.set(mainmemory.readbyte(ADDR_ITEMSTACK),7))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+		gui.addmessage(USER.." gave you an Ocarina!")
 		return true
 	elseif (val == 0) then
 		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),6)) then
@@ -327,6 +361,7 @@ function editocarina(val)
 		end
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),7))
 		mainmemory.writebyte(ADDR_ITEMSTACK, bit.clear(mainmemory.readbyte(ADDR_ITEMSTACK),8))
+		gui.addmessage(USER.." took away your Ocarina!")
 		return true
 	end
 end
@@ -338,8 +373,13 @@ function edithookshot(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function edithookshot(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_HOOKSHOT, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_HOOKSHOT, 1)
+		gui.addmessage(USER.." gave you a Hookshot!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_HOOKSHOT, 0)
+		gui.addmessage(USER.." took away your Hookshot!")
 		return true
 	end
 end
@@ -351,8 +391,13 @@ function editfirerod(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editfirerod(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_FIREROD, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_FIREROD, 1)
+		gui.addmessage(USER.." gave you a Fire Rod!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_FIREROD, 0)
+		gui.addmessage(USER.." took away your Fire Rod!")
 		return true
 	end
 end
@@ -364,8 +409,13 @@ function editicerod(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editicerod(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_ICEROD, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_ICEROD, 1)
+		gui.addmessage(USER.." gave you a Ice Rod!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_ICEROD, 0)
+		gui.addmessage(USER.." took away your Ice Rod!")
 		return true
 	end
 end
@@ -377,8 +427,13 @@ function editbombos(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editbombos(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_BOMBOS, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BOMBOS, 1)
+		gui.addmessage(USER.." gave you a Bombos Medallion!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_BOMBOS, 0)
+		gui.addmessage(USER.." took away your Bombos Medallion!")
 		return true
 	end
 end
@@ -390,8 +445,13 @@ function editether(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editether(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_ETHER, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_ETHER, 1)
+		gui.addmessage(USER.." gave you a Ether Medallion!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_ETHER, 0)
+		gui.addmessage(USER.." took away your Ether Medallion!")
 		return true
 	end
 end
@@ -403,8 +463,13 @@ function editquake(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editquake(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_QUAKE, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_QUAKE, 1)
+		gui.addmessage(USER.." gave you a Quake Medallion!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_QUAKE, 0)
+		gui.addmessage(USER.." took away your Quake Medallion!")
 		return true
 	end
 end
@@ -416,8 +481,13 @@ function editlamp(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editlamp(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_LAMP, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_LAMP, 1)
+		gui.addmessage(USER.." gave you a Lamp!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_LAMP, 0)
+		gui.addmessage(USER.." took away your Lamp!")
 		return true
 	end
 end
@@ -429,8 +499,13 @@ function editmagichammer(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagichammer(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_HAMMER, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_HAMMER, 1)
+		gui.addmessage(USER.." gave you a Magic Hammer!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_HAMMER, 0)
+		gui.addmessage(USER.." took away your Magic Hammer!")
 		return true
 	end
 end
@@ -442,8 +517,13 @@ function editbugnet(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editbugnet(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_BUGNET, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BUGNET, 1)
+		gui.addmessage(USER.." gave you a Bug Net!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_BUGNET, 0)
+		gui.addmessage(USER.." took away your Bug Net!")
 		return true
 	end
 end
@@ -455,8 +535,13 @@ function editbookofmodura(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editbookofmodura(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_BOOK, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BOOK, 1)
+		gui.addmessage(USER.." gave you a Book of Modura!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_BOOK, 0)
+		gui.addmessage(USER.." took away your Book of Modura!")
 		return true
 	end
 end
@@ -473,30 +558,66 @@ end
 --		6: Give (Bee)
 --		7: Give (Super Bee)
 function editbottles(bottle,val)
+	ret = false
+	ret2 = false
 	bottle = tonumber(bottle)
 	val = tonumber(val)
 	if (bottle < 1 || bottle > 4) then
 		console.writeline("ERROR: Function editbottles(): Bottle Number is invalid (should be 1-4)")
-		return false
-	elseif (val < 0 || val > 7) then
+		ret = false
+	elseif (bottle == 1) then
+		ADDR_BOTTLE = ADDR_BOTTLE1
+		ret = true
+	elseif (bottle == 2) then
+		ADDR_BOTTLE = ADDR_BOTTLE2
+		ret = true
+	elseif (bottle == 3) then
+		ADDR_BOTTLE = ADDR_BOTTLE3
+		ret = true
+	elseif (bottle == 4) then
+		ADDR_BOTTLE = ADDR_BOTTLE4
+		ret = true
+	end
+	if (val < 0 || val > 7) then
 		console.writeline("ERROR: Function editbottles(): Value is invalid (should be 0-7)")
-		return false
-	else
-		if (bottle == 1) then
-			ADDR_BOTTLE = ADDR_BOTTLE1
-		elseif (bottle == 2) then
-			ADDR_BOTTLE = ADDR_BOTTLE2
-		elseif (bottle == 3) then
-			ADDR_BOTTLE = ADDR_BOTTLE3
-		elseif (bottle == 4) then
-			ADDR_BOTTLE = ADDR_BOTTLE4
-		end
-		if (val == 0) then
-			mainmemory.writebyte(ADDR_BOTTLE, 0)
-		else
-			mainmemory.writebyte(ADDR_BOTTLE, val+1)
-		end
+		ret2 = false
+	elseif (val == 0 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 0)
+		gui.addmessage(USER.." took away your Bottle ("..bottle..")!")
+		ret2 = true
+	elseif (val == 1 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 2)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..")!")
+		ret2 = true
+	elseif (val == 2 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 3)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and filled it with Red Potion!")
+		ret2 = true
+	elseif (val == 3 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 4)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and filled it with Green Potion!")
+		ret2 = true
+	elseif (val == 4 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 5)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and filled it with Blue Potion!")
+		ret2 = true
+	elseif (val == 5 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 6)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and put a Fairy in it!")
+		ret2 = true
+	elseif (val == 6 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 7)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and put a Bee in it!")
+		ret2 = true
+	elseif (val == 7 && ret == true) then
+		mainmemory.writebyte(ADDR_BOTTLE, 8)
+		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and put a Super Bee in it!")
+		ret2 = true
+	end
+	if (ret == true && ret2 == true) then
 		return true
+	else
+		return false
 	end
 end
 
@@ -507,8 +628,13 @@ function editcaneofsomaria(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editcaneofsomaria(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_SOMARIA, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_SOMARIA, 1)
+		gui.addmessage(USER.." gave you a Cane of Somaria!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_SOMARIA, 0)
+		gui.addmessage(USER.." took away your Cane of Somaria!")
 		return true
 	end
 end
@@ -520,8 +646,13 @@ function editcaneofbyrna(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editcaneofbyrna(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_BYRNA, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BYRNA, 1)
+		gui.addmessage(USER.." gave you a Cane of Byrna!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_BYRNA, 0)
+		gui.addmessage(USER.." took away your Cane of Byrna!")
 		return true
 	end
 end
@@ -533,8 +664,13 @@ function editmagiccape(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagiccape(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_CAPE, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_CAPE, 1)
+		gui.addmessage(USER.." gave you a Book of Magic Cape!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_CAPE, 0)
+		gui.addmessage(USER.." took away your Magic Cape!")
 		return true
 	end
 end
@@ -546,12 +682,13 @@ function editmagicmirror(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmagicmirror(): Value is invalid (should be 0-1)")
 		return false
-	else
-		if (val == 0) then
-			mainmemory.writebyte(ADDR_MIRROR, 0)
-		elseif (val == 1) then
-			mainmemory.writebyte(ADDR_MIRROR, 2)
-		end
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_MIRROR, 2)
+		gui.addmessage(USER.." gave you a Magic Mirror!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_MIRROR, 0)
+		gui.addmessage(USER.." took away your Magic Mirror!")
 		return true
 	end
 end
@@ -563,8 +700,17 @@ function editgloves(val)
 	if (val < 0 || val > 2) then	
 		console.writeline("ERROR: Function editgloves(): Value is invalid (should be 0-2)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_GLOVE, val)
+	elseif (val == 2) then
+		mainmemory.writebyte(ADDR_GLOVE, 2)
+		gui.addmessage(USER.." gave you a Titan's Mitt!")
+		return true
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_GLOVE, 1)
+		gui.addmessage(USER.." gave you a Power Glove!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_GLOVE, 0)
+		gui.addmessage(USER.." took away your Gloves!")
 		return true
 	end
 end
@@ -576,14 +722,15 @@ function editpegasusboots(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editpegasusboots(): Value is invalid (should be 0-1)")
 		return false
-	else
-		if (val == 0) then
-			mainmemory.writebyte(ADDR_BOOTS1, 0)
-			mainmemory.writebyte(ADDR_BOOTS2, 0)
-		elseif (val == 1) then
-			mainmemory.writebyte(ADDR_BOOTS1, 1)
-			mainmemory.writebyte(ADDR_BOOTS2, 108)
-		end
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_BOOTS1, 1)
+		mainmemory.writebyte(ADDR_BOOTS2, 108)
+		gui.addmessage(USER.." gave you a pair of Pegasus Boots!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_BOOTS1, 0)
+		mainmemory.writebyte(ADDR_BOOTS2, 104)
+		gui.addmessage(USER.." took away your Pegasus Boots!")
 		return true
 	end
 end
@@ -595,8 +742,13 @@ function editzorasflippers(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editzorasflippers(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_FLIPPERS, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_FLIPPERS, 1)
+		gui.addmessage(USER.." gave you a pair of Zora's Flippers!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_FLIPPERS, 0)
+		gui.addmessage(USER.." took away your Zora's Flippers!")
 		return true
 	end
 end
@@ -608,8 +760,13 @@ function editmoonpearl(val)
 	if (val < 0 || val > 1) then
 		console.writeline("ERROR: Function editmoonpearl(): Value is invalid (should be 0-1)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_PEARL, val)
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_PEARL, 1)
+		gui.addmessage(USER.." gave you a Moon Pearl!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_PEARL, 0)
+		gui.addmessage(USER.." took away your Moon Pearl!")
 		return true
 	end
 end
@@ -621,8 +778,17 @@ function editmagicboost(val)
 	if (val < 0 || val > 2) then
 		console.writeline("ERROR: Function editmagicboost(): Value is invalid (should be 0-2)")
 		return false
-	else
-		mainmemory.writebyte(ADDR_MAGICBOOST, val)
+	elseif (val == 2) then
+		mainmemory.writebyte(ADDR_MAGICBOOST, 2)
+		gui.addmessage(USER.." blessed you with 1/4 Magic Use!")
+		return true
+	elseif (val == 1) then
+		mainmemory.writebyte(ADDR_MAGICBOOST, 1)
+		gui.addmessage(USER.." blessed you with 1/2 Magic Use!")
+		return true
+	elseif (val == 0) then
+		mainmemory.writebyte(ADDR_MAGICBOOST, 0)
+		gui.addmessage(USER.." took away all Magic Boosts!")
 		return true
 	end
 end
