@@ -1,5 +1,20 @@
 -- PastLink Functions
 
+-- FUNCTION: Read Command
+-- This function reads the file that stores the latest command.
+-- It then automatically erases the content, signalling Ground Control to write the next command to the file.
+function readcommand()
+	-- Open file "command" for reading.
+	file = io.open("command", "r+")
+	io.input(file)
+	data = io.read()
+	io.close(file)
+	-- Open the file again in overwrite mode to erase data from it.
+	file = io.open("command", "w+")
+	io.close(file)
+	return data
+end
+
 -- FUNCTION: Edit Rupees
 -- Argument quantity (sint): The number of rupees to set, give, or take.
 function editrupees(quantity)

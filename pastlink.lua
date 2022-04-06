@@ -11,14 +11,18 @@ require "functions.lua"
 while true do
 	-- Refresh counter expired, time to read the file.
 	if (REFRESH <= 0) then
-		REQUEST = fromfile() -- TODO: Create actual function
+		REQUEST = readcommand()
 		-- Split single REQUEST string returned from the server into three parts: Username, IP Address, and Message.
-		SPLIT = bizstring.split(REQUEST, ";")
-		USER = SPLIT[0]
+		SPLIT = bizstring.split(REQUEST, ",")
+		if (SPLIT[0] == "") then
+			USER = "Unknown ("..SPLIT[1]..")"
+		else
+			USER = SPLIT[0]
+		end
 		IP = SPLIT[1]
 		MESSAGE = SPLIT[2]
 		VALUE = bizstring.split(MESSAGE, ":")
-		VALUE = tonumber(VALUE[1])
+		VALUE = VALUE[1]
 		if (bizstring.startswith(MESSAGE, "EDITRUPEES:")) then			
 			RESULT = editrupees(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOMBS:")) then
@@ -61,9 +65,14 @@ while true do
 			RESULT = editbugnet(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOOKOFMODURA:")) then
 			RESULT = editbookofmodura(VALUE)
-		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLES:")) then
-			BSPLT = bizstring.split(VALUE, ",")
-			RESULT = editbottles(BSPLT[0], BSPLT[1])
+		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE1:")) then
+			RESULT = editbottles(1,VALUE)
+		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE2:")) then
+			RESULT = editbottles(2,VALUE)
+		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE3:")) then
+			RESULT = editbottles(3,VALUE)
+		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE4:")) then
+			RESULT = editbottles(4,VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITCANEOFSOMARIA:")) then
 			RESULT = editcaneofsomaria(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITCANEOFBYRNA:")) then
