@@ -808,6 +808,75 @@ function editmagicboost(val)
 	end
 end
 
+-- FUNCTION: Make Cuccos Angry! Also turns existing enemies, items (on ground), and NPCs into Cuccos.
+-- Should not result in softlock since these values are reset every screen transition.
+function createandangercuccos()
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE1, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE2, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE3, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE4, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE5, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE6, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE7, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE8, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE9, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE10, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE11, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE12, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE13, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE14, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE15, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE16, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE17, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE18, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE19, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE20, 11) end
+	mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
+end
+
+-- FUNCTION: Calm Down Cuccos!
+function calmcuccos()
+	if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE1, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE2, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE3, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE4, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE5, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE6, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE7, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE8, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE9, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE10, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE11, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE12, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE13, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE14, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE15, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE16, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE17, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE18, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE19, 0) end
+	if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE20, 0) end
+end
+
 -- FUNCTION: Cucco Storm aka Psychotic Chickens! (Has a timer of 1 minute, cannot be stacked.)
 -- Argument enable (int): 0: Disable (Good Chickens), 1+: Enable (Evil Chickens)
 -- UPDATE #1: No longer relies on already present Cuccos and turns all present enemies into Cuccos!
@@ -815,75 +884,46 @@ end
 function cuccostorm(enable)
 	if (ADDR_INDOORS < 1) then
 		if (enable > 0) then
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE1, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE2, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE3, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE4, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE5, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE6, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE7, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE8, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE9, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE10, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE11, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE12, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE13, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE14, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE15, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE16, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE17, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE18, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE19, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
-			if not (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE20, 11)
-			mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
 			CUCCOTIMER = 3600
 			CUCCOSTORM = true
+			createandangercuccos()
 			gui.addmessage(USER.." has angered the Chicken Gods!!!")
 		else
-			if (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE1, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE2, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE3, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE4, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE5, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE6, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE7, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE8, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE9, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE10, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE11, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE12, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE13, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE14, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE15, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE16, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE17, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE18, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE19, 0)
-			if (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_AUXSPRITE20, 0)
+			if (CUCCOTIMER < 1) then
+				gui.addmessage("The Chicken Gods have calmed down!")
+			else
+				gui.addmessage(USER.." has quelled the Chicken Gods' Rage!")
+			end
 			CUCCOTIMER = 0
 			CUCCOSTORM = false
-			gui.addmessage(USER.." has quelled the Chicken Gods' Rage!")
+			calmcuccos()
 		end
 	else
 		gui.addmessage("Cucco Storm cannot be used indoors!")
 	end
+end
+
+-- FUNCTION: Insta-death
+-- Kills the player instantly at the next possible opportunity.
+function instadeath()
+	-- Glitch Prevention: Wait until not in a state where you can't die.
+	while (mainmemory.readbyte(ADDR_PROGRAM1) ~= 7 and mainmemory.readbyte(ADDR_PROGRAM1) ~= 9) do
+		emu.frameadvance()
+	end
+	-- Wait 30 frames following the while loop to prevent an odd glitch that triggers a fairy revive event even if you don't have one.
+	repeat
+		emu.frameadvance()
+		a = a + 1
+	until (a > 30)
+	mainmemory.writebyte(ADDR_HEARTS, 0)
+	-- Wait 1 more frame to refresh the hearts in the HUD before triggering the death.
+	emu.frameadvance()
+	-- Take away all bottled fairies prior to death. Unfortunately, this is necessary to prevent graphical glitches and a nasty softlock.
+	if (mainmemory.readbyte(ADDR_BOTTLE1) == 6) then mainmemory.writebyte(ADDR_BOTTLE1, 0) end
+	if (mainmemory.readbyte(ADDR_BOTTLE2) == 6) then mainmemory.writebyte(ADDR_BOTTLE2, 0) end
+	if (mainmemory.readbyte(ADDR_BOTTLE3) == 6) then mainmemory.writebyte(ADDR_BOTTLE3, 0) end
+	if (mainmemory.readbyte(ADDR_BOTTLE4) == 6) then mainmemory.writebyte(ADDR_BOTTLE4, 0) end
+	mainmemory.writebyte(ADDR_SFX1, 38)
+	mainmemory.writebyte(ADDR_PROGRAM1, 18)
+	gui.addmessage(USER.." done gone and killed you!")
 end

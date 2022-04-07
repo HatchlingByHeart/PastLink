@@ -93,22 +93,27 @@ while true do
 			RESULT = editmagicboost(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "CUCCOSTORM:")) then
 			RESULT = cuccostorm(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "INSTADEATH")) then
+			RESULT = instadeath()
 		end
+
+		-- Process ongoing effects.
+		if (CUCCOSTORM == true) then
+			if (CUCCOTIMER < 1) then
+				cuccostorm(0)
+			else
+				createandangercuccos()
+				CUCCOTIMER = CUCCOTIMER - 1
+			end
+		end
+
 		-- Reset the refresh counter back to initial value to begin countdown again.
 		REFRESH = REFRESHTIME
 	else
-	-- Not time yet, decrement one frame from timer.
-	REFRESH = REFRESH-1
+		-- Not time yet, decrement one frame from timer.
+		REFRESH = REFRESH - 1
 	end
-	-- Decrease timers for active effects.
-	if (CUCCOSTORM == true) then
-		if (CUCCOTIMER <= 0) then
-			cuccostorm(0)
-			gui.addmessage("The Chicken Gods have calmed down!")
-		else
-			CUCCOTIMER = CUCCOTIMER-1
-		end
-	end
+	
 	-- Once everything is checked, advance BizHawk a frame.
 	emu.frameadvance()
 end
