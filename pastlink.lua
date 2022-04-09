@@ -95,8 +95,50 @@ while true do
 			RESULT = cuccostorm(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "INSTADEATH")) then
 			RESULT = instadeath()
+		elseif (bizstring.startswith(MESSAGE, "SMLMAGIC")) then
+			smlmagic()
+		elseif (bizstring.startswith(MESSAGE, "BIGMAGIC")) then
+			bigmagic()
+		elseif (bizstring.startswith(MESSAGE, "HEART")) then
+			heart()
+		elseif (bizstring.startswith(MESSAGE, "FAIRY")) then
+			fairy()
+		-- The following commented lines are functions that are not yet implemented into the Randomizer.
+		--elseif (bizstring.startswith(MESSAGE, "UPSWORD1M")) then
+			--upsword1m()
+		--elseif (bizstring.startswith(MESSAGE, "DOWNSWORD1M")) then
+			--downsword1m()
+		--elseif (bizstring.startswith(MESSAGE, "UPARMOR1M")) then
+			--uparmor1m()
+		--elseif (bizstring.startswith(MESSAGE, "DOWNARMOR1M")) then
+			--downarmor1m()
+		--elseif (bizstring.startswith(MESSAGE, "UPMAGIC1M")) then
+			--upmagic1m()
+		--elseif (bizstring.startswith(MESSAGE, "UPMAGIC1M")) then
+			--downmagic1m()
+		elseif (bizstring.startswith(MESSAGE, "SWORDUP")) then
+			swordup()
+		elseif (bizstring.startswith(MESSAGE, "SWORDDOWN")) then
+			sworddown()
+		elseif (bizstring.startswith(MESSAGE, "SHIELDUP")) then
+			shieldup()
+		elseif (bizstring.startswith(MESSAGE, "SHIELDDOWN")) then
+			shielddown()
+		elseif (bizstring.startswith(MESSAGE, "MAILUP")) then
+			mailup()
+		elseif (bizstring.startswith(MESSAGE, "MAILDOWN")) then
+			maildown()
+		elseif (bizstring.startswith(MESSAGE, "GIVEHEARTPIECE")) then
+			giveheartpiece()
+		elseif (bizstring.startswith(MESSAGE, "REMOVEHEARTPIECE")) then
+			removeheartpiece()
+		elseif (bizstring.startswith(MESSAGE, "GIVEHEARTCONTAINER")) then
+			giveheartcontainer()
+		elseif (bizstring.startswith(MESSAGE, "REMOVEHEARTCONTAINER")) then
+			removeheartcontainer()
+		elseif (bizstring.startswith(MESSAGE, "REFRESH")) then
+			refresh()
 		end
-
 		-- Process ongoing effects.
 		if (CUCCOSTORM == true) then
 			if (CUCCOTIMER < 1) then
@@ -106,14 +148,12 @@ while true do
 				CUCCOTIMER = CUCCOTIMER - 1
 			end
 		end
-
 		-- Reset the refresh counter back to initial value to begin countdown again.
 		REFRESH = REFRESHTIME
 	else
 		-- Not time yet, decrement one frame from timer.
 		REFRESH = REFRESH - 1
 	end
-	
 	-- Once everything is checked, advance BizHawk a frame.
 	emu.frameadvance()
 end

@@ -3,6 +3,10 @@
 -- Time (in frames) between calls to server. Higher values will save server resources but increase command delay. Values that are too low (0-10) may slow down BizHawk. Default (Recommended) Value: 60
 REFRESHTIME = 60
 
+-- Insta-Death toggle.
+-- This effect is a little extreme, so it's disabled by default and can be enabled by the player if desired.
+INSTADEATH_ENABLE = false
+
 -- Define Pokeable SNES Memory Addresses. You should never need to change these.
 ADDR_PROGRAM1 = 0x000010
 ADDR_PROGRAM2 = 0x000011
@@ -109,13 +113,12 @@ ADDR_CRYSTALS = 0x00F37A
 ADDR_MAGICBOOST = 0x00F37B
 ADDR_ITEMSTACK = 0x00F38C
 ADDR_BOWSTACK = 0x00F38E
-ADDR_ARMORLEVEL = 0x00F3BA
-ADDR_SWORDBUFF = 0x0150C0
-ADDR_SHIELDBUFF = 0x0150C1
-ADDR_ARMORBUFF = 0x0150C2
-ADDR_MAGICBUFF = 0x0150C3
-ADDR_LIGHTBUFF = 0x0150C4
-ADDR_UNUSEDEFFECT = 0x0150C5
+--ADDR_SWORDBUFF = 0x0150C0 -- Unused: Not yet implemented into Randomizer
+--ADDR_SHIELDBUFF = 0x0150C1 -- Unused: Not yet implemented into Randomizer
+--ADDR_ARMORBUFF = 0x0150C2 -- Unused: Not yet implemented into Randomizer
+--ADDR_MAGICBUFF = 0x0150C3 -- Unused: Not yet implemented into Randomizer
+--ADDR_LIGHTBUFF = 0x0150C4 -- Unused: Not yet implemented into Randomizer
+--ADDR_UNUSEDEFFECT = 0x0150C5 -- Unused: Not yet implemented into Randomizer
 ADDR_SLOWDASH = 0x0150C6
 ADDR_ICEPHYSICS = 0x0150C7
 ADDR_INFARROWS = 0x0150C8

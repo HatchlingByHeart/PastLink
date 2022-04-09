@@ -15,6 +15,19 @@ function readcommand()
 	return data
 end
 
+-- FUNCTION: Sleep
+-- Pauses processing of Lua code for a certain number of frames.
+-- Note that this does *not* pause emulation, it is designed to delay commands, not the game.
+function sleep(n)
+	n = tonumber(n)
+	if (n > 0) then
+		repeat
+			emu.frameadvance()
+			a = a + 1
+		until (a > n)
+	end
+end
+
 -- FUNCTION: Edit Rupees
 -- Argument quantity (sint): The number of rupees to set, give, or take.
 function editrupees(quantity)
@@ -48,7 +61,7 @@ function editrupees(quantity)
 			quantity = tonumber(quantity)
 			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the amount specified is valid (0-9999). Output error if it isn't.
-			if (quantity < 0 || quantity > 9999) then
+			if (quantity < 0 or quantity > 9999) then
 				console.writeline("ERROR: Function giverupees(): Quantity provided is not valid (should be 0-9999).")
 				return false
 			else
@@ -96,7 +109,7 @@ function editbombs(quantity)
 			quantity = tonumber(quantity)
 			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the amount specified is valid (0-50). Output error if it isn't.
-			if (quantity < 0 || quantity > 50) then
+			if (quantity < 0 or quantity > 50) then
 				console.writeline("ERROR: Function givebombs(): Quantity provided is not valid (should be 0-50).")
 				return false
 			else
@@ -144,7 +157,7 @@ function editarrows(quantity)
 			quantity = tonumber(quantity)
 			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 			-- Check that the amount specified is valid (0-70). Output error if it isn't.
-			if (quantity < 0 || quantity > 70) then
+			if (quantity < 0 or quantity > 70) then
 				console.writeline("ERROR: Function givearrows(): Quantity provided is not valid (should be 0-70).")
 				return false
 			else
@@ -163,7 +176,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editnormalbow(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editnormalbow(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -176,7 +189,7 @@ function editnormalbow(val)
 		gui.addmessage(USER.." gave you a Normal Bow!")
 		return true
 	elseif (val == 0) then
-		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),2) && bit.check(mainmemory.readbyte(ADDR_BOWSTACK),3)) then
+		if (bit.check(mainmemory.readbyte(ADDR_BOWSTACK),2) and bit.check(mainmemory.readbyte(ADDR_BOWSTACK),3)) then
 			if (mainmemory.readbyte(ADDR_ARROWS) >= 1) then
 				mainmemory.writebyte(ADDR_BOW, 4)
 			else
@@ -195,7 +208,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editsilverbow(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editsilverbow(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -229,7 +242,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editboomerang(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editboomerang(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -253,7 +266,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmagicalboomerang(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmagicalboomerang(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -277,7 +290,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmushroom(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmushroom(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -303,7 +316,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmagicpowder(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmagicpowder(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -312,7 +325,7 @@ function editmagicpowder(val)
 		gui.addmessage(USER.." gave you a Magic Powder!")
 		return true
 	elseif (val == 0) then
-		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),3) && bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),5)) then
+		if (bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),3) and bit.check(mainmemory.readbyte(ADDR_ITEMSTACK),5)) then
 			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 2)
 		else
 			mainmemory.writebyte(ADDR_MUSHROOMPOWDER, 0)
@@ -327,7 +340,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editshovel(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editshovel(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -353,7 +366,7 @@ end
 -- Argument val (int): 0: Take, 1: Give & Deactivate Bird, 2: Give & Activate Bird
 function editocarina(val)
 	val = tonumber(val)
-	if (val < 0 || val > 2) then
+	if (val < 0 or val > 2) then
 		console.writeline("ERROR: Function editocarina(): Value is invalid (should be 0-2)")
 		return false
 	elseif (val == 2) then
@@ -385,7 +398,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function edithookshot(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function edithookshot(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -403,7 +416,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editfirerod(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editfirerod(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -421,7 +434,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editicerod(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editicerod(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -439,7 +452,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editbombos(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editbombos(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -457,7 +470,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editether(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editether(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -475,7 +488,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editquake(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editquake(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -493,7 +506,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editlamp(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editlamp(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -511,7 +524,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmagichammer(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmagichammer(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -529,7 +542,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editbugnet(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editbugnet(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -547,7 +560,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editbookofmodura(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editbookofmodura(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -577,7 +590,7 @@ function editbottles(bottle,val)
 	ret2 = false
 	bottle = tonumber(bottle)
 	val = tonumber(val)
-	if (bottle < 1 || bottle > 4) then
+	if (bottle < 1 or bottle > 4) then
 		console.writeline("ERROR: Function editbottles(): Bottle Number is invalid (should be 1-4)")
 		ret = false
 	elseif (bottle == 1) then
@@ -593,43 +606,43 @@ function editbottles(bottle,val)
 		ADDR_BOTTLE = ADDR_BOTTLE4
 		ret = true
 	end
-	if (val < 0 || val > 7) then
+	if (val < 0 or val > 7) then
 		console.writeline("ERROR: Function editbottles(): Value is invalid (should be 0-7)")
 		ret2 = false
-	elseif (val == 0 && ret == true) then
+	elseif (val == 0 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 0)
 		gui.addmessage(USER.." took away your Bottle ("..bottle..")!")
 		ret2 = true
-	elseif (val == 1 && ret == true) then
+	elseif (val == 1 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 2)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..")!")
 		ret2 = true
-	elseif (val == 2 && ret == true) then
+	elseif (val == 2 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 3)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and filled it with Red Potion!")
 		ret2 = true
-	elseif (val == 3 && ret == true) then
+	elseif (val == 3 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 4)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and filled it with Green Potion!")
 		ret2 = true
-	elseif (val == 4 && ret == true) then
+	elseif (val == 4 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 5)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and filled it with Blue Potion!")
 		ret2 = true
-	elseif (val == 5 && ret == true) then
+	elseif (val == 5 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 6)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and put a Fairy in it!")
 		ret2 = true
-	elseif (val == 6 && ret == true) then
+	elseif (val == 6 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 7)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and put a Bee in it!")
 		ret2 = true
-	elseif (val == 7 && ret == true) then
+	elseif (val == 7 and ret == true) then
 		mainmemory.writebyte(ADDR_BOTTLE, 8)
 		gui.addmessage(USER.." gave you a Bottle ("..bottle..") and put a Super Bee in it!")
 		ret2 = true
 	end
-	if (ret == true && ret2 == true) then
+	if (ret == true and ret2 == true) then
 		return true
 	else
 		return false
@@ -640,7 +653,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editcaneofsomaria(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editcaneofsomaria(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -658,7 +671,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editcaneofbyrna(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editcaneofbyrna(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -676,7 +689,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmagiccape(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmagiccape(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -694,7 +707,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmagicmirror(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmagicmirror(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -712,7 +725,7 @@ end
 -- Argument val (int): 0: Take, 1: Give Power Glove, 2: Give Titan's Mitt
 function editgloves(val)
 	val = tonumber(val)
-	if (val < 0 || val > 2) then	
+	if (val < 0 or val > 2) then	
 		console.writeline("ERROR: Function editgloves(): Value is invalid (should be 0-2)")
 		return false
 	elseif (val == 2) then
@@ -734,7 +747,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editpegasusboots(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editpegasusboots(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -754,7 +767,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editzorasflippers(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editzorasflippers(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -772,7 +785,7 @@ end
 -- Argument val (int): 0: Take, 1: Give
 function editmoonpearl(val)
 	val = tonumber(val)
-	if (val < 0 || val > 1) then
+	if (val < 0 or val > 1) then
 		console.writeline("ERROR: Function editmoonpearl(): Value is invalid (should be 0-1)")
 		return false
 	elseif (val == 1) then
@@ -790,7 +803,7 @@ end
 -- Argument val (int): 0: Take, 1: Give 1/2 Magic, 2: Give 1/4 Magic
 function editmagicboost(val)
 	val = tonumber(val)
-	if (val < 0 || val > 2) then
+	if (val < 0 or val > 2) then
 		console.writeline("ERROR: Function editmagicboost(): Value is invalid (should be 0-2)")
 		return false
 	elseif (val == 2) then
@@ -882,7 +895,7 @@ end
 -- UPDATE #1: No longer relies on already present Cuccos and turns all present enemies into Cuccos!
 -- UPDATE #2: No longer operates when indoors, since Cuccos cannot attack indoors.
 function cuccostorm(enable)
-	if (ADDR_INDOORS < 1) then
+	if (mainmemory.readbyte(ADDR_INDOORS) < 1) then
 		if (enable > 0) then
 			CUCCOTIMER = 3600
 			CUCCOSTORM = true
@@ -905,25 +918,211 @@ end
 
 -- FUNCTION: Insta-death
 -- Kills the player instantly at the next possible opportunity.
+-- Disabled by default. Enable by setting "INSTADEATH_ENABLE" to true in config.lua.
 function instadeath()
-	-- Glitch Prevention: Wait until not in a state where you can't die.
-	while (mainmemory.readbyte(ADDR_PROGRAM1) ~= 7 and mainmemory.readbyte(ADDR_PROGRAM1) ~= 9) do
+	if (INSTADEATH_ENABLE) then
+		-- Glitch Prevention: Wait until not in a state where you can't die.
+		while (mainmemory.readbyte(ADDR_PROGRAM1) ~= 7 and mainmemory.readbyte(ADDR_PROGRAM1) ~= 9) do
+			emu.frameadvance()
+		end
+		-- Wait 30 frames following the while loop to prevent an odd glitch that triggers a fairy revive event even if you don't have one.
+		sleep(30)
+		mainmemory.writebyte(ADDR_HEARTS, 0)
+		-- Wait 1 more frame to refresh the hearts in the HUD before triggering the death.
 		emu.frameadvance()
+		-- Take away all bottled fairies prior to death. Unfortunately, this is necessary to prevent graphical glitches and a nasty softlock.
+		if (mainmemory.readbyte(ADDR_BOTTLE1) == 6) then mainmemory.writebyte(ADDR_BOTTLE1, 0) end
+		if (mainmemory.readbyte(ADDR_BOTTLE2) == 6) then mainmemory.writebyte(ADDR_BOTTLE2, 0) end
+		if (mainmemory.readbyte(ADDR_BOTTLE3) == 6) then mainmemory.writebyte(ADDR_BOTTLE3, 0) end
+		if (mainmemory.readbyte(ADDR_BOTTLE4) == 6) then mainmemory.writebyte(ADDR_BOTTLE4, 0) end
+		mainmemory.writebyte(ADDR_SFX1, 38)
+		mainmemory.writebyte(ADDR_PROGRAM1, 18)
+		gui.addmessage(USER.." done gone and killed you!")
 	end
-	-- Wait 30 frames following the while loop to prevent an odd glitch that triggers a fairy revive event even if you don't have one.
-	repeat
-		emu.frameadvance()
-		a = a + 1
-	until (a > 30)
-	mainmemory.writebyte(ADDR_HEARTS, 0)
-	-- Wait 1 more frame to refresh the hearts in the HUD before triggering the death.
-	emu.frameadvance()
-	-- Take away all bottled fairies prior to death. Unfortunately, this is necessary to prevent graphical glitches and a nasty softlock.
-	if (mainmemory.readbyte(ADDR_BOTTLE1) == 6) then mainmemory.writebyte(ADDR_BOTTLE1, 0) end
-	if (mainmemory.readbyte(ADDR_BOTTLE2) == 6) then mainmemory.writebyte(ADDR_BOTTLE2, 0) end
-	if (mainmemory.readbyte(ADDR_BOTTLE3) == 6) then mainmemory.writebyte(ADDR_BOTTLE3, 0) end
-	if (mainmemory.readbyte(ADDR_BOTTLE4) == 6) then mainmemory.writebyte(ADDR_BOTTLE4, 0) end
-	mainmemory.writebyte(ADDR_SFX1, 38)
-	mainmemory.writebyte(ADDR_PROGRAM1, 18)
-	gui.addmessage(USER.." done gone and killed you!")
+end
+
+-- FUNCTION: Give Small Magic
+-- Gives player a small amount of magic equivalent to a small magic jar.
+function smlmagic()
+	if (mainmemory.readbyte(ADDR_MAGIC) <= 112) then
+		mainmemory.writebyte(ADDR_FILLMAGIC, 16)
+	end
+end
+
+-- FUNCTION: Give Big Magic
+-- Gives player full magic, equivalent to a big magic jar.
+function bigmagic()
+	if (mainmemory.readbyte(ADDR_MAGIC) < 32) then
+		mainmemory.writebyte(ADDR_FILLMAGIC, 128)
+	end
+end
+
+-- FUNCTION: Give Heart
+-- Gives player 1 heart.
+function heart()
+	if (mainmemory.readbyte(ADDR_HEARTS) <= 152) then
+		mainmemory.writebyte(ADDR_FILLHEARTS, 8)
+	end
+end
+
+-- FUNCTION: Give Fairy
+-- Gives player hearts equivalent to one fairy.
+function fairy()
+	if (mainmemory.readbyte(ADDR_HEARTS) <= 104) then
+		mainmemory.writebyte(ADDR_FILLHEARTS, 56)
+	end
+end
+
+-- FUNCTION: Upgrade Sword (1 minute) -- Unused: Not yet implemented into Randomizer
+--function upsword1m()
+--	mainmemory.writebyte(ADDR_SWORD_BUFF, mainmemory.readbyte(ADDR_SWORD_BUFF)+1)
+--end
+
+-- FUNCTION: Downgrade Sword (1 minute) -- Unused: Not yet implemented into Randomizer
+--function downsword1m()
+--	mainmemory.writebyte(ADDR_SWORD_BUFF, mainmemory.readbyte(ADDR_SWORD_BUFF)-1)
+--end
+
+-- FUNCTION: Upgrade Armor (1 minute) -- Unused: Not yet implemented into Randomizer
+--function uparmor1m()
+--	mainmemory.writebyte(ADDR_ARMOR_BUFF, mainmemory.readbyte(ADDR_ARMOR_BUFF)+1)
+--end
+
+-- FUNCTION: Downgrade Armor (1 minute) -- Unused: Not yet implemented into Randomizer
+--function downarmor1m()
+--	mainmemory.writebyte(ADDR_ARMOR_BUFF, mainmemory.readbyte(ADDR_ARMOR_BUFF)-1)
+--end
+
+-- FUNCTION: Upgrade Magic (1 minute) -- Unused: Not yet implemented into Randomizer
+--function upmagic1m()
+--	mainmemory.writebyte(ADDR_MAGIC_BUFF, mainmemory.readbyte(ADDR_MAGIC_BUFF)+1)
+--end
+
+-- FUNCTION: Downgrade Magic (1 minute) -- Unused: Not yet implemented into Randomizer
+--function downmagic1m()
+--	mainmemory.writebyte(ADDR_MAGIC_BUFF, mainmemory.readbyte(ADDR_MAGIC_BUFF)-1)
+--end
+
+-- FUNCTION: Upgrade Sword (Permanent)
+function swordup()
+	if (mainmemory.readbyte(ADDR_SWORD) > 4) then
+		console.writeline("WARNING: Sword already maximum.")
+	else
+		mainmemory.writebyte(ADDR_SWORD, mainmemory.readbyte(ADDR_SWORD)+1)
+	end
+end
+
+-- FUNCTION: Downgrade Sword (Permanent)
+function sworddown()
+	if (mainmemory.readbyte(ADDR_SWORD) < 0) then
+		console.writeline("WARNING: Sword already gone.")
+	else
+		mainmemory.writebyte(ADDR_SWORD, mainmemory.readbyte(ADDR_SWORD)-1)
+	end
+end
+
+-- FUNCTION: Upgrade Shield (Permanent)
+function shieldup()
+	if (mainmemory.readbyte(ADDR_SHIELD) > 3) then
+		console.writeline("WARNING: Shield already maximum.")
+	else
+		mainmemory.writebyte(ADDR_SHIELD, mainmemory.readbyte(ADDR_SHIELD)+1)
+	end
+end
+
+-- FUNCTION: Downgrade Shield (Permanent)
+function shielddown()
+	if (mainmemory.readbyte(ADDR_SHIELD) < 0) then
+		console.writeline("WARNING: Sword already gone.")
+	else
+		mainmemory.writebyte(ADDR_SHIELD, mainmemory.readbyte(ADDR_SHIELD)-1)
+	end
+end
+
+-- FUNCTION: Upgrade Mail (Permanent)
+function mailup()
+	if (mainmemory.readbyte(ADDR_MAIL) > 2) then
+		console.writeline("WARNING: Mail already maximum.")
+	else
+		mainmemory.writebyte(ADDR_MAIL, mainmemory.readbyte(ADDR_MAIL)+1)
+	end
+end
+
+-- FUNCTION: Downgrade Mail (Permanent)
+function maildown()
+	if (mainmemory.readbyte(ADDR_MAIL) < 0) then
+		console.writeline("WARNING: Mail already minimum.")
+	else
+		mainmemory.writebyte(ADDR_MAIL, mainmemory.readbyte(ADDR_MAIL)-1)
+	end
+end
+
+-- FUNCTION: Give Heart Piece
+function giveheartpiece()
+	if (mainmemory.readbyte(ADDR_MAXHEARTS) > 152) then
+		console.writeline("WARNING: Hearts already maximum")
+	else
+		if (mainmemory.readbyte(ADDR_HEARTPIECES) > 2) then
+			mainmemory.writebyte(ADDR_HEARTPIECES, 0)
+			mainmemory.writebyte(ADDR_SFX2, 45)
+			sleep(180)
+			mainmemory.writebyte(ADDR_MAXHEARTS, mainmemory.readbyte(ADDR_MAXHEARTS)+8)
+			mainmemory.writebyte(ADDR_SFX2, 15)
+		else
+			mainmemory.writebyte(ADDR_HEARTPIECES, mainmemory.readbyte(ADDR_HEARTPIECES)+1)
+			mainmemory.writebyte(ADDR_SFX2, 45)
+		end
+	end
+end
+	
+-- FUNCTION: Remove Heart Piece
+function removeheartpiece()
+	if (mainmemory.readbyte(ADDR_MAXHEARTS) < 32 and mainmemory.readbyte(ADDR_HEARTPIECES) < 1) then
+		console.writeline("WARNING: Hearts already minimum")
+	else
+		if (mainmemory.readbyte(ADDR_HEARTPIECES) < 1) then
+			mainmemory.writebyte(ADDR_HEARTPIECES, 3)
+			mainmemory.writebyte(ADDR_SFX2, 45)
+			sleep(180)
+			mainmemory.writebyte(ADDR_MAXHEARTS, mainmemory.readbyte(ADDR_MAXHEARTS)-8)
+			mainmemory.writebyte(ADDR_SFX2, 15)
+		else
+			mainmemory.writebyte(ADDR_HEARTPIECES, mainmemory.readbyte(ADDR_HEARTPIECES)-1)
+			mainmemory.writebyte(ADDR_SFX2, 45)
+		end
+	end
+end
+
+-- FUNCTION: Heart Container
+function giveheartcontainer()
+	if (mainmemory.readbyte(ADDR_MAXHEARTS) > 152) then
+		console.writeline("WARNING: Hearts already maximum")
+	else
+		mainmemory.writebyte(ADDR_MAXHEARTS, mainmemory.readbyte(ADDR_MAXHEARTS)+8)
+		mainmemory.writebyte(ADDR_SFX2, 15)
+	end
+end
+
+-- FUNCTION: Remove Heart Container
+function removeheartcontainer()
+	if (mainmemory.readbyte(ADDR_MAXHEARTS) < 32) then
+		console.writeline("WARNING: Hearts already minimum")
+	else
+		mainmemory.writebyte(ADDR_MAXHEARTS, mainmemory.readbyte(ADDR_MAXHEARTS)-8)
+		mainmemory.writebyte(ADDR_SFX2, 15)
+	end
+end
+
+-- FUNCTION: Refresh Health & Magic
+function refresh()
+	if (mainmemory.readbyte(ADDR_HEARTS) < mainmemory.readbyte(ADDR_MAXHEARTS)) then
+		mainmemory.writebyte(ADDR_FILLHEARTS, mainmemory.readbyte(ADDR_MAXHEARTS)-mainmemory.readbyte(ADDR_HEARTS))
+	else
+		console.writeline("WARNING: Hearts already maximum")
+	end
+	if (mainmemory.readbyte(ADDR_MAGIC) < 128) then
+		mainmemory.writebyte(ADDR_FILLMAGIC, 128-mainmemory.readbyte(ADDR_MAGIC))
+	else
+		console.writeline("WARNING: Magic already maximum")
+	end
 end
