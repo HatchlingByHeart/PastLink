@@ -824,46 +824,89 @@ end
 -- FUNCTION: Make Cuccos Angry! Also turns existing enemies, items (on ground), and NPCs into Cuccos.
 -- Should not result in softlock since these values are reset every screen transition.
 function createandangercuccos()
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE1) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE1, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE1, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE2) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE2, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE2, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE3) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE3, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE3, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE4) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE4, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE4, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE5) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE5, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE5, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE6) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE6, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE6, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE7) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE7, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE7, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE8) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE8, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE8, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE9) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE9, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE9, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE10) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE10, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE10, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE11) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE11, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE11, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE12) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE12, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE12, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE13) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE13, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE13, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE14) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE14, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE14, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE15) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE15, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE15, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE16) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE16, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE16, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE17) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE17, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE17, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE18) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE18, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE18, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE19) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE19, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE19, 35)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE20) == 11) then mainmemory.writebyte(ADDR_SPRITETYPE20, 11) end
-	mainmemory.writebyte(ADDR_AUXSPRITE20, 35)
+	result = ""
+	ADDR_SPRITETYPE_NAMES = {
+	ADDR_SPRITETYPE1,
+	ADDR_SPRITETYPE2,
+	ADDR_SPRITETYPE3,
+	ADDR_SPRITETYPE4,
+	ADDR_SPRITETYPE5,
+	ADDR_SPRITETYPE6,
+	ADDR_SPRITETYPE7,
+	ADDR_SPRITETYPE8,
+	ADDR_SPRITETYPE9,
+	ADDR_SPRITETYPE10,
+	ADDR_SPRITETYPE11,
+	ADDR_SPRITETYPE12,
+	ADDR_SPRITETYPE13,
+	ADDR_SPRITETYPE14,
+	ADDR_SPRITETYPE15,
+	ADDR_SPRITETYPE16,
+	ADDR_SPRITETYPE17,
+	ADDR_SPRITETYPE18,
+	ADDR_SPRITETYPE19,
+	ADDR_SPRITETYPE20
+	}
+	ADDR_SPRITETYPE_VALUES = {
+	mainmemory.readbyte(ADDR_SPRITETYPE1),
+	mainmemory.readbyte(ADDR_SPRITETYPE2),
+	mainmemory.readbyte(ADDR_SPRITETYPE3),
+	mainmemory.readbyte(ADDR_SPRITETYPE4),
+	mainmemory.readbyte(ADDR_SPRITETYPE5),
+	mainmemory.readbyte(ADDR_SPRITETYPE6),
+	mainmemory.readbyte(ADDR_SPRITETYPE7),
+	mainmemory.readbyte(ADDR_SPRITETYPE8),
+	mainmemory.readbyte(ADDR_SPRITETYPE9),
+	mainmemory.readbyte(ADDR_SPRITETYPE10),
+	mainmemory.readbyte(ADDR_SPRITETYPE11),
+	mainmemory.readbyte(ADDR_SPRITETYPE12),
+	mainmemory.readbyte(ADDR_SPRITETYPE13),
+	mainmemory.readbyte(ADDR_SPRITETYPE14),
+	mainmemory.readbyte(ADDR_SPRITETYPE15),
+	mainmemory.readbyte(ADDR_SPRITETYPE16),
+	mainmemory.readbyte(ADDR_SPRITETYPE17),
+	mainmemory.readbyte(ADDR_SPRITETYPE18),
+	mainmemory.readbyte(ADDR_SPRITETYPE19),
+	mainmemory.readbyte(ADDR_SPRITETYPE20)
+	}
+	ADDR_AUXSPRITE_NAMES = {
+	ADDR_AUXSPRITE1,
+	ADDR_AUXSPRITE2,
+	ADDR_AUXSPRITE3,
+	ADDR_AUXSPRITE4,
+	ADDR_AUXSPRITE5,
+	ADDR_AUXSPRITE6,
+	ADDR_AUXSPRITE7,
+	ADDR_AUXSPRITE8,
+	ADDR_AUXSPRITE9,
+	ADDR_AUXSPRITE10,
+	ADDR_AUXSPRITE11,
+	ADDR_AUXSPRITE12,
+	ADDR_AUXSPRITE13,
+	ADDR_AUXSPRITE14,
+	ADDR_AUXSPRITE15,
+	ADDR_AUXSPRITE16,
+	ADDR_AUXSPRITE17,
+	ADDR_AUXSPRITE18,
+	ADDR_AUXSPRITE19,
+	ADDR_AUXSPRITE20
+	}
+	for i=1,20 do
+		for n=1,#CUCCOSTORM_EXCLUDE do
+			if (ADDR_SPRITETYPE_VALUES[i] == CUCCOSTORM_EXCLUDE[n]) then
+				result = result.."true"
+			else
+				result = result.."false"
+			end
+		end
+		if not (bizstring.contains(result, "true")) then
+			if (mainmemory.readbyte(ADDR_INDOORS) < 1) then
+				mainmemory.writebyte(ADDR_SPRITETYPE_NAMES[i], 11)
+				mainmemory.writebyte(ADDR_AUXSPRITE_NAMES[i], 35)
+			end
+		end
+		result = ""
+	end
 end
 
 -- FUNCTION: Calm Down Cuccos!
@@ -1128,27 +1171,67 @@ function refresh()
 end
 
 -- FUNCTION: Create Bees
+-- UPDATE: Rabbits that jump out of grass don't like being turned into bees (they crash the game in rage)
+-- Exempt the rabbits from beeification. Now they just explode into bees when you talk to them.
+-- UPDATE: Now using arrays and for loops to dynamically adjust to the amount of excluded sprites.
 function createbees()
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE1) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE1, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE2) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE2, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE3) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE3, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE4) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE4, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE5) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE5, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE6) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE6, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE7) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE7, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE8) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE8, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE9) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE9, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE10) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE10, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE11) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE11, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE12) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE12, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE13) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE13, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE14) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE14, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE15) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE15, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE16) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE16, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE17) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE17, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE18) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE18, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE19) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE19, 121)
-	if not (mainmemory.readbyte(ADDR_SPRITETYPE20) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE20, 121)
+	ADDR_SPRITETYPE_NAMES = {
+	ADDR_SPRITETYPE1,
+	ADDR_SPRITETYPE2,
+	ADDR_SPRITETYPE3,
+	ADDR_SPRITETYPE4,
+	ADDR_SPRITETYPE5,
+	ADDR_SPRITETYPE6,
+	ADDR_SPRITETYPE7,
+	ADDR_SPRITETYPE8,
+	ADDR_SPRITETYPE9,
+	ADDR_SPRITETYPE10,
+	ADDR_SPRITETYPE11,
+	ADDR_SPRITETYPE12,
+	ADDR_SPRITETYPE13,
+	ADDR_SPRITETYPE14,
+	ADDR_SPRITETYPE15,
+	ADDR_SPRITETYPE16,
+	ADDR_SPRITETYPE17,
+	ADDR_SPRITETYPE18,
+	ADDR_SPRITETYPE19,
+	ADDR_SPRITETYPE20
+	}
+	ADDR_SPRITETYPE_VALUES = {
+	mainmemory.readbyte(ADDR_SPRITETYPE1),
+	mainmemory.readbyte(ADDR_SPRITETYPE2),
+	mainmemory.readbyte(ADDR_SPRITETYPE3),
+	mainmemory.readbyte(ADDR_SPRITETYPE4),
+	mainmemory.readbyte(ADDR_SPRITETYPE5),
+	mainmemory.readbyte(ADDR_SPRITETYPE6),
+	mainmemory.readbyte(ADDR_SPRITETYPE7),
+	mainmemory.readbyte(ADDR_SPRITETYPE8),
+	mainmemory.readbyte(ADDR_SPRITETYPE9),
+	mainmemory.readbyte(ADDR_SPRITETYPE10),
+	mainmemory.readbyte(ADDR_SPRITETYPE11),
+	mainmemory.readbyte(ADDR_SPRITETYPE12),
+	mainmemory.readbyte(ADDR_SPRITETYPE13),
+	mainmemory.readbyte(ADDR_SPRITETYPE14),
+	mainmemory.readbyte(ADDR_SPRITETYPE15),
+	mainmemory.readbyte(ADDR_SPRITETYPE16),
+	mainmemory.readbyte(ADDR_SPRITETYPE17),
+	mainmemory.readbyte(ADDR_SPRITETYPE18),
+	mainmemory.readbyte(ADDR_SPRITETYPE19),
+	mainmemory.readbyte(ADDR_SPRITETYPE20)
+	}
+	for i=1,20 do
+		for n=1,#BEES_EXCLUDE do
+			if (ADDR_SPRITETYPE_VALUES[i] == BEES_EXCLUDE[n]) then
+				result = result.."true"
+			else
+				result = result.."false"
+			end
+		end
+		if not (bizstring.contains(result, "true")) then
+			if (mainmemory.readbyte(ADDR_INDOORS) < 1) then mainmemory.writebyte(ADDR_SPRITETYPE_NAMES[i], 121) end
+		end
+		result = ""
+	end
 end
 
 -- FUNCTION: Everything is Bees!
@@ -1189,4 +1272,3 @@ end
 --		end
 --	end
 --end
-

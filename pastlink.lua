@@ -3,17 +3,28 @@
 -- UPDATE: Configuration moved to config.lua
 -- UPDATE: Functions moved to functions.lua
 
--- Include Required Files
-require "config.lua"
-require "functions.lua"
-
--- Init Vars
+-- Init Toggles and Timers for ongoing effects.
 CUCCOSTORM = false
 CUCCOTIMER = 0
 BEES = false
 BEETIMER = 0
+
+-- Init result var for various functions.
+result = ""
+
 --SLOWDASH = false -- Unused: Not yet implemented into Randomizer
 --SLOWDASHTIMER = 0 -- Unused: Not yet implemented into Randomizer
+
+-- Sprite IDs to exclude from all sprite substituting functions such as Cucco Storm and Everything is Bees.
+-- Required to prevent serious glitches / softlocks, DO NOT MODIFY unless adding new sprites!
+-- All affected functions will automatically scale to the size of the array, no further modifications are needed.
+BEES_EXCLUDE = {77, 121, 236}
+CUCCOSTORM_EXCLUDE = {11, 77, 236}
+
+-- Include Required Files
+require "config.lua"
+require "functions.lua"
+
 REFRESH = REFRESHTIME
 
 -- Place all main code inside an always true while loop to maintain indefinite operation.
