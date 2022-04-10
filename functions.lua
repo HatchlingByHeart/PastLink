@@ -974,32 +974,32 @@ function fairy()
 end
 
 -- FUNCTION: Upgrade Sword (1 minute) -- Unused: Not yet implemented into Randomizer
---function upsword1m()
+--function swordup1m()
 --	mainmemory.writebyte(ADDR_SWORD_BUFF, mainmemory.readbyte(ADDR_SWORD_BUFF)+1)
 --end
 
 -- FUNCTION: Downgrade Sword (1 minute) -- Unused: Not yet implemented into Randomizer
---function downsword1m()
+--function sworddown1m()
 --	mainmemory.writebyte(ADDR_SWORD_BUFF, mainmemory.readbyte(ADDR_SWORD_BUFF)-1)
 --end
 
 -- FUNCTION: Upgrade Armor (1 minute) -- Unused: Not yet implemented into Randomizer
---function uparmor1m()
+--function armorup1m()
 --	mainmemory.writebyte(ADDR_ARMOR_BUFF, mainmemory.readbyte(ADDR_ARMOR_BUFF)+1)
 --end
 
 -- FUNCTION: Downgrade Armor (1 minute) -- Unused: Not yet implemented into Randomizer
---function downarmor1m()
+--function armordown1m()
 --	mainmemory.writebyte(ADDR_ARMOR_BUFF, mainmemory.readbyte(ADDR_ARMOR_BUFF)-1)
 --end
 
 -- FUNCTION: Upgrade Magic (1 minute) -- Unused: Not yet implemented into Randomizer
---function upmagic1m()
+--function magicup1m()
 --	mainmemory.writebyte(ADDR_MAGIC_BUFF, mainmemory.readbyte(ADDR_MAGIC_BUFF)+1)
 --end
 
 -- FUNCTION: Downgrade Magic (1 minute) -- Unused: Not yet implemented into Randomizer
---function downmagic1m()
+--function magicdown1m()
 --	mainmemory.writebyte(ADDR_MAGIC_BUFF, mainmemory.readbyte(ADDR_MAGIC_BUFF)-1)
 --end
 
@@ -1126,3 +1126,67 @@ function refresh()
 		console.writeline("WARNING: Magic already maximum")
 	end
 end
+
+-- FUNCTION: Create Bees
+function createbees()
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE1) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE1, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE2) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE2, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE3) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE3, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE4) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE4, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE5) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE5, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE6) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE6, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE7) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE7, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE8) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE8, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE9) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE9, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE10) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE10, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE11) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE11, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE12) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE12, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE13) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE13, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE14) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE14, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE15) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE15, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE16) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE16, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE17) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE17, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE18) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE18, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE19) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE19, 121)
+	if not (mainmemory.readbyte(ADDR_SPRITETYPE20) == 121) then mainmemory.writebyte(ADDR_SPRITETYPE20, 121)
+end
+
+-- FUNCTION: Everything is Bees!
+function bees(enable)
+	if (enable > 0) then
+		createbees()
+		BEETIMER = 3600
+		BEES = true
+		gui.addmessage(USER.." has released the Bees! Not the bees!!!")
+	else
+		if (BEETIMER < 1) then
+			gui.addmessage("The Bees have retreated!")
+		else
+			gui.addmessage(USER.." has contained the Bees!")
+		end
+		BEETIMER = 0
+		BEES = false
+	end
+end
+
+-- FUNCTION: Slow Dash -- Unused: Not yet implemented into Randomizer
+--function slowdash(enable)
+--	if (enable == true) then
+--		if (SLOWDASH == true) then
+--			console.writeline("WARNING: Slow Dash already in effect!")
+--		else
+--			mainmemory.writebyte(ADDR_SLOWDASH, 1)
+--			SLOWDASH = true
+--			SLOWDASHTIMER = 3600
+--		end
+--	else
+--		if (SLOWDASH == false) then
+--			console.writeline("WARNING: Slow Dash not in effect!")
+--		else
+--			mainmemory.writebyte(ADDR_SLOWDASH, 0)
+--			SLOWDASH = false
+--			SLOWDASHTIMER = 0
+--		end
+--	end
+--end
+
