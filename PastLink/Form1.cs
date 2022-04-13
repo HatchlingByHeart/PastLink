@@ -19,5 +19,10 @@ namespace PastLink
         {
 
         }
+        private void btnGenServerConfig_Click(object sender, EventArgs e)
+        {
+            frmServerConfigGen srvconfgen = new frmServerConfigGen();
+            srvconfgen.ShowDialog();
+        }
     }
 }
