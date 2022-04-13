@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -604,16 +604,18 @@ Partial Class Form1
         Me.wchCommandFile.NotifyFilter = System.IO.NotifyFilters.Size
         Me.wchCommandFile.SynchronizingObject = Me
         '
-        'Form1
+        'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 505)
+        Me.ClientSize = New System.Drawing.Size(649, 476)
         Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.grpServerSettings)
         Me.Controls.Add(Me.grpManual)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.Name = "frmMain"
+        Me.Text = "PastLink"
         Me.cmenuQueue.ResumeLayout(False)
         Me.groupBox1.ResumeLayout(False)
         Me.grpServerSettings.ResumeLayout(False)

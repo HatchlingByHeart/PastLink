@@ -126,10 +126,10 @@ Partial Class Form2
         '
         'numericUpDown1
         '
-        Me.numericUpDown1.Location = New System.Drawing.Point(107, 40)
+        Me.numericUpDown1.Location = New System.Drawing.Point(150, 40)
         Me.numericUpDown1.Margin = New System.Windows.Forms.Padding(2)
         Me.numericUpDown1.Name = "numericUpDown1"
-        Me.numericUpDown1.Size = New System.Drawing.Size(97, 20)
+        Me.numericUpDown1.Size = New System.Drawing.Size(54, 20)
         Me.numericUpDown1.TabIndex = 1
         Me.numericUpDown1.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -139,9 +139,9 @@ Partial Class Form2
         Me.label1.Location = New System.Drawing.Point(7, 41)
         Me.label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(89, 13)
+        Me.label1.Size = New System.Drawing.Size(139, 13)
         Me.label1.TabIndex = 0
-        Me.label1.Text = "Viewer Cooldown"
+        Me.label1.Text = "Viewer Command Cooldown"
         '
         'grpDatabaseConfig
         '
@@ -272,7 +272,7 @@ Partial Class Form2
         Me.Controls.Add(Me.grpServerConfig)
         Me.Controls.Add(Me.grpDatabaseConfig)
         Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.Text = "Generate Server Configuration"
         Me.grpServerConfig.ResumeLayout(False)
         Me.grpServerConfig.PerformLayout()
         CType(Me.numericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
