@@ -14,4 +14,7 @@ define("BIZHAWK", "****************");
 
 // Cooldown for each user, in seconds.
 define("COOLDOWN", 10);
+
+// Whether or not to use the points system for issuing commands.
+define("POINTS", false)
 ?>
