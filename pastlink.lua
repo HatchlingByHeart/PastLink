@@ -22,6 +22,7 @@ ADDR_SFX1 = 0x00012E
 ADDR_SFX2 = 0x00012F
 ADDR_BUNNYTIMER = 0x0003F5
 ADDR_DUNGEONID = 0x00040C
+ADDR_LIGHTLEVEL = 0x00045A
 ADDR_LOWSPRITEY = 0x000D00
 ADDR_LOWSPRITEX = 0x000D10
 ADDR_HIGHSPRITEY = 0x000D20
@@ -113,13 +114,6 @@ ADDR_CRYSTALS = 0x00F37A
 ADDR_MAGICBOOST = 0x00F37B
 ADDR_ITEMSTACK = 0x00F38C
 ADDR_BOWSTACK = 0x00F38E
---ADDR_SWORDBUFF = 0x0150C0 -- Unused: Not yet implemented into Randomizer
---ADDR_SHIELDBUFF = 0x0150C1 -- Unused: Not yet implemented into Randomizer
---ADDR_ARMORBUFF = 0x0150C2 -- Unused: Not yet implemented into Randomizer
---ADDR_MAGICBUFF = 0x0150C3 -- Unused: Not yet implemented into Randomizer
---ADDR_LIGHTBUFF = 0x0150C4 -- Unused: Not yet implemented into Randomizer
---ADDR_UNUSEDEFFECT = 0x0150C5 -- Unused: Not yet implemented into Randomizer
---ADDR_SLOWDASH = 0x0150C6 -- Unused: Not yet implemented into Randomizer
 ADDR_SLIPPERYFLOORS = 0x0150C7
 ADDR_INFARROWS = 0x0150C8
 ADDR_INFBOMBS = 0x0150C9
@@ -129,17 +123,13 @@ ADDR_OHKOMODE = 0x0150CC
 ADDR_SWAPSPRITE = 0x0150CD
 ADDR_ENABLEBOOTS = 0x0150CE
 
--- Init Toggles and Timers for ongoing effects.
+-- Init Vars.
 CUCCOSTORM = false
 CUCCOTIMER = 0
 BEES = false
 BEETIMER = 0
-
--- Init result var for various functions.
+a = 0
 result = ""
-
---SLOWDASH = false -- Unused: Not yet implemented into Randomizer
---SLOWDASHTIMER = 0 -- Unused: Not yet implemented into Randomizer
 
 -- Sprite IDs to exclude from all sprite substituting functions such as Cucco Storm and Everything is Bees.
 -- Required to prevent serious glitches / softlocks, DO NOT MODIFY unless adding new sprites!
@@ -161,46 +151,20 @@ function sleep(n)
 end
 
 -- FUNCTION: Edit Rupees
--- Argument quantity (sint): The number of rupees to set, give, or take.
+-- Argument quantity (sint): The number of rupees to set.
 function editrupees(quantity)
 	-- Check if quantity is provided.
 	if (quantity) then
-		-- Check for modifiers (- or +) and subtract or add quantity respectively if modifiers are found.
-		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
-		if (bizstring.startswith(quantity, "+")) then
-			quantity = tonumber(bizstring.remove(quantity,0,1))
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the function won't cause internal rupee count to rise above 9999.
-			if (mainmemory.read_s16_le(ADDR_RUPEES)+quantity > 9999) then
-				mainmemory.write_s16_le(ADDR_RUPEES, 9999)
-			else
-				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)+quantity)
-			end
-			gui.addmessage(USER.." gave you "..quantity.." Rupee"..PLURAL.."!")
-			return true
-		elseif (bizstring.startswith(quantity, "-")) then
-			quantity = tonumber(bizstring.remove(quantity,0,1))
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the function won't cause internal rupee count to fall below 0.
-			if (mainmemory.read_s16_le(ADDR_RUPEES)-quantity < 0) then
-				mainmemory.write_s16_le(ADDR_RUPEES, 0)
-			else
-				mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)-quantity)
-			end
-			gui.addmessage(USER.." took away "..quantity.." Rupee"..PLURAL.."!")
-			return true
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the amount specified is valid (0-9999). Output error if it isn't.
+		if (quantity < 0 or quantity > 9999) then
+			console.writeline("ERROR: Function giverupees(): Quantity provided is not valid (should be 0-9999).")
+			return false
 		else
-			quantity = tonumber(quantity)
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the amount specified is valid (0-9999). Output error if it isn't.
-			if (quantity < 0 or quantity > 9999) then
-				console.writeline("ERROR: Function giverupees(): Quantity provided is not valid (should be 0-9999).")
-				return false
-			else
-				mainmemory.write_s16_le(ADDR_RUPEES, quantity)
-				gui.addmessage(USER.." set your Rupee count to "..quantity.." Rupee"..PLURAL.."!")
-				return true
-			end
+			mainmemory.write_s16_le(ADDR_RUPEES, quantity)
+			gui.addmessage(USER.." set your Rupee count to "..quantity.." Rupee"..PLURAL.."!")
+			return true
 		end
 	else
 		console.writeline("ERROR: Function editrupees(): Quantity not provided.")
@@ -208,47 +172,64 @@ function editrupees(quantity)
 	end
 end
 
+-- FUNCTION: Add Rupees
+-- Argument quantity (sint): The number of rupees to give.
+function addrupees(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		console.writeline("Value is: "..quantity)
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the function won't cause internal rupee count to rise above 9999.
+		if (mainmemory.read_s16_le(ADDR_RUPEES)+quantity > 9999) then
+			mainmemory.write_s16_le(ADDR_RUPEES, 9999)
+		else
+			mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)+quantity)
+		end
+		gui.addmessage(USER.." gave you "..quantity.." Rupee"..PLURAL.."!")
+		return true
+	else
+		console.writeline("ERROR: Function addrupees(): Quantity not provided.")
+		return false
+	end
+end
+
+-- FUNCTION: Take Rupees
+-- Argument quantity (sint): The number of rupees to take.
+function takerupees(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the function won't cause internal rupee count to fall below 0.
+		if (mainmemory.read_s16_le(ADDR_RUPEES)-quantity < 0) then
+			mainmemory.write_s16_le(ADDR_RUPEES, 0)
+		else
+			mainmemory.write_s16_le(ADDR_RUPEES, mainmemory.read_s16_le(ADDR_RUPEES)-quantity)
+		end
+		gui.addmessage(USER.." took away "..quantity.." Rupee"..PLURAL.."!")
+		return true
+	else
+		console.writeline("ERROR: Function takerupees(): Quantity not provided.")
+		return false
+	end
+end
+
 -- FUNCTION: Edit Bombs
--- Argument quantity (sint): The number of bombs to set, give, or take.
+-- Argument quantity (sint): The number of bombs to set.
 function editbombs(quantity)
 	-- Check if quantity is provided.
 	if (quantity) then
-		-- Check for modifiers (- or +) and subtract or add quantity respectively if modifiers are found.
-		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
-		if (bizstring.startswith(quantity, "+")) then
-			quantity = tonumber(bizstring.remove(quantity,0,1))
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the function won't cause internal bomb count to rise above 50.
-			if (mainmemory.readbyte(ADDR_BOMBS)+quantity > 50) then
-				mainmemory.writebyte(ADDR_BOMBS, 50)
-			else
-				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)+quantity)
-			end
-			gui.addmessage(USER.." gave you "..quantity.." Bomb"..PLURAL.."!")
-			return true
-		elseif (bizstring.startswith(quantity, "-")) then
-			quantity = tonumber(bizstring.remove(quantity,0,1))
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the function won't cause internal bomb count to fall below 0.
-			if (mainmemory.readbyte(ADDR_BOMBS)-quantity < 0) then
-				mainmemory.writebyte(ADDR_BOMBS, 0)
-			else
-				mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)-quantity)
-			end
-			gui.addmessage(USER.." took away "..quantity.." Bomb"..PLURAL.."!")
-			return true
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the amount specified is valid (0-50). Output error if it isn't.
+		if (quantity < 0 or quantity > 50) then
+			console.writeline("ERROR: Function givebombs(): Quantity provided is not valid (should be 0-50).")
+			return false
 		else
-			quantity = tonumber(quantity)
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the amount specified is valid (0-50). Output error if it isn't.
-			if (quantity < 0 or quantity > 50) then
-				console.writeline("ERROR: Function givebombs(): Quantity provided is not valid (should be 0-50).")
-				return false
-			else
-				mainmemory.writebyte(ADDR_BOMBS, quantity)
-				gui.addmessage(USER.." set your Bomb count to "..quantity.." Bomb"..PLURAL.."!")
-				return true
-			end
+			mainmemory.writebyte(ADDR_BOMBS, quantity)
+			gui.addmessage(USER.." set your Bomb count to "..quantity.." Bomb"..PLURAL.."!")
+			return true
 		end
 	else
 		console.writeline("ERROR: Function editbombs(): Quantity not provided.")
@@ -256,50 +237,106 @@ function editbombs(quantity)
 	end
 end
 
+-- FUNCTION: Add Bombs
+-- Argument quantity (sint): The number of bombs to give.
+function addbombs(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the function won't cause internal bomb count to rise above 50.
+		if (mainmemory.readbyte(ADDR_BOMBS)+quantity > 50) then
+			mainmemory.writebyte(ADDR_BOMBS, 50)
+		else
+			mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)+quantity)
+		end
+		gui.addmessage(USER.." gave you "..quantity.." Bomb"..PLURAL.."!")
+		return true
+	else
+		console.writeline("ERROR: Function addbombs(): Quantity not provided.")
+		return false
+	end
+end
+
+-- FUNCTION: Take Bombs
+-- Argument quantity (sint): The number of bombs to take.
+function takebombs(quantity)
+	if (quantity) then
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the function won't cause internal bomb count to fall below 0.
+		if (mainmemory.readbyte(ADDR_BOMBS)-quantity < 0) then
+			mainmemory.writebyte(ADDR_BOMBS, 0)
+		else
+			mainmemory.writebyte(ADDR_BOMBS, mainmemory.readbyte(ADDR_BOMBS)-quantity)
+		end
+		gui.addmessage(USER.." took away "..quantity.." Bomb"..PLURAL.."!")
+		return true
+	else
+		console.writeline("ERROR: Function takebombs(): Quantity not provided.")
+		return false
+	end
+end
+
 -- FUNCTION: Edit Arrows
--- Argument quantity (sint): The number of arrows to set, give, or take.
+-- Argument quantity (sint): The number of arrows to set.
 function editarrows(quantity)
 	-- Check if quantity is provided.
 	if (quantity) then
-		-- Check for modifiers (- or +) and subtract or add quantity respectively if modifiers are found.
-		-- An absolute value is assigned if no modifiers are found. (example: "+3" adds 3, "-3" subtracts 3, "3" sets value to 3)
-		if (bizstring.startswith(quantity, "+")) then
-			quantity = tonumber(bizstring.remove(quantity,0,1))
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the function won't cause internal arrow count to rise above 70.
-			if (mainmemory.readbyte(ADDR_ARROWS)+quantity > 70) then
-				mainmemory.writebyte(ADDR_ARROWS, 70)
-			else
-				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)+quantity)
-			end
-			gui.addmessage(USER.." gave you "..quantity.." Arrow"..PLURAL.."!")
-			return true
-		elseif (bizstring.startswith(quantity, "-")) then
-			quantity = tonumber(bizstring.remove(quantity,0,1))
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the function won't cause internal arrow count to fall below 0.
-			if (mainmemory.readbyte(ADDR_ARROWS)-quantity < 0) then
-				mainmemory.writebyte(ADDR_ARROWS, 0)
-			else
-				mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)-quantity)
-			end
-			gui.addmessage(USER.." took away "..quantity.." Arrow"..PLURAL.."!")
-			return true
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the amount specified is valid (0-50). Output error if it isn't.
+		if (quantity < 0 or quantity > 70) then
+			console.writeline("ERROR: Function givearrow(): Quantity provided is not valid (should be 0-70).")
+			return false
 		else
-			quantity = tonumber(quantity)
-			if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
-			-- Check that the amount specified is valid (0-70). Output error if it isn't.
-			if (quantity < 0 or quantity > 70) then
-				console.writeline("ERROR: Function givearrows(): Quantity provided is not valid (should be 0-70).")
-				return false
-			else
-				mainmemory.writebyte(ADDR_ARROWS, quantity)
-				gui.addmessage(USER.." set your Arrow count to "..quantity.." Arrow"..PLURAL.."!")
-				return true
-			end
+			mainmemory.writebyte(ADDR_ARROWS, quantity)
+			gui.addmessage(USER.." set your Arrow count to "..quantity.." Arrow"..PLURAL.."!")
+			return true
 		end
 	else
-		console.writeline("ERROR: Function editarrows(): Quantity not provided.")
+		console.writeline("ERROR: Function editbombs(): Quantity not provided.")
+		return false
+	end
+end
+
+-- FUNCTION: Add Arrows
+-- Argument quantity (sint): The number of arrows to give.
+function addarrows(quantity)
+	-- Check if quantity is provided.
+	if (quantity) then
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the function won't cause internal arrow count to rise above 50.
+		if (mainmemory.readbyte(ADDR_ARROWS)+quantity > 70) then
+			mainmemory.writebyte(ADDR_ARROWS, 70)
+		else
+			mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)+quantity)
+		end
+		gui.addmessage(USER.." gave you "..quantity.." Arrows"..PLURAL.."!")
+		return true
+	else
+		console.writeline("ERROR: Function addarrows(): Quantity not provided.")
+		return false
+	end
+end
+
+-- FUNCTION: Take Arrows
+-- Argument quantity (sint): The number of arrows to take.
+function takearrows(quantity)
+	if (quantity) then
+		quantity = tonumber(quantity)
+		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
+		-- Check that the function won't cause internal arrow count to fall below 0.
+		if (mainmemory.readbyte(ADDR_ARROWS)-quantity < 0) then
+			mainmemory.writebyte(ADDR_ARROWS, 0)
+		else
+			mainmemory.writebyte(ADDR_ARROWS, mainmemory.readbyte(ADDR_ARROWS)-quantity)
+		end
+		gui.addmessage(USER.." took away "..quantity.." Arrow"..PLURAL.."!")
+		return true
+	else
+		console.writeline("ERROR: Function takearrows(): Quantity not provided.")
 		return false
 	end
 end
@@ -1033,6 +1070,7 @@ function createandangercuccos()
 		end
 		if not (bizstring.contains(result, "true")) then
 			if (mainmemory.readbyte(ADDR_INDOORS) < 1) then
+				mainmemory.writebyte(ADDR_AUXSPRITE_NAMES[i], 0)
 				mainmemory.writebyte(ADDR_SPRITETYPE_NAMES[i], 11)
 				mainmemory.writebyte(ADDR_AUXSPRITE_NAMES[i], 35)
 			end
@@ -1148,41 +1186,11 @@ end
 function fairy()
 	if (mainmemory.readbyte(ADDR_HEARTS) <= 104) then
 		mainmemory.writebyte(ADDR_FILLHEARTS, 56)
-		gui.addmessage(USER.." gave you a fairy (unbottled)!")
+		gui.addmessage(USER.." sent a fairy to heal you!")
 	end
 end
 
--- FUNCTION: Upgrade Sword (1 minute) -- Unused: Not yet implemented into Randomizer
---function swordup1m()
---	mainmemory.writebyte(ADDR_SWORD_BUFF, mainmemory.readbyte(ADDR_SWORD_BUFF)+1)
---end
-
--- FUNCTION: Downgrade Sword (1 minute) -- Unused: Not yet implemented into Randomizer
---function sworddown1m()
---	mainmemory.writebyte(ADDR_SWORD_BUFF, mainmemory.readbyte(ADDR_SWORD_BUFF)-1)
---end
-
--- FUNCTION: Upgrade Armor (1 minute) -- Unused: Not yet implemented into Randomizer
---function armorup1m()
---	mainmemory.writebyte(ADDR_ARMOR_BUFF, mainmemory.readbyte(ADDR_ARMOR_BUFF)+1)
---end
-
--- FUNCTION: Downgrade Armor (1 minute) -- Unused: Not yet implemented into Randomizer
---function armordown1m()
---	mainmemory.writebyte(ADDR_ARMOR_BUFF, mainmemory.readbyte(ADDR_ARMOR_BUFF)-1)
---end
-
--- FUNCTION: Upgrade Magic (1 minute) -- Unused: Not yet implemented into Randomizer
---function magicup1m()
---	mainmemory.writebyte(ADDR_MAGIC_BUFF, mainmemory.readbyte(ADDR_MAGIC_BUFF)+1)
---end
-
--- FUNCTION: Downgrade Magic (1 minute) -- Unused: Not yet implemented into Randomizer
---function magicdown1m()
---	mainmemory.writebyte(ADDR_MAGIC_BUFF, mainmemory.readbyte(ADDR_MAGIC_BUFF)-1)
---end
-
--- FUNCTION: Upgrade Sword (Permanent)
+-- FUNCTION: Upgrade Sword
 function swordup()
 	if (mainmemory.readbyte(ADDR_SWORD) > 4) then
 		console.writeline("WARNING: Sword already maximum.")
@@ -1192,7 +1200,7 @@ function swordup()
 	end
 end
 
--- FUNCTION: Downgrade Sword (Permanent)
+-- FUNCTION: Downgrade Sword
 function sworddown()
 	if (mainmemory.readbyte(ADDR_SWORD) < 0) then
 		console.writeline("WARNING: Sword already gone.")
@@ -1202,7 +1210,7 @@ function sworddown()
 	end
 end
 
--- FUNCTION: Upgrade Shield (Permanent)
+-- FUNCTION: Upgrade Shield
 function shieldup()
 	if (mainmemory.readbyte(ADDR_SHIELD) > 3) then
 		console.writeline("WARNING: Shield already maximum.")
@@ -1212,7 +1220,7 @@ function shieldup()
 	end
 end
 
--- FUNCTION: Downgrade Shield (Permanent)
+-- FUNCTION: Downgrade Shield
 function shielddown()
 	if (mainmemory.readbyte(ADDR_SHIELD) < 0) then
 		console.writeline("WARNING: Sword already gone.")
@@ -1222,7 +1230,7 @@ function shielddown()
 	end
 end
 
--- FUNCTION: Upgrade Mail (Permanent)
+-- FUNCTION: Upgrade Mail
 function mailup()
 	if (mainmemory.readbyte(ADDR_MAIL) > 2) then
 		console.writeline("WARNING: Armor already maximum.")
@@ -1232,7 +1240,7 @@ function mailup()
 	end
 end
 
--- FUNCTION: Downgrade Mail (Permanent)
+-- FUNCTION: Downgrade Mail
 function maildown()
 	if (mainmemory.readbyte(ADDR_MAIL) < 0) then
 		console.writeline("WARNING: Armor already minimum.")
@@ -1326,6 +1334,28 @@ end
 -- Exempt the rabbits from beeification. Now they just explode into bees when you talk to them.
 -- UPDATE: Now using arrays and for loops to dynamically adjust to the amount of excluded sprites.
 function createbees()
+	ADDR_AUXSPRITE_NAMES = {
+	ADDR_AUXSPRITE1,
+	ADDR_AUXSPRITE2,
+	ADDR_AUXSPRITE3,
+	ADDR_AUXSPRITE4,
+	ADDR_AUXSPRITE5,
+	ADDR_AUXSPRITE6,
+	ADDR_AUXSPRITE7,
+	ADDR_AUXSPRITE8,
+	ADDR_AUXSPRITE9,
+	ADDR_AUXSPRITE10,
+	ADDR_AUXSPRITE11,
+	ADDR_AUXSPRITE12,
+	ADDR_AUXSPRITE13,
+	ADDR_AUXSPRITE14,
+	ADDR_AUXSPRITE15,
+	ADDR_AUXSPRITE16,
+	ADDR_AUXSPRITE17,
+	ADDR_AUXSPRITE18,
+	ADDR_AUXSPRITE19,
+	ADDR_AUXSPRITE20
+	}
 	ADDR_SPRITETYPE_NAMES = {
 	ADDR_SPRITETYPE1,
 	ADDR_SPRITETYPE2,
@@ -1379,7 +1409,11 @@ function createbees()
 			end
 		end
 		if not (bizstring.contains(result, "true")) then
-			if (mainmemory.readbyte(ADDR_INDOORS) < 1) then mainmemory.writebyte(ADDR_SPRITETYPE_NAMES[i], 121) end
+			if (mainmemory.readbyte(ADDR_INDOORS) < 1) then
+				mainmemory.writebyte(ADDR_AUXSPRITE_NAMES[i], 0)
+				mainmemory.writebyte(ADDR_SPRITETYPE_NAMES[i], 121)
+				mainmemory.writebyte(ADDR_AUXSPRITE_NAMES[i], 0)
+			end
 		end
 		result = ""
 	end
@@ -1402,27 +1436,6 @@ function bees(enable)
 		BEES = false
 	end
 end
-
--- FUNCTION: Slow Dash -- Unused: Not yet implemented into Randomizer
---function slowdash(enable)
---	if (enable == true) then
---		if (SLOWDASH == true) then
---			console.writeline("WARNING: Slow Dash already in effect!")
---		else
---			mainmemory.writebyte(ADDR_SLOWDASH, 1)
---			SLOWDASH = true
---			SLOWDASHTIMER = 60
---		end
---	else
---		if (SLOWDASH == false) then
---			console.writeline("WARNING: Slow Dash not in effect!")
---		else
---			mainmemory.writebyte(ADDR_SLOWDASH, 0)
---			SLOWDASH = false
---			SLOWDASHTIMER = 0
---		end
---	end
---end
 
 -- FUNCTION: Slippery Floors
 function slipperyfloors(enable)
@@ -1500,6 +1513,44 @@ function infmagic(enable)
 	end
 end
 
+-- FUNCTION: One Hit KO
+function ohkomode(enable)
+	if (enable > 0) then
+		mainmemory.writebyte(ADDR_OHKOMODE, 1)
+		OHKOTIMER = 60
+		OHKOMODE = true
+		gui.addmessage(USER.." made you extremely frail!")
+	else
+		mainmemory.writebyte(ADDR_OHKOMODE, 0)
+		OHKOTIMER = 0
+		OHKOMODE = false
+		if (OHKOTIMER < 1) then
+			gui.addmessage("Your constitution is back to normal!")
+		else
+			gui.addmessage(USER.." granted you your constitution back!")
+		end
+	end
+end
+
+-- FUNCTION: Infinite Light
+function inflight(enable)
+		if (enable > 0) then
+		mainmemory.writebyte(ADDR_LIGHTLEVEL, 1)
+		INFLIGHTTIMER = 60
+		INFLIGHT = true
+		gui.addmessage(USER..": Let there be light!")
+	else
+		mainmemory.writebyte(ADDR_LIGHTLEVEL, 0)
+		INFLIGHTTIMER = 0
+		INFLIGHT = false
+		if (INFLIGHTTIMER < 1) then
+			gui.addmessage("The light is gone now.")
+		else
+			gui.addmessage(USER..": Sorry. No light for you!")
+		end
+	end
+end
+
 REFRESH = 60
 
 -- Place all main code inside an always true while loop to maintain indefinite operation.
@@ -1507,7 +1558,7 @@ while true do
 	-- Refresh counter expired, time to read the file.
 	if (REFRESH <= 0) then
 		-- Open file "command" for reading.
-		file = io.open("command", "r+")
+		file = io.open("command", "r")
 		io.input(file)
 		REQUEST = io.read()
 		io.close(file)
@@ -1526,77 +1577,89 @@ while true do
 		VALUE = bizstring.split(MESSAGE, ":")
 		VALUE = tonumber(VALUE[2])
 		if (bizstring.startswith(MESSAGE, "EDITRUPEES:")) then			
-			RESULT = editrupees(VALUE)
+			editrupees(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "ADDRUPEES:")) then			
+			addrupees(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "TAKERUPEES:")) then			
+			takerupees(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOMBS:")) then
-			RESULT = editbombs(VALUE)
+			editbombs(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "ADDBOMBS:")) then
+			addbombs(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "TAKEBOMBS:")) then
+			takebombs(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITARROWS:")) then
-			RESULT = editarrows(VALUE)
+			editarrows(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "ADDARROWS:")) then
+			addarrows(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "TAKEARROWS:")) then
+			takearrows(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITNORMALBOW:")) then
-			RESULT = editnormalbow(VALUE)
+			editnormalbow(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITSILVERBOW:")) then
-			RESULT = editsilverbow(VALUE)
+			editsilverbow(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOOMERANG:")) then
-			RESULT = editboomerang(VALUE)
+			editboomerang(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMAGICALBOOMERANG:")) then
-			RESULT = editmagicalboomerang(VALUE)
+			editmagicalboomerang(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMUSHROOM:")) then
-			RESULT = editmushroom(VALUE)
+			editmushroom(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMAGICPOWDER:")) then
-			RESULT = editmagicpowder(VALUE)
+			editmagicpowder(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITSHOVEL:")) then
-			RESULT = editshovel(VALUE)
+			editshovel(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITOCARINA:")) then
-			RESULT = editocarina(VALUE)
+			editocarina(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITHOOKSHOT:")) then
-			RESULT = edithookshot(VALUE)
+			edithookshot(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITFIREROD:")) then
-			RESULT = editfirerod(VALUE)
+			editfirerod(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITICEROD:")) then
-			RESULT = editicerod(VALUE)
+			editicerod(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOMBOS:")) then
-			RESULT = editbombos(VALUE)
+			editbombos(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITETHER:")) then
-			RESULT = editether(VALUE)
+			editether(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITQUAKE:")) then
-			RESULT = editquake(VALUE)
+			editquake(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITLAMP:")) then
-			RESULT = editlamp(VALUE)
+			editlamp(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMAGICHAMMER:")) then
-			RESULT = editmagichammer(VALUE)
+			editmagichammer(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBUGNET:")) then
-			RESULT = editbugnet(VALUE)
+			editbugnet(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOOKOFMODURA:")) then
-			RESULT = editbookofmodura(VALUE)
+			editbookofmodura(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE1:")) then
-			RESULT = editbottles(1,VALUE)
+			editbottles(1,VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE2:")) then
-			RESULT = editbottles(2,VALUE)
+			editbottles(2,VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE3:")) then
-			RESULT = editbottles(3,VALUE)
+			editbottles(3,VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITBOTTLE4:")) then
-			RESULT = editbottles(4,VALUE)
+			editbottles(4,VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITCANEOFSOMARIA:")) then
-			RESULT = editcaneofsomaria(VALUE)
+			editcaneofsomaria(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITCANEOFBYRNA:")) then
-			RESULT = editcaneofbyrna(VALUE)
+			editcaneofbyrna(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMAGICCAPE:")) then
-			RESULT = editmagiccape(VALUE)
+			editmagiccape(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMAGICMIRROR:")) then
-			RESULT = editmagicmirror(VALUE)
+			editmagicmirror(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITGLOVES:")) then
-			RESULT = editgloves(VALUE)
+			editgloves(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITPEGASUSBOOTS:")) then
-			RESULT = editpegasusboots(VALUE)
+			editpegasusboots(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITZORASFLIPPERS:")) then
-			RESULT = editzorasflippers(VALUE)
+			editzorasflippers(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMOONPEARL:")) then
-			RESULT = editmoonpearl(VALUE)
+			editmoonpearl(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "EDITMAGICBOOST:")) then
-			RESULT = editmagicboost(VALUE)
+			editmagicboost(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "CUCCOSTORM:")) then
-			RESULT = cuccostorm(VALUE)
+			cuccostorm(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "INSTADEATH")) then
-			RESULT = instadeath()
+			instadeath()
 		elseif (bizstring.startswith(MESSAGE, "SMLMAGIC")) then
 			smlmagic()
 		elseif (bizstring.startswith(MESSAGE, "BIGMAGIC")) then
@@ -1605,19 +1668,6 @@ while true do
 			heart()
 		elseif (bizstring.startswith(MESSAGE, "FAIRY")) then
 			fairy()
-		-- The following commented lines are functions that are not yet implemented into the Randomizer.
-		--elseif (bizstring.startswith(MESSAGE, "SWORDUP1M")) then
-			--swordup1m()
-		--elseif (bizstring.startswith(MESSAGE, "SWORDDOWN1M")) then
-			--sworddown1m()
-		--elseif (bizstring.startswith(MESSAGE, "ARMORUP1M")) then
-			--armorup1m()
-		--elseif (bizstring.startswith(MESSAGE, "ARMORDOWN1M")) then
-			--armordown1m()
-		--elseif (bizstring.startswith(MESSAGE, "MAGICUP1M")) then
-			--magicup1m()
-		--elseif (bizstring.startswith(MESSAGE, "MAGICDOWN1M")) then
-			--magicdown1m()
 		elseif (bizstring.startswith(MESSAGE, "SWORDUP")) then
 			swordup()
 		elseif (bizstring.startswith(MESSAGE, "SWORDDOWN")) then
@@ -1642,8 +1692,6 @@ while true do
 			refresh()
 		elseif (bizstring.startswith(MESSAGE, "BEES:")) then
 			bees(VALUE)
---		elseif (bizstring.startswith(MESSAGE, "SLOWDASH:")) then
---			slowdash(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "SLIPPERYFLOORS:")) then
 			slipperyfloors(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "INFARROWS:")) then
@@ -1652,6 +1700,10 @@ while true do
 			infbombs(VALUE)
 		elseif (bizstring.startswith(MESSAGE, "INFMAGIC:")) then
 			infmagic(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "OHKOMODE:")) then
+			ohkomode(VALUE)
+		elseif (bizstring.startswith(MESSAGE, "INFLIGHT:")) then
+			inflight(VALUE)
 		end
 		-- Process ongoing effects.
 		if (CUCCOSTORM == true) then
@@ -1659,7 +1711,7 @@ while true do
 				cuccostorm(0)
 			else
 				createandangercuccos()
-				CUCCOTIMER = CUCCOTIMER - 1
+				CUCCOTIMER = CUCCOTIMER-1
 			end
 		end
 		if (BEES == true) then
@@ -1667,50 +1719,56 @@ while true do
 				bees(0)
 			else
 				createbees()
-				BEETIMER = BEETIMER - 1
+				BEETIMER = BEETIMER-1
 			end
 		end
--- The following commented lines are functions that are not yet implemented into the Randomizer.
---		if (SLOWDASH == true) then
---			if (SLOWDASHTIMER < 1) then
---				slowdash(0)
---			else
---				SLOWDASHTIMER = SLOWDASHTIMER - 1
---			end
---		end
 		if (SLIPPERYFLOORS == true) then
 			if (SLIPPERYTIMER < 1) then
 				slipperyfloors(0)
 			else
-				SLIPPERYTIMER = SLIPPERYTIMER - 1
+				SLIPPERYTIMER = SLIPPERYTIMER-1
 			end
 		end
 		if (INFARROWS == true) then
 			if (INFARROWSTIMER < 1) then
 				infarrows(0)
 			else
-				INFARROWSTIMER = INFARROWSTIMER - 1
+				INFARROWSTIMER = INFARROWSTIMER-1
 			end
 		end
 		if (INFBOMBS == true) then
 			if (INFBOMBSTIMER < 1) then
 				infbombs(0)
 			else
-				INFBOMBSTIMER = INFBOMBSTIMER - 1
+				INFBOMBSTIMER = INFBOMBSTIMER-1
 			end
 		end
 		if (INFMAGIC == true) then
 			if (INFMAGICTIMER < 1) then
 				infmagic(0)
 			else
-				INFMAGICTIMER = INFMAGICTIMER - 1
+				INFMAGICTIMER = INFMAGICTIMER-1
+			end
+		end
+		if (OHKOMODE == true) then
+			if (OHKOTIMER < 1) then
+				ohkomode(0)
+			else
+				OHKOTIMER = OHKOTIMER-1
+			end
+		end
+		if (INFLIGHT == true) then
+			if (INFLIGHTTIMER < 1) then
+				inflight(0)
+			else
+				INFLIGHTTIMER = INFLIGHTTIMER-1
 			end
 		end
 		-- Reset the refresh counter back to initial value to begin countdown again.
 		REFRESH = 60
 	else
 		-- Not time yet, decrement one frame from timer.
-		REFRESH = REFRESH - 1
+		REFRESH = REFRESH-1
 	end
 	-- Once everything is checked, advance BizHawk a frame.
 	emu.frameadvance()
