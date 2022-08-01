@@ -1563,8 +1563,11 @@ while true do
 		REQUEST = io.read()
 		io.close(file)
 		-- Open the file again in overwrite mode to erase data from it.
-		file = io.open("command", "w+")
-		io.close(file)
+		-- UPDATE: Don't erase file if it doesn't contain anything anyway. Hopefully this will improve performance.
+		if (REQUEST) then 
+			file = io.open("command", "w+")
+			io.close(file)
+		end
 		-- Split single REQUEST string returned from the server into three parts: Username, IP Address, and Message.
 		SPLIT = bizstring.split(REQUEST, ",")
 		if (SPLIT[1] == "") then
