@@ -23,6 +23,9 @@ ADDR_SFX2 = 0x00012F
 ADDR_BUNNYTIMER = 0x0003F5
 ADDR_DUNGEONID = 0x00040C
 ADDR_LIGHTLEVEL = 0x00045A
+ADDR_LIGHTTIMER1 = 0x0004F0
+ADDR_LIGHTTIMER2 = 0x0004F1
+ADDR_LIGHTTIMER3 = 0x0004F2
 ADDR_LOWSPRITEY = 0x000D00
 ADDR_LOWSPRITEX = 0x000D10
 ADDR_HIGHSPRITEY = 0x000D20
@@ -177,7 +180,6 @@ end
 function addrupees(quantity)
 	-- Check if quantity is provided.
 	if (quantity) then
-		console.writeline("Value is: "..quantity)
 		quantity = tonumber(quantity)
 		if (quantity == 1) then PLURAL = "" else PLURAL = "s" end
 		-- Check that the function won't cause internal rupee count to rise above 9999.
@@ -1535,12 +1537,18 @@ end
 -- FUNCTION: Infinite Light
 function inflight(enable)
 		if (enable > 0) then
-		mainmemory.writebyte(ADDR_LIGHTLEVEL, 1)
+		mainmemory.writebyte(ADDR_LIGHTLEVEL, 3)
+		mainmemory.writebyte(ADDR_LIGHTTIMER1, 192)
+		mainmemory.writebyte(ADDR_LIGHTTIMER2, 192)
+		mainmemory.writebyte(ADDR_LIGHTTIMER3, 192)
 		INFLIGHTTIMER = 60
 		INFLIGHT = true
 		gui.addmessage(USER..": Let there be light!")
 	else
 		mainmemory.writebyte(ADDR_LIGHTLEVEL, 0)
+		mainmemory.writebyte(ADDR_LIGHTTIMER1, 0)
+		mainmemory.writebyte(ADDR_LIGHTTIMER2, 0)
+		mainmemory.writebyte(ADDR_LIGHTTIMER3, 0)
 		INFLIGHTTIMER = 0
 		INFLIGHT = false
 		if (INFLIGHTTIMER < 1) then
